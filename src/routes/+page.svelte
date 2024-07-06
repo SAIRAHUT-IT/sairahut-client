@@ -27,6 +27,6 @@
 	<button class="border border-black w-auto h-auto rounded-2xl px-8 py-4"> Login with goolgle </button>
 </div>
 <footer class="bg-blue-950 w-full h-20 mt-10 flex items-center justify-center">
-	<p class="text-white"> Create by หม่ำ Team </p>
+	<p class="text-white"> Create by หม่ำ Team    </p>
 </footer>
 

@@ -97,7 +97,6 @@
 	<div class="space-y-5">
 		<div id="game-header" class="flex items-center justify-between mx-5 h-12">
 			<div class="flex items-center justify-center gap-2">
-				<!-- <p class="text-2xl font-bold2">&lt;</p> -->
 				<a href="/">
 					<ArrowLeftFromLine size={32} />
 				</a>

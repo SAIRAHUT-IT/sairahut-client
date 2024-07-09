@@ -93,7 +93,7 @@
 	];
 </script>
 
-<div class="h-screen w-screen mt-4">
+<div class="h-dvh mt-4 overflow-y-scroll">
 	<div class="space-y-5">
 		<div id="game-header" class="flex items-center justify-between mx-5 h-12">
 			<div class="flex items-center justify-center gap-2">

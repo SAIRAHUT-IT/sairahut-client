@@ -39,7 +39,7 @@
 	export let data: PageData;
 </script>
 
-<div class="sm:hidden block eiei w-full h-screen bg-gray-200">
+<div class="sm:hidden block w-full h-screen bg-gray-200">
 	<div class="text-2xl mt-5 px-6">THIS OR THAT</div>
 	<div>
 		<nav class="bg-gray-600 mt-5 mx-5 rounded-3xl text-white shadow-md">

@@ -3,16 +3,32 @@
 	import type { PageData } from './$types';
 	let arr = new Array(5).fill(undefined);
 	let question_arr = [
-		{ title: 'test1', isSelect: false },
-		{ title: 'test2', isSelect: false },
-		{ title: 'test3', isSelect: false },
-		{ title: 'test4', isSelect: false },
-		{ title: 'test5', isSelect: false },
-		{ title: 'test6', isSelect: false },
-		{ title: 'test7', isSelect: false },
-		{ title: 'test8', isSelect: false },
-		{ title: 'test9', isSelect: false },
-		{ title: 'test10', isSelect: false }
+		{ title: 'สายกิจกรรม', isSelect: false },
+		{ title: 'สายเรียน', isSelect: false },
+		{ title: 'แชท', isSelect: false },
+		{ title: 'โทร', isSelect: false },
+		{ title: 'อยู่บ้าน', isSelect: false },
+		{ title: 'ไปเที่ยว', isSelect: false },
+		{ title: 'เล่นกีฬา', isSelect: false },
+		{ title: 'เล่นเกม', isSelect: false },
+		{ title: 'ชอบโอ๋', isSelect: false },
+		{ title: 'ชอบอ้อน', isSelect: false },
+		{ title: 'วางแผน', isSelect: false },
+		{ title: 'ด้นสด', isSelect: false },
+		{ title: 'งานกลุ่ม', isSelect: false },
+		{ title: 'งานเดี่ยว', isSelect: false },
+		{ title: 'มินิมอล', isSelect: false },
+		{ title: 'เยอะๆไว้ก่อน', isSelect: false },
+		{ title: 'ย้อนอดีต', isSelect: false },
+		{ title: 'ไปอนาคต', isSelect: false },
+		{ title: 'เลี้ยงมังกร', isSelect: false },
+		{ title: 'เลี้ยงยูนิคอร์น', isSelect: false },
+		{ title: 'นอนเร็ว', isSelect: false },
+		{ title: 'นอนดึก', isSelect: false },
+		{ title: 'กินเผ็ด', isSelect: false },
+		{ title: 'ไม่กินเผ็ด', isSelect: false },
+		{ title: 'Real', isSelect: false },
+		{ title: 'Fake', isSelect: false }
 	];
 	const add_arr = (item: any, index: number) => {
 		if (arr.includes(item.title)) {

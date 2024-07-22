@@ -1,8 +1,11 @@
 <script>
+	// @ts-nocheck
+
 	import { Html5Qrcode } from 'html5-qrcode';
 	import { onMount } from 'svelte';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { ArrowLeftFromLine } from 'lucide-svelte';
+	import Scorebar from '$lib/components/Scorebar.svelte';
 
 	let scanning = false;
 	/**
@@ -70,29 +73,15 @@
 <div class="sm:hidden block w-full h-screen bg-gray-200">
 	<div class="flex items-center mx-5 my-5 justify-between">
 		<div class="flex items-center">
-			<a href="/">
+			<a href="/menu">
 				<ArrowLeftFromLine size={32} />
 			</a>
 			<p class="text-2xl">Phase 1 : Topic</p>
 		</div>
-		<a href="/">img stat</a>
+		<a href="/qrScanner/ranking"><img src="ranking.png" alt=""></a>
 	</div>
 	<div class="my-5">
-		<nav class="bg-gray-600 mt-5 mx-5 rounded-3xl text-white shadow-md">
-			<div class="container mx-auto px-6 py-3 flex">
-				<div class="w-1/4 flex items-center justify-end">
-					<h1 class="text-4xl">{ranking}</h1>
-				</div>
-				<div class="w-3/4 flex justify-center">
-					<div>
-						<div>คืออันดับของคุณ</div>
-						<div>
-							your point : {score} pt
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
+		<Scorebar bind:score={score}/>
 	</div>
 
 	<div class="flex flex-col items-center justify-center">
@@ -121,11 +110,14 @@
 			/>
 		</div>
 		<div class="flex justify-center">
-			<button class="bg-white p-2 rounded-xl border border-black" on:click={() => {
-                if (code == correctAns) {
-                    score += 1000;
-                }
-            }}>
+			<button
+				class="bg-white p-2 rounded-xl border border-black"
+				on:click={() => {
+					if (code == correctAns) {
+						score += 1000;
+					}
+				}}
+			>
 				<Dialog.Root>
 					<Dialog.Trigger disabled={!code}>Submit</Dialog.Trigger>
 					{#if checker(code)}

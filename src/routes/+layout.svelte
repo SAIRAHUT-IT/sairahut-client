@@ -9,11 +9,9 @@
 	});
 </script>
 
-<!-- <div class="block sm:hidden"> -->
 <header>
 	<Navbar />
 </header>
-<main class="relative min-h-screen">
+<main class="relative min-h-screen z-10 overflow-hidden">
 	<slot />
 </main>
-<!-- </div> -->

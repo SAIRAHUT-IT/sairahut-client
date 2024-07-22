@@ -5,28 +5,28 @@
 	let test = [
 		{
 			title: 'test1',
-            leftDoorPath: 'image_part_001.png',
+			leftDoorPath: 'image_part_001.png',
 			rightDoorPath: 'image_part_002.png',
 			mainColor: '#A63521',
 			secondaryColor: ''
 		},
-        {
+		{
 			title: 'test2',
-            leftDoorPath: 'image_part_001.png',
+			leftDoorPath: 'image_part_001.png',
 			rightDoorPath: 'image_part_002.png',
 			mainColor: '#E38626',
 			secondaryColor: ''
 		},
-        {
+		{
 			title: 'test3',
-            leftDoorPath: 'image_part_001.png',
+			leftDoorPath: 'image_part_001.png',
 			rightDoorPath: 'image_part_002.png',
 			mainColor: '#2B9972',
 			secondaryColor: ''
 		},
-        {
+		{
 			title: 'test4',
-            leftDoorPath: 'image_part_001.png',
+			leftDoorPath: 'image_part_001.png',
 			rightDoorPath: 'image_part_002.png',
 			mainColor: '#E38626',
 			secondaryColor: ''
@@ -52,7 +52,7 @@
 				class="absolute door transition-all duration-300 group-hover:translate-x-36"
 				id="right-door"
 			/>
-            <p class="text-white">{x.title}</p>
+			<p class="text-white">{x.title}</p>
 		</div>
 	{/each}
 </div>

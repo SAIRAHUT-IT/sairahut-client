@@ -108,9 +108,9 @@
 			</Table.Body>
 		</Table.Root>
 	</div>
-    <div class="w-full mt-5 flex justify-center">
-        <a href="/menu">
-            <button class="px-12 py-3 bg-white rounded-xl border border-black">Close</button>
-        </a>
-    </div>
+	<div class="w-full mt-5 flex justify-center">
+		<a href="/menu">
+			<button class="px-12 py-3 bg-white rounded-xl border border-black">Close</button>
+		</a>
+	</div>
 </div>

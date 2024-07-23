@@ -1,17 +1,14 @@
 <script>
-	import Button from "./ui/button/button.svelte";
-
+	import * as Avatar from '$lib/components/ui/avatar';
 </script>
 
-<div>
-	<nav class="bg-gray-400 mt-5 mx-5 rounded-3xl">
-		<div class="container mx-auto px-6 py-3">
-            <div class="flex items-center justify-between">
-                <h1>SAIRAHUT</h1>
-                <div class="">
-                    <Button>PMD</Button>
-                </div>
-            </div>
-        </div>
-	</nav>
-</div>
+<nav
+	class="flex justify-between items-center bg-gradient-to-r from-black to-yellow-900 px-4 mx-auto"
+>
+	<img src="/img/logo.svg" alt="logo" class="object-cover w-28" />
+
+	<Avatar.Root>
+		<Avatar.Image src="https://github.com/shadcn.png" alt="@shadcn" />
+		<Avatar.Fallback>CN</Avatar.Fallback>
+	</Avatar.Root>
+</nav>

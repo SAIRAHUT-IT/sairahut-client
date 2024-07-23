@@ -1,37 +1,36 @@
 <script lang="ts">
 	// import type { PageData } from './$types';
 	// export let data: PageData;
-
-	let test = [
-		{
-			title: 'Scan',
-            leftDoorPath: 'image_part_001.png',
-			rightDoorPath: 'image_part_002.png',
-			mainColor: '#A63521',
-			secondaryColor: ''
-		},
+  let test = [
         {
-			title: 'Bingo',
+            title: 'Scan',
+            leftDoorPath: 'image_part_001.png',
+            rightDoorPath: 'image_part_002.png',
+            mainColor: '#A63521',
+            secondaryColor: ''
+        },
+        {
+            title: 'Bingo',
             leftDoorPath: 'Image Splitter Frame.png',
-			rightDoorPath: 'Frame Divider Split.png',
-			mainColor: '#3E80B1',
-			secondaryColor: ''
-		},
+            rightDoorPath: 'Frame Divider Split.png',
+            mainColor: '#3E80B1',
+            secondaryColor: ''
+        },
         {
-			title: 'Hint',
+            title: 'Hint',
             leftDoorPath: 'image_part_001.png',
-			rightDoorPath: 'image_part_002.png',
-			mainColor: '#009971',
-			secondaryColor: ''
-		},
+            rightDoorPath: 'image_part_002.png',
+            mainColor: '#009971',
+            secondaryColor: ''
+        },
         {
-			title: 'Picture',
+            title: 'Picture',
             leftDoorPath: 'Image Splitter Frame (1).png',
-			rightDoorPath: 'กรอบหบ้ต่าง-split (1).png',
-			mainColor: '#E68636',
-			secondaryColor: ''
-		}
-	];
+            rightDoorPath: 'กรอบหบ้ต่าง-split (1).png',
+            mainColor: '#E68636',
+            secondaryColor: ''
+        }
+    ];
 </script>
 
 <div class="h-full w-full bg-[#1C1A17] flex flex-col gap-4 justify-center items-center">
@@ -53,7 +52,7 @@
 				class="absolute door transition-all duration-300 group-hover:translate-x-36"
 				id="right-door"
 			/>
-            <p class="text-white">{x.title}</p>
+			<p class="text-white">{x.title}</p>
 		</div>
 	{/each}
 </div>

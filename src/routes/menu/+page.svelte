@@ -4,31 +4,31 @@
 
 	let test = [
 		{
-			title: 'test1',
+			title: 'Scan',
             leftDoorPath: 'image_part_001.png',
 			rightDoorPath: 'image_part_002.png',
 			mainColor: '#A63521',
 			secondaryColor: ''
 		},
         {
-			title: 'test2',
-            leftDoorPath: 'image_part_001.png',
-			rightDoorPath: 'image_part_002.png',
-			mainColor: '#E38626',
+			title: 'Bingo',
+            leftDoorPath: 'Image Splitter Frame.png',
+			rightDoorPath: 'Frame Divider Split.png',
+			mainColor: '#3E80B1',
 			secondaryColor: ''
 		},
         {
-			title: 'test3',
+			title: 'Hint',
             leftDoorPath: 'image_part_001.png',
 			rightDoorPath: 'image_part_002.png',
-			mainColor: '#2B9972',
+			mainColor: '#009971',
 			secondaryColor: ''
 		},
         {
-			title: 'test4',
-            leftDoorPath: 'image_part_001.png',
-			rightDoorPath: 'image_part_002.png',
-			mainColor: '#E38626',
+			title: 'Picture',
+            leftDoorPath: 'Image Splitter Frame (1).png',
+			rightDoorPath: 'กรอบหบ้ต่าง-split (1).png',
+			mainColor: '#E68636',
 			secondaryColor: ''
 		}
 	];
@@ -38,7 +38,8 @@
 	{#each test as x, i}
 		<div
 			id="wrapper"
-			class={`group hover:shadow-sm hover:shadow-yellow-200 relative flex items-center justify-center w-72 h-72 max-w-[300px] max-h-[300px] overflow-hidden rounded-full border-[5px] border-[${x.mainColor}]`}
+			class="group hover:shadow-sm hover:shadow-yellow-200 relative flex items-center justify-center w-72 h-72 max-w-[300px] max-h-[300px] overflow-hidden rounded-full border-[5px]"
+			style:border-color={x.mainColor}
 		>
 			<img
 				src={`${x.leftDoorPath}`}

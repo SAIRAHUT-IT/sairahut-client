@@ -1,44 +1,44 @@
 <script lang="ts">
 	// import type { PageData } from './$types';
 	// export let data: PageData;
-
 	let test = [
-		{
-			title: 'test1',
-			leftDoorPath: 'image_part_001.png',
-			rightDoorPath: 'image_part_002.png',
-			mainColor: '#A63521',
-			secondaryColor: ''
-		},
-		{
-			title: 'test2',
-			leftDoorPath: 'image_part_001.png',
-			rightDoorPath: 'image_part_002.png',
-			mainColor: '#E38626',
-			secondaryColor: ''
-		},
-		{
-			title: 'test3',
-			leftDoorPath: 'image_part_001.png',
-			rightDoorPath: 'image_part_002.png',
-			mainColor: '#2B9972',
-			secondaryColor: ''
-		},
-		{
-			title: 'test4',
-			leftDoorPath: 'image_part_001.png',
-			rightDoorPath: 'image_part_002.png',
-			mainColor: '#E38626',
-			secondaryColor: ''
-		}
-	];
+        {
+            title: 'Scan',
+            leftDoorPath: 'image_part_001.png',
+            rightDoorPath: 'image_part_002.png',
+            mainColor: '#A63521',
+            secondaryColor: ''
+        },
+        {
+            title: 'Bingo',
+            leftDoorPath: 'Image Splitter Frame.png',
+            rightDoorPath: 'Frame Divider Split.png',
+            mainColor: '#3E80B1',
+            secondaryColor: ''
+        },
+        {
+            title: 'Hint',
+            leftDoorPath: 'image_part_001.png',
+            rightDoorPath: 'image_part_002.png',
+            mainColor: '#009971',
+            secondaryColor: ''
+        },
+        {
+            title: 'Picture',
+            leftDoorPath: 'Image Splitter Frame (1).png',
+            rightDoorPath: 'กรอบหบ้ต่าง-split (1).png',
+            mainColor: '#E68636',
+            secondaryColor: ''
+        }
+    ];
 </script>
 
 <div class="h-full w-full bg-[#1C1A17] flex flex-col gap-4 justify-center items-center">
 	{#each test as x, i}
 		<div
 			id="wrapper"
-			class={`group hover:shadow-sm hover:shadow-yellow-200 relative flex items-center justify-center w-72 h-72 max-w-[300px] max-h-[300px] overflow-hidden rounded-full border-[5px] border-[${x.mainColor}]`}
+			class="group hover:shadow-sm hover:shadow-yellow-200 relative flex items-center justify-center w-72 h-72 max-w-[300px] max-h-[300px] overflow-hidden rounded-full border-[5px]"
+			style:border-color={x.mainColor}
 		>
 			<img
 				src={`${x.leftDoorPath}`}

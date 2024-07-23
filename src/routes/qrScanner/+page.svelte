@@ -67,6 +67,7 @@
 	}
 </script>
 
+<<<<<<< feat/qrscanner:src/routes/qrScanner/+page.svelte
 <div class="sm:hidden block w-full h-screen bg-gray-200">
 	<div class="flex items-center mx-5 my-5 justify-between">
 		<div class="flex items-center">
@@ -139,20 +140,126 @@
 								</Dialog.Description>
 							</Dialog.Header>
 						</Dialog.Content>
+=======
+<div class="flex relative bg-black text-white flex-col items-center w-full h-dvh">
+	<div
+		class="relative background-img flex flex-col justify-center w-[367px] h-full max-h-[740px] mt-10"
+	>
+		<div class="flex items-center mx-6 my-5 justify-between z-20">
+			<div class="flex items-center">
+				<a href="/menu">
+					<ArrowLeftFromLine size={32} />
+				</a>
+				<p class="text-2xl">PHASE 1</p>
+			</div>
+			<a href="/leaderboard"><img src="ranking.svg" alt="" /></a>
+		</div>
+		<div class="mb-5 z-20">
+			<Scorebar bind:score />
+		</div>
+		<div class="flex flex-col items-center justify-center z-20">
+			<!-- <img
+				src="กรอบqr.svg"
+				alt=""
+				class="absolute bg-fixed bottom-32 z-10 scale-110 overflow-visible pointer-events-none"
+			/> -->
+			<div class="z-30">
+				<div
+					class="flex items-center relative [margin-inline:_auto] aspect-square overflow-hidden rounded-xl w-[310px] border"
+				>
+					<div id="reader" class="reader w-full"></div>
+				</div>
+				<div class="my-3 flex justify-center">
+					{#if scanning}
+						<button on:click={stop}>stop</button>
+>>>>>>> local:src/routes/(minigame)/qrScanner/+page.svelte
 					{:else}
-						<Dialog.Content class="bg-red-100">
-							<Dialog.Header>
-								<Dialog.Title>Your code is not correct</Dialog.Title>
-								<Dialog.Description>
-									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, sint facilis!
-									Eveniet pariatur quia nisi, architecto nobis laborum saepe culpa, sequi voluptas
-									unde ipsa nostrum qui provident iure repellendus atque?
-								</Dialog.Description>
-							</Dialog.Header>
-						</Dialog.Content>
+						<button on:click={start}>start</button>
 					{/if}
-				</Dialog.Root>
-			</button>
+				</div>
+			</div>
+		</div>
+		<div class="mx-6 z-20">
+			<p class="text-base">Password</p>
+			<div class="my-3 flex justify-center">
+				<input
+					type="text"
+					bind:value={code}
+					class="p-2 w-full rounded-xl bg-[#8D8C8A] drop-shadow-[0_3px_11px_#C99949]"
+				/>
+			</div>
+			<!-- <div class="my-3 flex justify-center">
+				<input
+					type="text"
+					bind:value={code}
+					class="border border-black p-2 text-center bg-code h-full min-h-[77px] w-[296px] text-2xl"
+				/>
+			</div> -->
+			<!-- <div class="bg-[#26221E] pb-3 px-3 my-5 rounded-sm">
+				<div class="flex justify-center">
+					<img src="Frame29.svg" alt="" />
+				</div>
+				<p class="text-sm">
+					อธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอ
+				</p>
+			</div> -->
+			<div class="flex justify-center">
+				<button
+					class=" p-2 rounded-xl border border-black"
+					on:click={() => {
+						if (code == correctAns) {
+							score += 1000;
+						}
+					}}
+				>
+					<Dialog.Root>
+						<Dialog.Trigger disabled={!code} class="bg-black"><img src="ปุม submit.svg" alt=""></Dialog.Trigger>
+						{#if checker(code)}
+							<Dialog.Content class="bg-green-100">
+								<Dialog.Header>
+									<Dialog.Title>Your code is correct</Dialog.Title>
+									<Dialog.Description>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, consectetur culpa
+										odit, aliquid soluta, placeat esse dolore illum voluptatem maiores perferendis
+										non tempora eos provident. Corrupti vero modi repellat magnam!
+									</Dialog.Description>
+								</Dialog.Header>
+							</Dialog.Content>
+						{:else}
+							<Dialog.Content class="bg-red-100">
+								<Dialog.Header>
+									<Dialog.Title>Your code is not correct</Dialog.Title>
+									<Dialog.Description>
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, sint facilis!
+										Eveniet pariatur quia nisi, architecto nobis laborum saepe culpa, sequi voluptas
+										unde ipsa nostrum qui provident iure repellendus atque?
+									</Dialog.Description>
+								</Dialog.Header>
+							</Dialog.Content>
+						{/if}
+					</Dialog.Root>
+				</button>
+			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	.background-img {
+		background-image: url('ขอบกรอบ.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-code {
+		background-image: url('กรอบtext.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-qr {
+		background-image: url('กรอบqr.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+</style>

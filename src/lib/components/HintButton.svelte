@@ -5,10 +5,19 @@
 	import { Label } from '$lib/components/ui/label/index.js';
 	import { ShieldHalf } from 'lucide-svelte';
     export let isUnlocked = false;
+	export let i = 1;
+	export let shard = 5;
+	let hint = [
+		'01',
+		'02',
+		'03',
+		'04',
+		'05'
+	];
 </script>
 
 <div class="mx-5">
-	<label class="block text-lg font-bold mb-1 ml-2" for="field1">คำใบ้ 1</label>
+	<label class="block text-lg font-bold mb-1 ml-2" for="field1">คำใบ้ {i}</label>
 	<Dialog.Root>
 		<Dialog.Trigger class="w-full relative" disabled={isUnlocked}>
             {#if !isUnlocked}
@@ -16,19 +25,17 @@
                     <ShieldHalf class="text-2xl text-white/95 drop-shadow-[0_3px_3px_rgba(0,0,0,0.25)]" />
                 </div>
             {/if}
-			<input
+			<textarea
 				class="border shadow rounded-2xl w-full h-12 py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline pointer-events-none"
 				id="field1"
-				type="text"
-				placeholder="Lorem ipsum"
-				readonly
-			/>
+				bind:value={hint[i-1]}
+				readonly	
+			></textarea>
 		</Dialog.Trigger>
 		<Dialog.Content class="sm:max-w-[425px]">
 			<Dialog.Header>
-				<Dialog.Title class="text-start text-xl font-semibold">abc</Dialog.Title>
+				<Dialog.Title class="text-center text-xl font-semibold">Use {shard} shard to unlock</Dialog.Title>
 			</Dialog.Header>
-			<Input id="name" value="" placeholder="Provide Code Here" class="col-span-1" />
 			<Dialog.Footer>
 				<Button type="submit">Submit</Button>
 			</Dialog.Footer>

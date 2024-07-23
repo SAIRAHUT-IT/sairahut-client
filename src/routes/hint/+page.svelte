@@ -4,10 +4,13 @@
 	import HintButton from '$lib/components/HintButton.svelte';
 	let point = 0;
 	// export let data: PageData;
+	let shard = [5, 10, 15, 20, 25];
 	let hint = [
-		{
-			question: 'Hint 1: What is the name of your father?'
-		}
+		'01',
+		'02',
+		'03',
+		'04',
+		'05'
 	];
 </script>
 
@@ -29,6 +32,8 @@
 			<span class="pr-2">Your point :</span>
 			<p class="text-4xl">{point} pt</p>
 		</div>
-        <HintButton isUnlocked={false}/>
+        {#each hint as hint, i}
+			<HintButton i={i+1} shard={shard[i]} isUnlocked={false}/>
+		{/each}
     </div>
 </div>

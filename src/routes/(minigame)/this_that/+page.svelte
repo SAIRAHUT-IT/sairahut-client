@@ -52,7 +52,7 @@
 	};
 </script>
 
-<div class="flex relative bg-black text-white flex-col items-center w-full h-dvh">
+<div class="flex relative text-white flex-col items-center w-full h-dvh">
 	<div class="absolute flex w-full justify-between z-10 pointer-events-none">
 		<img
 			src="โคมไฟซ้าย_thisorthat.svg"
@@ -68,7 +68,11 @@
 	<div
 		class="relative flex flex-col justify-center bg-[#5A271F] w-[330px] h-full max-h-[763.67px] mt-10"
 	>
-		<img src="cloud.svg" class="absolute bg-fixed bottom-40 z-10 scale-110 overflow-visible" alt="" />
+		<img
+			src="cloud.svg"
+			class="absolute bg-fixed bottom-40 z-10 scale-110 overflow-visible"
+			alt=""
+		/>
 		<div class="absolute group-img w-full h-full object-cover pointer-events-none"></div>
 		<div class="p-5 z-30">
 			<div class="max-w-60 mx-auto">

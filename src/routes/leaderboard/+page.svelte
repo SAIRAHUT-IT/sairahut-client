@@ -1,5 +1,4 @@
 <script lang="ts">
-	// @ts-nocheck
 	import Scorebar from '$lib/components/Scorebar.svelte';
 	import { ArrowLeftFromLine } from 'lucide-svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
@@ -58,17 +57,17 @@
 	// let ranking = 80;
 </script>
 
-<div class="sm:hidden block w-full h-screen bg-gray-200">
-	<div class="flex items-center mx-5 my-5 justify-start">
+<div class="w-full h-dvh">
+	<div class="flex items-center justify-start">
 		<div class="flex items-center">
 			<a href="/qrScanner">
-				<ArrowLeftFromLine size={32} />
+				<ArrowLeftFromLine size={32} class="text-white" />
 			</a>
-			<p class="text-2xl">Ranking</p>
+			<p class="text-2xl text-white">Ranking</p>
 		</div>
 	</div>
-	<Scorebar {score} />
-	<div class="mx-5 my-5">
+	<Scorebar {score} internalScore={score} />
+	<div>
 		<Table.Root>
 			<Table.Header>
 				<Table.Row class="bg-black">

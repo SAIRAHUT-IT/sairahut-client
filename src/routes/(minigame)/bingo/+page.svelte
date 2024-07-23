@@ -1,14 +1,8 @@
 <script lang="ts">
-	// import type { PageData } from './$types';
 	let bingoScore = 0;
 	import Bingo from '$lib/components/Bingo.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { ArrowLeftFromLine } from 'lucide-svelte';
-
-	// export let data: PageData;
-	// let questionList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-	// let question = Array(16).fill(0).map((_, i) => questionList[Math.floor(Math.random() * questionList.length)]);
-	// console.log(question);
 	let question = [
 		{
 			id: 1,
@@ -125,5 +119,4 @@
 			aliquam sequi ducimus?
 		</p>
 	</div>
-    
 </div>

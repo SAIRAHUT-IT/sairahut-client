@@ -1,7 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+@font-face {
+  font-family: mangorn;
+  src: url(/fonts/mangorn.ttf);
+}
+
+@font-face {
+  font-family: tradewin;
+  src: url(/fonts/tradewin.ttf);
+}
+
+@font-face {
+  font-family: maitree;
+  src: url(/fonts/maitree.ttf);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -73,6 +88,14 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-foreground;
   }
+}
+
+.mangorn {
+  font-family: mangorn;
+}
+
+.tradewin {
+  font-family: tradewin;
 }

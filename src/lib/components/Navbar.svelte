@@ -3,7 +3,7 @@
 </script>
 
 <nav
-	class="flex justify-between items-center bg-gradient-to-r from-black to-yellow-900 px-4 mx-auto"
+	class="flex w-full justify-between items-center bg-gradient-to-r from-black to-yellow-900 px-4 z-40"
 >
 	<img src="/img/logo.svg" alt="logo" class="object-cover w-28" />
 

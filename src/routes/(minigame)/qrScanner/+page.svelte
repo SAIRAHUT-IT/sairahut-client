@@ -70,7 +70,7 @@
 	}
 </script>
 
-<div class="flex relative bg-black text-white flex-col items-center w-full h-dvh">
+<div class="flex relative text-white flex-col items-center w-full h-dvh">
 	<div
 		class="relative background-img flex flex-col justify-center w-[367px] h-full max-h-[740px] mt-10"
 	>
@@ -84,7 +84,7 @@
 				<a href="/menu">
 					<img src="ลูกศรกลับหน้าhome.svg" alt="" />
 				</a>
-				<p class="text-2xl tradewin">PHASE 1</p>
+				<p class="ml-2 text-2xl tradewin">PHASE 1</p>
 			</div>
 			<a href="/leaderboard"><img src="ranking.svg" alt="" /></a>
 		</div>
@@ -152,7 +152,7 @@
 			</div> -->
 			<div class="flex justify-center">
 				<button
-					class=" p-2 rounded-xl border border-black"
+					class=" p-2 rounded-xl "
 					on:click={() => {
 						if (code == correctAns) {
 							score += 1000;
@@ -160,7 +160,7 @@
 					}}
 				>
 					<Dialog.Root>
-						<Dialog.Trigger disabled={!code} class="bg-black"
+						<Dialog.Trigger disabled={!code} class=""
 							><img src="ปุม submit.svg" alt="" /></Dialog.Trigger
 						>
 						{#if checker(code)}

@@ -4,7 +4,7 @@ import { sequence } from '@sveltejs/kit/hooks';
 const handleRequest: Handle = async ({ event, resolve }) => {
 	if (event.url.pathname.startsWith('/api')) {
 		const token = event.locals?.token || event.cookies.get('token') || '';
-		const response = await fetch('http://localhost:3000' + event.url.pathname, {
+		const response = await fetch('https://3a59-223-24-158-199.ngrok-free.app' + event.url.pathname, {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization: `Bearer ${token}`

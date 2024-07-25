@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { session } from '$lib/stores/member.store';
 	import { ArrowLeftFromLine } from 'lucide-svelte';
 	import { ArrowRightFromLine } from 'lucide-svelte';
 	let data = {
@@ -8,6 +9,7 @@
 		elemental: "FIRE",
 		isshowsumnak: false
 	};
+	$:console.log($session)
 </script>
 
 <!-- BASS -->
@@ -39,7 +41,7 @@
 						<div class="flex items-center justify-center px-2 text-sm">
 							<div class="mangorn flex flex-col items-center">
 								<p class="text-4xl">ชื่อจอมยุทธ</p>
-								<p class="text-7xl">{data.nickname}</p>
+								<p class="text-7xl">{$session.email}</p>
 								{#if data.isshowsumnak}
 									<p class="text-4xl">{data.sumnak}</p>
 								{:else}

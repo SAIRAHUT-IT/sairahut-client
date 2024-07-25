@@ -1,13 +1,37 @@
 <script>
 	import { onMount } from 'svelte';
 	import '../app.css';
-	import { updateSession } from '../stores/member.store';
+	import { session, updateSession } from '../lib/stores/member.store';
+	import Loading from '$lib/components/Loading.svelte';
+	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
+	import { goto } from '$app/navigation';
+
 	export let data;
-	onMount(() => {
-		if (data.isToken) updateSession();
+	$: loader = true;
+	const checker = () => {
+		console.log($session);
+		if ($page.data.isAuth && $session.id === undefined) {
+			if (browser) goto('/');
+		}
+	};
+
+	page.subscribe(() => {
+		if (loader) checker();
+	});
+
+	onMount(async () => {
+		loader = true;
+		const updater = [];
+		if ($page.data.isToken) updater.push(updateSession());
+		Promise.allSettled(updater).finally(() => {
+			loader = false;
+			checker();
+		});
 	});
 </script>
 
-<main class="relative min-h-screen z-10 overflow-hidden">
+<div class="overflow-x-hidden">
+	<Loading loading={loader} />
 	<slot />
-</main>
+</div>

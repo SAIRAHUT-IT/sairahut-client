@@ -6,10 +6,10 @@ declare global {
 		interface Locals {
 			token: string;
 		}
-		// interface PageData {}
-		// interface PageState {}
+		// interface PageData { }
+		// interface PageState { }
 		// interface Platform {}
 	}
 }
 
-export {};
+export { };

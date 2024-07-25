@@ -5,6 +5,6 @@
 <header>
 	<Navbar />
 </header>
-<main class="relative min-h-screen z-10 overflow-hidden p-3">
+<main class="relative z-10 overflow-y-scroll min-h-dvh">
 	<slot />
 </main>

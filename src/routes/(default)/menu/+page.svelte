@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { session } from "../../../lib/stores/member.store";
+	import { session } from '$lib/stores/member.store';
+	import { elemental_parser } from '$lib/parser/elemental';
 	let door = [
 		{
 			title: 'Scan',
@@ -34,14 +35,14 @@
 			secondaryColor: ''
 		}
 	];
-	let houseName = 'สำนักที่พลัดพลาก';
-	let path = ['qrScanner', 'bingo', 'hint', 'puzzle'];
+
+	let houseIsUnlock = true;
 	function delayedNavigation(
 		event: { preventDefault: () => void },
 		url: string,
 		delay: number | undefined
 	) {
-		event.preventDefault(); 
+		event.preventDefault();
 
 		setTimeout(() => {
 			window.location.href = url;
@@ -71,8 +72,15 @@
 			<div id="house" class="relative mb-9">
 				<span class="relative top-0 flex items-center justify-center">
 					<img src="menu/สำนัก.png" alt="banner" class="absolute h-[60px] w-[215px]" />
-					<img src="menu/logoHouse.svg" alt="house" class="z-50" />
-					<p class="mangorn text-center text-3xl text-black z-50">{houseName}</p>
+					<img src="menu/สำนัก.png" alt="banner" class="absolute h-[60px] w-[215px]" />
+					{#if houseIsUnlock}
+						<img src="menu/logoHouse.svg" alt="house" class="z-50" />
+						<p class="mangorn text-center text-3xl text-black z-50">
+							{elemental_parser(String($session.elemental))}
+						</p>
+					{:else}
+						<p class="mangorn text-center text-3xl text-[#767272] z-50">สำนักยังไม่เปิดเผย</p>
+					{/if}
 				</span>
 			</div>
 			<div class="max-h-dvh">

@@ -30,6 +30,7 @@ declare interface Member {
 	email: string;
 	role: MemberRole;
 	status: MemberStatus;
+	elemental: string;
 	reputation: number;
 	coins: number;
 	this_or_that: string[];

@@ -31,7 +31,7 @@
 	});
 </script>
 
-<div class="overflow-x-hidden">
+<div class="block sm:hidden overflow-x-hidden">
 	<Loading loading={loader} />
 	<slot />
 </div>

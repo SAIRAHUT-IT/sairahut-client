@@ -12,6 +12,6 @@
 <header>
 	<Navbar />
 </header>
-<main class="relative min-h-screen z-10 overflow-hidden p-3">
+<main class="relative min-h-dvh z-10 overflow-x-hidden">
 	<slot />
 </main>

@@ -2,6 +2,7 @@ import type { LayoutLoad } from "./$types";
 
 export const load: LayoutLoad = async () => {
 	return {
-		isAuth: true
+		// isAuth: true
+		isAuth: false
 	};
 };

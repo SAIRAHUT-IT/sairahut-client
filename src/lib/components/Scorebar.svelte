@@ -6,6 +6,7 @@
 	// @ts-ignore
 	export let score;
 	export let ranking = 80;
+	export let text = "your point : "+score+" pt"
 
     /**
 	 * @type {number}
@@ -28,7 +29,7 @@
 			<div>
 				<div class="mangorn text-3xl">คืออันดับของคุณ</div>
 				<div>
-					your point : {internalScore} pt
+					{text}
 				</div>
 			</div>
 		</div>

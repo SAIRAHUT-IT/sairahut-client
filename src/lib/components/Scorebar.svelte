@@ -1,23 +1,23 @@
 <script>
-	import { onMount } from "svelte";
+	import { onMount } from 'svelte';
 	/**
 	 * @type {number}
 	 */
 	// @ts-ignore
 	export let score;
 	export let ranking = 80;
-	export let text = "your point : "+score+" pt"
+	export let text = 'your point : ' + score + ' pt';
 
-    /**
+	/**
 	 * @type {number}
 	 */
-    export let internalScore;
+	export let internalScore;
 
-    onMount(() => {
-        internalScore = score;
-    });
+	onMount(() => {
+		internalScore = score;
+	});
 
-    $: internalScore = score;
+	$: internalScore = score;
 </script>
 
 <div class="mx-5 rounded-3xl text-white shadow-md bg-score tradewin">

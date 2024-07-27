@@ -12,8 +12,8 @@
 
 <!-- bass -->
 
-<div class="flex relative text-white flex-col items-center w-full h-dvh">
-	<div class="relative background-img flex justify-center w-[367px] h-full max-h-[740px] mt-10">
+<div class="flex relative text-white flex-col items-center w-full h-screen">
+	<div class="relative background-img flex justify-center w-[367px] h-full max-h-[740px]">
 		<div class="z-50 mt-3">
 			<div class="flex items-center mx-5 my-5 justify-start">
 				<div class="flex items-center">

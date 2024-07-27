@@ -13,8 +13,8 @@
 </script>
 
 <!-- BASS -->
-<div class="flex relative text-white flex-col items-center w-full h-dvh">
-	<div class="relative background-img flex justify-center w-[367px] h-full max-h-[740px] mt-10">
+<div class="flex relative text-white flex-col items-center w-full h-screen">
+	<div class="relative background-img flex justify-center w-[367px] h-full max-h-[740px]">
 		<img
 			src="cloud.svg"
 			class="absolute bg-fixed bottom-40 z-10 scale-110 overflow-visible"

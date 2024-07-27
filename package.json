@@ -36,6 +36,7 @@
 	"dependencies": {
 		"bits-ui": "^0.21.12",
 		"clsx": "^2.1.1",
+		"format": "^0.2.2",
 		"gsap": "^3.12.5",
 		"html5-qrcode": "^2.3.8",
 		"lucide-svelte": "^0.399.0",

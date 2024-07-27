@@ -71,9 +71,7 @@
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full h-screen">
-	<div
-		class="relative background-img flex flex-col justify-center w-[367px] h-full max-h-[740px]"
-	>
+	<div class="relative background-img flex flex-col justify-center w-[367px] h-full max-h-[740px]">
 		<img
 			src="cloud.svg"
 			class="absolute bg-fixed bottom-40 z-10 scale-110 overflow-visible"
@@ -152,7 +150,7 @@
 			</div> -->
 			<div class="flex justify-center">
 				<button
-					class=" p-2 rounded-xl "
+					class=" p-2 rounded-xl"
 					on:click={() => {
 						if (code == correctAns) {
 							score += 1000;

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import LeaderBoardNong from '$lib/components/LeaderBoardNong.svelte'
-	import LeaderBoardP from '$lib/components/LeaderBoardP.svelte'
+	import LeaderBoardNong from '$lib/components/LeaderBoardNong.svelte';
+	import LeaderBoardP from '$lib/components/LeaderBoardP.svelte';
 	import { session } from '$lib/stores/member.store.js';
 </script>
 

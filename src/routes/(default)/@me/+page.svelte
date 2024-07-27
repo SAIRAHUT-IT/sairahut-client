@@ -5,11 +5,11 @@
 	let data = {
 		fullname: 'Nuttawit P.',
 		nickname: 'วิน',
-		sumnak: "สำนักอิอิ",
-		elemental: "FIRE",
+		sumnak: 'สำนักอิอิ',
+		elemental: 'FIRE',
 		isshowsumnak: false
 	};
-	$:console.log($session)
+	$: console.log($session);
 </script>
 
 <!-- BASS -->
@@ -33,10 +33,14 @@
 				<div class="bg-profile mt-5 mx-5 text-white shadow-md min-h-[175px] min-w-[310px]">
 					<div class="relative flex items-center justify-center container mx-auto px-6 py-3">
 						{#if data.isshowsumnak}
-						<div class="absolute flex justify-around w-full">
-							<img class="transform -scale-x-100 w-[6rem] rotate-12" src="/elemental/fire.svg" alt="elemental_icon"/>
-							<img class="w-[6rem] -rotate-12" src="/elemental/fire.svg" alt="elemental_icon"/>
-						</div>
+							<div class="absolute flex justify-around w-full">
+								<img
+									class="transform -scale-x-100 w-[6rem] rotate-12"
+									src="/elemental/fire.svg"
+									alt="elemental_icon"
+								/>
+								<img class="w-[6rem] -rotate-12" src="/elemental/fire.svg" alt="elemental_icon" />
+							</div>
 						{/if}
 						<div class="flex items-center justify-center px-2 text-sm">
 							<div class="mangorn flex flex-col items-center">
@@ -58,9 +62,7 @@
 			</div>
 			<div>
 				<a href="/@me/history/code">
-					<div
-						class="bg-[#383527] mt-7 mx-5 rounded-md shadow-md drop-shadow-[0_3px_6px_#C99949]"
-					>
+					<div class="bg-[#383527] mt-7 mx-5 rounded-md shadow-md drop-shadow-[0_3px_6px_#C99949]">
 						<div class="container mx-auto px-6">
 							<div class="flex items-center justify-between px-2">
 								<div class="mangorn text-3xl">
@@ -73,9 +75,7 @@
 			</div>
 			<div>
 				<a href="/@me/history/bingo">
-					<div
-						class="bg-[#383527] mt-10 mx-5 rounded-md shadow-md drop-shadow-[0_3px_6px_#C99949]"
-					>
+					<div class="bg-[#383527] mt-10 mx-5 rounded-md shadow-md drop-shadow-[0_3px_6px_#C99949]">
 						<div class="container mx-auto px-6">
 							<div class="flex items-center justify-between px-2">
 								<div class="mangorn text-3xl">

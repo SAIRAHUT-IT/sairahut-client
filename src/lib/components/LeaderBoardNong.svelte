@@ -61,7 +61,7 @@
 	<div
 		class="relative background-img flex flex-col justify-center w-[367px] h-full max-h-[740px] mt-10"
 	>
-		<div class="flex items-center mx-6 my-5 justify-between z-20 ">
+		<div class="flex items-center mx-6 my-5 justify-between z-20">
 			<div class="flex items-center">
 				<a href="/qrScanner">
 					<img src="ลูกศรกลับหน้าhome.svg" alt="" />
@@ -70,7 +70,7 @@
 			</div>
 		</div>
 		<Scorebar {score} internalScore={score} />
-		<div class="scale-90 z-50 ">
+		<div class="scale-90 z-50">
 			<Table.Root>
 				<Table.Header>
 					<Table.Row class="bg-black mangorn text-2xl">
@@ -112,7 +112,7 @@
 		</div>
 		<div class="w-full flex justify-center">
 			<a href="/menu">
-				<img src="ปุ่มปิด.svg" alt="">
+				<img src="ปุ่มปิด.svg" alt="" />
 			</a>
 		</div>
 	</div>

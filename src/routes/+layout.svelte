@@ -8,7 +8,6 @@
 	import { goto } from '$app/navigation';
 	import Footer from '$lib/components/Footer.svelte';
 
-	export let data;
 	$: loader = true;
 	const checker = () => {
 		console.log($session);
@@ -35,5 +34,5 @@
 <div class="block sm:hidden overflow-x-hidden">
 	<Loading loading={loader} />
 	<slot />
-	<Footer/>
+	<Footer />
 </div>

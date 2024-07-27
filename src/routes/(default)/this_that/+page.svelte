@@ -84,14 +84,24 @@
 			</div>
 			<div class="mt-5 mx-5 rounded-3xl text-white">
 				<div class="container mx-auto px-6 py-3">
-					<div class="grid grid-cols-2 gap-1">
+					<div class=" grid grid-cols-2 gap-1">
 						{#each question_arr as item, index}
-							<button
-								class={`${item.isSelect ? 'glow' : ''} mangorn text-2xl text-center`}
-								on:click={() => {
-									add_arr(item, index);
-								}}>{item.title}</button
-							>
+							<div class="relative flex justify-center items-center">
+								<button
+									class={`${item.isSelect ? 'drop-shadow-[0_3px_11px_#E6E0AE] text-[#E6E0AE]' : ''} mangorn text-2xl text-center z-50`}
+									on:click={() => {
+										add_arr(item, index);
+									}}>{item.title}</button
+								>
+								{#if item.isSelect}
+									<img src="Clip path group.svg" class="absolute bg-fixed top-0" alt="" />
+									<img
+										src="Clip path group.svg"
+										class="absolute bg-fixed bottom-0 rotate-180"
+										alt=""
+									/>
+								{/if}
+							</div>
 						{/each}
 					</div>
 					<div class="mt-5">

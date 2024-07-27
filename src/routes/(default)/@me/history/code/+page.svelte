@@ -111,7 +111,7 @@
 									<Table.Cell class="text-center">{item.code}</Table.Cell>
 									<Table.Cell class="text-center">{item.name_P}</Table.Cell>
 								</Table.Row>
-							{:else if index <= 7}
+							{:else if index <= 9}
 								<Table.Row class="bg-white">
 									<Table.Cell class="font-medium text-center">{item.time}</Table.Cell>
 									<Table.Cell class="text-center">{item.code}</Table.Cell>

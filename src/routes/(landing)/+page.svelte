@@ -1,4 +1,22 @@
 <script lang="ts">
+	    async function handleLogin() {
+        try {
+			const response = await fetch('/api/auth/signin');
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const jsonData = await response.json();
+			if (jsonData.success) {
+				window.location.href = jsonData.data;
+			} else {
+				console.error('Login failed:', jsonData.error);
+			}
+        } catch (error) {
+            console.error('Login error:', error);
+        }
+    }
 </script>
 
 <!-- <div class="flex items-center justify-center space-y-10">
@@ -61,10 +79,10 @@
 					<p class="maitree text-xs">นักศึกษาต้องทำการกรอกข้อมูลส่วนตัว อุปนิสัย ความชอบหลังจากเข้าสู่ระบบ จึงจะนับได้ว่าเข้าร่วมกิจกรรมโดยสมบูรณ์</p>
 				</div>
 				<div class="relative flex justify-center items-center">
-					<a href="/" class="flex justify-center items-center">
+					<button on:click={handleLogin} class="flex justify-center items-center">
 						<h1 class="z-50 tradewin">login with google</h1>
 						<img src="ปุ่มล้อกอิน.svg" class="absolute bg-fixed w-44" alt="">
-					</a>
+					</button>
 				</div>
 			</div>
 		</div>

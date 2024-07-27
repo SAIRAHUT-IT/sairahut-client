@@ -6,6 +6,7 @@
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import Footer from '$lib/components/Footer.svelte';
 
 	export let data;
 	$: loader = true;
@@ -34,4 +35,5 @@
 <div class="block sm:hidden overflow-x-hidden">
 	<Loading loading={loader} />
 	<slot />
+	<Footer/>
 </div>

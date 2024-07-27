@@ -4,8 +4,6 @@ import { sequence } from '@sveltejs/kit/hooks';
 const handleRequest: Handle = async ({ event, resolve }) => {
 	if (event.url.pathname.startsWith('/api')) {
 		const token = event.locals?.token || event.cookies.get('token') || '';
-		
-
 		if (event.url.pathname === '/api/auth/callback') {
             const code = event.url.searchParams.get('code');
             if (code) {

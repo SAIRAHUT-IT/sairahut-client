@@ -10,7 +10,6 @@
 
 	$: loader = true;
 	const checker = () => {
-		console.log($session);
 		if ($page.data.isAuth && $session.id === undefined) {
 			if (browser) goto('/');
 		}
@@ -31,8 +30,10 @@
 	});
 </script>
 
-<div class="block sm:hidden overflow-x-hidden">
+<div class="">
 	<Loading loading={loader} />
-	<slot />
-	<Footer />
+	{#if !loader}
+		<slot />
+		<Footer />
+	{/if}
 </div>

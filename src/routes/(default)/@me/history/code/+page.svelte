@@ -65,7 +65,7 @@
 			<div class="flex items-center mx-5 my-5 justify-start">
 				<div class="flex items-center">
 					<a href="/@me">
-						<img src="/ลูกศรกลับหน้าhome.svg" alt="" />
+						<img src="/ลูกศรกลับหน้าhome.webp" alt="" />
 					</a>
 					<p class="ml-2 text-4xl mangorn">ประวัติการกรอก code</p>
 				</div>
@@ -124,7 +124,7 @@
 			</div>
 			<div class="w-full mt-5 flex justify-center">
 				<a href="/menu">
-					<img src="/ปุ่มปิด.svg" alt="" />
+					<img src="/ปุ่มปิด.webp" alt="" />
 				</a>
 			</div>
 		</div>
@@ -133,13 +133,13 @@
 
 <style>
 	.background-img {
-		background-image: url('/ขอบกรอบ.svg');
+		background-image: url('/ขอบกรอบ.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
 	.bg-history {
-		background-image: url('/กรอบtexthistorycode.svg');
+		background-image: url('/กรอบtexthistorycode.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

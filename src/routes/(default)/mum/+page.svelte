@@ -14,7 +14,7 @@
 				data={{
 					name: 'PLEUK IT21',
 					ig_name: 'IG : pl . xvii',
-					image: 'pluk.jpg',
+					image: 'pluk.webp',
 					ig_link: 'https://www.instagram.com/pl.xvii'
 				}}
 			></Student>
@@ -22,7 +22,7 @@
 				data={{
 					name: 'BASS IT21',
 					ig_name: 'IG : siwapat_bass',
-					image: 'bass.jpg',
+					image: 'bass.webp',
 					ig_link: 'https://www.instagram.com/siwapat_bass'
 				}}
 			></Student>
@@ -30,7 +30,7 @@
 				data={{
 					name: 'PHUFA IT21',
 					ig_name: 'IG : phufa.phu',
-					image: 'phufa.jpg',
+					image: 'phufa.webp',
 					ig_link: 'https://www.instagram.com/phufa.phu'
 				}}
 			></Student>
@@ -38,7 +38,7 @@
 				data={{
 					name: 'WIN IT21',
 					ig_name: 'IG : nuttawit_nx',
-					image: 'win.jpg',
+					image: 'win.webp',
 					ig_link: 'https://www.instagram.com/nuttawit_nx'
 				}}
 			></Student>
@@ -46,7 +46,7 @@
 				data={{
 					name: 'ICE IT21',
 					ig_name: 'IG : anner.py',
-					image: 'ice.jpg',
+					image: 'ice.webp',
 					ig_link: 'https://www.instagram.com/anner.py'
 				}}
 			></Student>
@@ -54,7 +54,7 @@
 				data={{
 					name: 'JAME DSBA7',
 					ig_name: 'IG : j.a.m.e._o',
-					image: 'jame.jpg',
+					image: 'jame.webp',
 					ig_link: 'https://www.instagram.com/j.a.m.e._o'
 				}}
 			></Student>

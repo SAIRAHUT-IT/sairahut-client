@@ -4,16 +4,16 @@
 	let door = [
 		{
 			title: 'Scan',
-			leftDoorPath: 'menu/leftdoorred.svg',
-			rightDoorPath: 'menu/rightdoorred.svg',
+			leftDoorPath: 'menu/leftdoorred.webp',
+			rightDoorPath: 'menu/rightdoorred.webp',
 			mainColor: '#A63521',
 			path: 'qrScanner',
 			secondaryColor: ''
 		},
 		{
 			title: 'Bingo',
-			leftDoorPath: 'menu/leftdoorblue.svg',
-			rightDoorPath: 'menu/rightdoorblue.svg',
+			leftDoorPath: 'menu/leftdoorblue.webp',
+			rightDoorPath: 'menu/rightdoorblue.webp',
 			mainColor: '#3E80B1',
 			path: 'bingo',
 			secondaryColor: ''
@@ -35,31 +35,31 @@
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full overflow-x-hidden">
-	<img src="menu/combo.svg" class="absolute bg-fixed w-full -top-24" alt="s" />
-	<!-- <img src="menuPee/frame.svg" class="absolute bg-fixed w-full" alt="frame" /> -->
-	<img src="cloud.svg" class="absolute bg-fixed top-32 scale-125 w-screen -z-50" alt="" />
+	<img src="menu/combo.webp" class="absolute bg-fixed w-full -top-24" alt="s" />
+	<!-- <img src="menuPee/frame.webp" class="absolute bg-fixed w-full" alt="frame" /> -->
+	<img src="cloud.webp" class="absolute bg-fixed top-32 scale-125 w-screen -z-50" alt="" />
 	<div class="absolute flex justify-between z-10 pointer-events-none top-20 w-full">
 		<img
-			src="/menu/leftlamp.svg"
+			src="/menu/leftlamp.webp"
 			class="bg-fixed bottom-0 left-0 drop-shadow-[0_3px_50px_#fae846]"
 			alt="left_comb"
 		/>
 		<img
-			src="/menu/rightlamp.svg"
+			src="/menu/rightlamp.webp"
 			class="bg-fixed top-0 right-0 drop-shadow-[0_3px_50px_#fae846]"
 			alt="right_comb"
 		/>
-		<img src="/menu/flower.png" class="absolute w-screen top-60 z-50" alt="flower" />
+		<img src="/menu/flower.webp" class="absolute w-screen top-60 z-50" alt="flower" />
 	</div>
 	<div class="relative background-img flex justify-center min-w-[367px] min-h-[663px]">
 		<div class="absolute">
 			<div class="mt-10">
 				<div id="house" class="relative mb-9">
 					<span class="relative top-0 flex items-center justify-center">
-						<img src="menu/สำนัก.png" alt="banner" class="absolute h-[60px] w-[215px]" />
-						<img src="menu/สำนัก.png" alt="banner" class="absolute h-[60px] w-[215px]" />
+						<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
+						<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
 						{#if houseIsUnlock}
-							<img src="menu/logoHouse.svg" alt="house" class="z-50" />
+							<img src="menu/logoHouse.webp" alt="house" class="z-50" />
 							<p class="mangorn text-center text-3xl text-black z-50">
 								{elemental_parser(String($session.elemental))}
 							</p>
@@ -105,7 +105,7 @@
 
 <style>
 	.background-img {
-		background-image: url('menuPee/ขอบกรอบ.svg');
+		background-image: url('menuPee/ขอบกรอบ.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

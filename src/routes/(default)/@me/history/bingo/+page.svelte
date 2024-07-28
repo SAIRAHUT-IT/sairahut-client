@@ -18,7 +18,7 @@
 			<div class="flex items-center mx-5 my-5 justify-start">
 				<div class="flex items-center">
 					<a href="/@me">
-						<img src="/ลูกศรกลับหน้าhome.svg" alt="" />
+						<img src="/ลูกศรกลับหน้าhome.webp" alt="" />
 					</a>
 					<p class="ml-2 text-2xl tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Bingo Ticket</p>
 				</div>
@@ -92,7 +92,7 @@
 			</div>
 			<div class="w-full mt-5 flex justify-center">
 				<a href="/menu">
-					<img src="/ปุ่มปิด.svg" alt="" />
+					<img src="/ปุ่มปิด.webp" alt="" />
 				</a>
 			</div>
 		</div>
@@ -101,13 +101,13 @@
 
 <style>
 	.background-img {
-		background-image: url('/ขอบกรอบ.svg');
+		background-image: url('/ขอบกรอบ.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
 	.bg-history {
-		background-image: url('/กรอบtexthistorybingo.svg');
+		background-image: url('/กรอบtexthistorybingo.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

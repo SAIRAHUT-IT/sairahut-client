@@ -4,32 +4,32 @@
 	let door = [
 		{
 			title: 'Scan',
-			leftDoorPath: 'menu/leftdoorred.svg',
-			rightDoorPath: 'menu/rightdoorred.svg',
+			leftDoorPath: 'menu/leftdoorred.webp',
+			rightDoorPath: 'menu/rightdoorred.webp',
 			mainColor: '#A63521',
 			path: 'qrScanner',
 			secondaryColor: ''
 		},
 		{
 			title: 'Bingo',
-			leftDoorPath: 'menu/leftdoorblue.svg',
-			rightDoorPath: 'menu/rightdoorblue.svg',
+			leftDoorPath: 'menu/leftdoorblue.webp',
+			rightDoorPath: 'menu/rightdoorblue.webp',
 			mainColor: '#3E80B1',
 			path: 'bingo',
 			secondaryColor: ''
 		},
 		{
 			title: 'Hint',
-			leftDoorPath: 'menu/leftdoorgreen.svg',
-			rightDoorPath: 'menu/rightdoorgreen.svg',
+			leftDoorPath: 'menu/leftdoorgreen.webp',
+			rightDoorPath: 'menu/rightdoorgreen.webp',
 			mainColor: '#009971',
 			secondaryColor: '',
 			path: 'hint'
 		},
 		{
 			title: 'Picture',
-			leftDoorPath: 'menu/leftdooryellow.svg',
-			rightDoorPath: 'menu/rightdooryellow.svg',
+			leftDoorPath: 'menu/leftdooryellow.webp',
+			rightDoorPath: 'menu/rightdooryellow.webp',
 			mainColor: '#E68636',
 			path: 'puzzle',
 			secondaryColor: ''
@@ -51,30 +51,38 @@
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full">
-	<img src="menu/combo.svg" class="absolute bg-fixed w-full -top-24" alt="s" />
-	<div class="absolute flex justify-between z-10 pointer-events-none top-20 w-full">
+	<img src="menu/Group 37.svg" class="absolute bg-fixed w-full -top-24" alt="s" />
+	<div class="absolute flex justify-between z-10 pointer-events-none top-10 w-full">
 		<img
-			src="/menu/leftlamp.svg"
-			class="bg-fixed scale-125 bottom-0 left-0 drop-shadow-[0_3px_50px_#fae846]"
+			src="/menu/leftlamp.webp"
+			class="bg-fixed scale-100 left-0 drop-shadow-[0_3px_50px_#fae846]"
 			alt="left_comb"
 		/>
 		<img
-			src="/menu/rightlamp.svg"
-			class="bg-fixed scale-125 top- right-0 drop-shadow-[0_3px_50px_#fae846]"
+			src="/menu/rightlamp.webp"
+			class="bg-fixed scale-100 right-0 drop-shadow-[0_3px_50px_#fae846]"
 			alt="right_comb"
 		/>
-		<img src="/menu/cloud.svg" class="absolute w-full" alt="" />
-		<img src="/menu/flower.png" class="absolute w-screen top-48 z-50" alt="flower" />
-		<img src="/menu/flower.png" class="absolute w-screen top-[550px]" alt="flower" />
 	</div>
+	<img src="/menu/cloud.webp" class="absolute w-full pointer-events-none" alt="" />
+	<img
+		src="/menu/flower.webp"
+		class="absolute w-screen top-48 z-50 pointer-events-none"
+		alt="flower"
+	/>
+	<img
+		src="/menu/flower.webp"
+		class="absolute w-screen top-[550px] pointer-events-none"
+		alt="flower"
+	/>
 	<div class="absolute">
 		<div class="mt-10">
 			<div id="house" class="relative mb-9">
 				<span class="relative top-0 flex items-center justify-center">
-					<img src="menu/สำนัก.png" alt="banner" class="absolute h-[60px] w-[215px]" />
-					<img src="menu/สำนัก.png" alt="banner" class="absolute h-[60px] w-[215px]" />
+					<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
+					<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
 					{#if houseIsUnlock}
-						<img src="menu/logoHouse.svg" alt="house" class="z-50" />
+						<img src="menu/logoHouse.webp" alt="house" class="z-50" />
 						<p class="mangorn text-center text-3xl text-black z-50">
 							{elemental_parser(String($session.elemental))}
 						</p>

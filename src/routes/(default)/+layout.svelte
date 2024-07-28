@@ -2,9 +2,7 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 </script>
 
-<header>
+<div class="min-h-screen max-h-screen">
 	<Navbar />
-</header>
-<main class="relative z-10 overflow-y-scroll min-h-dvh">
 	<slot />
-</main>
+</div>

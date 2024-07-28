@@ -16,7 +16,7 @@
 <div class="flex relative text-white flex-col items-center w-full h-dvh">
 	<div class="relative background-img flex justify-center w-[367px] h-full max-h-[740px] mt-10">
 		<img
-			src="cloud.svg"
+			src="cloud.webp"
 			class="absolute bg-fixed bottom-40 z-10 scale-110 overflow-visible"
 			alt=""
 		/>
@@ -24,7 +24,7 @@
 			<div class="flex items-center mx-5 my-5 justify-start">
 				<div class="flex items-center">
 					<a href="/menu">
-						<img src="ลูกศรกลับหน้าhome.svg" alt="" />
+						<img src="ลูกศรกลับหน้าhome.webp" alt="" />
 					</a>
 					<p class="ml-2 text-2xl tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Profile</p>
 				</div>
@@ -36,10 +36,10 @@
 							<div class="absolute flex justify-around w-full">
 								<img
 									class="transform -scale-x-100 w-[6rem] rotate-12"
-									src="/elemental/fire.svg"
+									src="/elemental/fire.webp"
 									alt="elemental_icon"
 								/>
-								<img class="w-[6rem] -rotate-12" src="/elemental/fire.svg" alt="elemental_icon" />
+								<img class="w-[6rem] -rotate-12" src="/elemental/fire.webp" alt="elemental_icon" />
 							</div>
 						{/if}
 						<div class="flex items-center justify-center px-2 text-sm">
@@ -88,7 +88,7 @@
 			</div>
 			<div class="w-full mt-5 flex justify-center">
 				<a href="/menu">
-					<img src="ปุ่มปิด.svg" alt="" />
+					<img src="ปุ่มปิด.webp" alt="" />
 				</a>
 			</div>
 		</div>
@@ -97,13 +97,13 @@
 
 <style>
 	.background-img {
-		background-image: url('ขอบกรอบ.svg');
+		background-image: url('ขอบกรอบ.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
 	.bg-profile {
-		background-image: url('กรอบtextprofile.svg');
+		background-image: url('กรอบtextprofile.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

@@ -55,12 +55,12 @@
 <div class="flex relative text-white flex-col items-center w-full">
 	<div class="absolute flex w-full justify-between z-10 pointer-events-none">
 		<img
-			src="โคมไฟซ้าย_thisorthat.svg"
+			src="โคมไฟซ้าย_thisorthat.webp"
 			class="bg-fixed scale-125 top-0 left-0 drop-shadow-[0_3px_50px_#fae846]"
 			alt="left_comb"
 		/>
 		<img
-			src="โคมไฟขวา_thisorthat.svg"
+			src="โคมไฟขวา_thisorthat.webp"
 			class="bg-fixed scale-125 top-0 right-0 drop-shadow-[0_3px_50px_#fae846]"
 			alt="right_comb"
 		/>
@@ -69,7 +69,7 @@
 		class="relative flex flex-col justify-center bg-[#5A271F] w-[330px] h-full min-h-[764.67px] overflow-visible mt-5"
 	>
 		<img
-			src="cloud.svg"
+			src="cloud.webp"
 			class="absolute bg-fixed bottom-40 z-10 scale-110 overflow-visible"
 			alt=""
 		/>
@@ -77,7 +77,7 @@
 		<div class="p-5 z-30">
 			<div class="max-w-60 mx-auto">
 				<h1 class="text-3xl text-center tradewin drop-shadow-[0_3px_11px_#ffffff]">THIS OR THAT</h1>
-				<img src="/arcane.svg" alt="arcane" />
+				<img src="/arcane.webp" alt="arcane" />
 				<p class="text-[10px] maitree">
 					ปุจฉาอัขรา เหล่าจอมยุทธเอ๋ย <br />จงเลือกตัวเลือกที่ิอธิบายความเป็นตัวเจ้าได้มากที่สุด
 				</p>
@@ -94,9 +94,9 @@
 									}}>{item.title}</button
 								>
 								{#if item.isSelect}
-									<img src="Clip path group.svg" class="absolute bg-fixed top-0" alt="" />
+									<img src="Clip path group.webp" class="absolute bg-fixed top-0" alt="" />
 									<img
-										src="Clip path group.svg"
+										src="Clip path group.webp"
 										class="absolute bg-fixed bottom-0 rotate-180"
 										alt=""
 									/>
@@ -106,7 +106,7 @@
 					</div>
 					<div class="mt-5">
 						<div class="flex justify-center items-center">
-							<button class="" on:click={submit}><img src="ปุม submit.svg" alt="" /></button>
+							<button class="" on:click={submit}><img src="ปุม submit.webp" alt="" /></button>
 						</div>
 					</div>
 				</div>
@@ -117,25 +117,25 @@
 
 <style>
 	.background-red {
-		background-image: url('พื้นหลังสีแดง.svg');
+		background-image: url('พื้นหลังสีแดง.webp');
 		/* background-position: 54% 33%; */
 		background-repeat: no-repeat;
 	}
 
 	.arcane-description {
-		background-image: url('arcane.svg');
+		background-image: url('arcane.webp');
 		/* background-position: 54% 33%; */
 		background-repeat: no-repeat;
 	}
 
 	.group-img {
-		background-image: url('group.svg');
+		background-image: url('group.webp');
 		background-position: center top;
 		background-repeat: no-repeat;
 	}
 
 	.left-lamp {
-		background-image: url('โคมไฟซ้าย_thisorthat.svg');
+		background-image: url('โคมไฟซ้าย_thisorthat.webp');
 		background-position: left top;
 		background-repeat: no-repeat;
 		/* overflow: hidden;
@@ -146,25 +146,25 @@
 	}
 
 	.right-lamp {
-		background-image: url('โคมไฟขวา_thisorthat.svg');
+		background-image: url('โคมไฟขวา_thisorthat.webp');
 		background-position: right top;
 		background-repeat: no-repeat;
 	}
 
 	.could {
-		background-image: url('เมฆตกแต่ง.svg');
+		background-image: url('เมฆตกแต่ง.webp');
 		background-position: 50% 120%;
 		background-repeat: no-repeat;
 	}
 
 	.left-light {
-		background-image: url('แสงซ้าย.png');
+		background-image: url('แสงซ้าย.webp');
 		background-position: left 7%;
 		background-repeat: no-repeat;
 	}
 
 	.right-light {
-		background-image: url('แสงขวา.png');
+		background-image: url('แสงขวา.webp');
 		background-position: right 7%;
 		background-repeat: no-repeat;
 	}

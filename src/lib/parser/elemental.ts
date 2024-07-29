@@ -1,5 +1,5 @@
 export const elemental_parser = (val: string): string => {
-	const x = {
+	const x: { [key: string]: string } = {
 		FIRE: 'หุบเขาพันแสง',
 		WATER: 'ท่าเรือบงกชนรฤมิตร',
 		EARTH: 'เมืองลู่จิ้ง',
@@ -7,5 +7,6 @@ export const elemental_parser = (val: string): string => {
 		LIGHTING: 'แนวเขาอัสนีราตรี',
 		PLANT: 'เมืองเลี่ยงหลิน'
 	};
-	return x[val] as string;
+
+	return x[val.toUpperCase()] || 'สำนักยังไม่เปิดเผย';
 };

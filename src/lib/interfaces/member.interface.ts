@@ -40,7 +40,7 @@ interface Member {
 	unlocked_puzzle: string[];
 	puzzle_url: string;
 	paired_member_id: number;
-	paired_member: Member | null;
+	paired_member: Member;
 	paired_with: Member[];
 	redeemed_codes: Code[];
 	created_codes: Code[];

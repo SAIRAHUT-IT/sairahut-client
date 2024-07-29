@@ -3,4 +3,6 @@
 	export let data;
 </script>
 
-<LeaderBoard leaderboard={data.leaderboard} />
+{#if data}
+	<LeaderBoard leaderboard={data.leaderboard} />
+{/if}

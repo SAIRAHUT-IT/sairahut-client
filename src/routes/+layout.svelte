@@ -9,22 +9,26 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import toast, { Toaster } from 'svelte-french-toast';
 
-	$: loader = true;
-	const checker = () => {
+	let loader = true;
+	const checker = async () => {
+		console.log($session);
 		const isPhaseDay = checkPhaseDay($page.url.pathname.slice(1));
-		if ($page.data.isAuth && $session.id === undefined) {
-			if (browser) goto('/');
-		} else if (
-			($page.url.pathname == '/' && $session.id !== undefined) ||
-			($page.data.isSubmitted && ($session.this_or_that?.length || 0) > 0) ||
-			!isPhaseDay
+
+		if ($page.data.isAuth && $session.id === undefined && !$page.data.isToken) {
+			toast.error('กรุณาเข้าสู่ระบบ');
+			if (browser) await goto('/');
+		}
+
+		if (['/'].includes($page.url.pathname) && $session.id !== undefined) {
+			if (browser) await goto('/menu');
+		}
+
+		if (
+			!isPhaseDay &&
+			['this_that', 'qrScanner', 'bingo', 'hint', 'puzzle'].includes($page.url.pathname.slice(1))
 		) {
-			if (
-				!isPhaseDay &&
-				['this_that', 'qrScanner', 'bingo', 'hint', 'puzzle'].includes($page.url.pathname.slice(1))
-			)
-				toast.error('ยังไม่ถึงกำหนดการ');
-			if (browser) goto('/menu');
+			toast.error('ยังไม่ถึงกำหนดการ');
+			if (browser) await goto('/menu');
 		}
 	};
 
@@ -37,7 +41,7 @@
 		}
 		switch (path) {
 			case 'this_that':
-				return day >= 1;
+				return true;
 			case 'qrScanner':
 				return day >= 2;
 			case 'bingo':
@@ -47,7 +51,7 @@
 			case 'puzzle':
 				return day >= 14;
 			default:
-				return false;
+				return true;
 		}
 	};
 
@@ -59,10 +63,9 @@
 		loader = true;
 		const updater = [];
 		if ($page.data.isToken) updater.push(updateSession());
-		Promise.all(updater).finally(() => {
-			loader = false;
-			checker();
-		});
+		await Promise.all(updater);
+		loader = false;
+		checker();
 	});
 </script>
 

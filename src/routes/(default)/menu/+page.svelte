@@ -36,7 +36,29 @@
 		}
 	];
 
-	let houseIsUnlock = true;
+	const checkPhaseDay = (path: string) => {
+		const date = new Date();
+		const day = date.getDate();
+		const month = date.getMonth();
+		if (month !== 7) {
+			return false;
+		}
+		switch (path) {
+			case 'this_that':
+				return true;
+			case 'qrScanner':
+				return day >= 2;
+			case 'bingo':
+				return day >= 5;
+			case 'hint':
+				return day >= 8;
+			case 'puzzle':
+				return day >= 14;
+			default:
+				return true;
+		}
+	};
+
 	function delayedNavigation(
 		event: { preventDefault: () => void },
 		url: string,
@@ -81,14 +103,14 @@
 				<span class="relative top-0 flex items-center justify-center">
 					<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
 					<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
-					{#if houseIsUnlock}
+					{#if $session.paired_member?.elemental || ($session.elemental && $session.elemental !== 'NONE')}
 						<img
-							src={`elemental/${$session.paired_member?.elemental || ''}.svg`}
+							src={`elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
 							alt="house"
 							class="z-50"
 						/>
 						<p class="mangorn text-center text-3xl text-black z-50">
-							{elemental_parser(String($session.paired_member?.elemental || ''))}
+							{elemental_parser($session.paired_member?.elemental || $session.elemental || '')}
 						</p>
 					{:else}
 						<p class="mangorn text-center text-3xl text-[#767272] z-50">สำนักยังไม่เปิดเผย</p>
@@ -120,7 +142,7 @@
 						<p
 							class="text-white z-10 tradewin font-bold text-5xl drop-shadow-[0_3px_1px_rgba(0,0,0,1)]"
 						>
-							{x.title}
+							{checkPhaseDay(x.path) ? x.title : '????'}
 						</p>
 					</div>
 				{/each}

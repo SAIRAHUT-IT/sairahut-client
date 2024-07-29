@@ -16,7 +16,7 @@
 	];
 
 	let imageUrl =
-		'https://media.discordapp.net/attachments/1134763980871712768/1261681743963099136/IMG_1321.jpg?ex=6693d830&is=669286b0&hm=9d563de53441c869f1db83b19e7fae58ea4f15a91f3a79fc79171933983c11eb&=&format=webp&width=896&height=1194';
+		'https://media.discordapp.net/attachments/1134763980871712768/1261687348165480538/9F99E393-67FE-4E42-AE14-142FF78DE785.jpg?ex=66a7a3e8&is=66a65268&hm=f0caaf0cb962a6cf858ef79ad3926afed4931c457e43f6fd74fa142d3b83ce41&=&format=webp&width=526&height=700';
 
 	onMount(() => {
 		loadFromUrl(imageUrl);

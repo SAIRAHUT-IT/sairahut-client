@@ -1,23 +1,9 @@
-<script>
-	import { onMount } from 'svelte';
-	/**
-	 * @type {number}
-	 */
-	// @ts-ignore
-	export let score;
-	export let ranking = 80;
-	export let text = 'your point : ' + score + ' pt';
+<script lang="ts">
+	import { session } from '$lib/stores/member.store';
 
-	/**
-	 * @type {number}
-	 */
-	export let internalScore;
-
-	onMount(() => {
-		internalScore = score;
-	});
-
-	$: internalScore = score;
+	let score = $session.token;
+	let ranking = 80;
+	let text = 'your point : ' + score + ' pt';
 </script>
 
 <div class="mx-5 rounded-3xl text-white shadow-md bg-score tradewin">
@@ -38,7 +24,7 @@
 
 <style>
 	.bg-score {
-		background-image: url('กรอบtextScore.svg');
+		background-image: url('กรอบtextScore.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

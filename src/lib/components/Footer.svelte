@@ -1,5 +1,5 @@
-<footer class="w-full mt-2 fixed bottom-0 z-[1500]">
-	<img src="footer_style.webp" alt="" />
+<footer class="w-full fixed bottom-0 pointer-events-none">
+	<img src="footer_style.webp" alt="Footer Style" class="w-full" />
 	<div
 		class="flex justify-center items-center w-full h-[30px] text-white text-[12px] bg-[#2c2921] py-4 mangorn"
 	>

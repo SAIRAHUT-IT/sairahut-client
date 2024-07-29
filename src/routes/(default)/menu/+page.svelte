@@ -82,7 +82,7 @@
 					<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
 					<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
 					{#if houseIsUnlock}
-						<img src="menu/logoHouse.webp" alt="house" class="z-50" />
+						<img src={`elemental/${$session.elemental}.svg`} alt="house" class="z-50" />
 						<p class="mangorn text-center text-3xl text-black z-50">
 							{elemental_parser(String($session.elemental))}
 						</p>
@@ -91,7 +91,7 @@
 					{/if}
 				</span>
 			</div>
-			<div class="max-h-dvh">
+			<div class="max-h-screen">
 				{#each door as x}
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<!-- svelte-ignore a11y-no-static-element-interactions -->

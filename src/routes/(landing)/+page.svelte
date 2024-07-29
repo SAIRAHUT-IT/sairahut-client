@@ -16,7 +16,7 @@
 		/>
 	</div>
 	<img src="ริ้ว.webp" class="absolute bg-fixed w-full" alt="" />
-	<img src="เขาหลัง.webp" class="absolute -bottom-1 bg-fixed w-full z-10" alt="" />
+	<!-- <img src="เขาหลัง.webp" class="absolute bottom-0 bg-fixed w-full z-10" alt="" /> -->
 	<img src="หน้าปก.webp" class="bg-fixed w-full" alt="" />
 	<div class="p-3 relative w-[390px]">
 		<div class="relative background-img flex flex-col justify-center min-w-[367px] min-h-[511px]">
@@ -69,20 +69,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="w-8/12 h-44 border text-center bg-blue-800 mt-20 rounded-3xl text-white">
-        สายรหัสคืออะไร
-    </div>
-    <div class="w-8/12 h-44 border text-center bg-blue-800 mt-20 rounded-3xl text-white">
-        ใครเข้าร่วมได้บ้าง
-    </div>
-    <div class="w-8/12 h-44 border text-center bg-blue-800 mt-20 rounded-3xl text-white">
-        เข้าร่วมอย่างไร
-    </div> -->
 </div>
-
-<!-- <footer class="bg-blue-950 w-full h-20 mt-10 flex items-center justify-center">
-    <p class="text-white">Create by หม่ำ Team</p>
-</footer> -->
 
 <style>
 	.background-img {

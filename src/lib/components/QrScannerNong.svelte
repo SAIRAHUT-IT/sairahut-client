@@ -2,7 +2,7 @@
 	// @ts-nocheck
 
 	import { Html5Qrcode } from 'html5-qrcode';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { ArrowLeftFromLine } from 'lucide-svelte';
 	import Scorebar from '$lib/components/Scorebar.svelte';
@@ -29,6 +29,9 @@
 	};
 
 	onMount(init);
+	onDestroy(() => {
+		stop();
+	});
 
 	function init() {
 		html5Qrcode = new Html5Qrcode('reader');
@@ -70,32 +73,34 @@
 	}
 </script>
 
-<div class="flex relative text-white flex-col items-center w-full h-screen">
-	<div class="relative background-img flex flex-col justify-center w-[367px] h-full max-h-[740px]">
+<div class="flex relative text-white flex-col items-center w-full h-dvh">
+	<div
+		class="relative background-img flex flex-col justify-center w-[367px] h-full max-h-[740px] mt-10"
+	>
 		<img
-			src="cloud.svg"
+			src="cloud.webp"
 			class="absolute bg-fixed bottom-40 z-10 scale-110 overflow-visible"
 			alt=""
 		/>
 		<div class="flex items-center mx-6 my-5 justify-between z-20">
 			<div class="flex items-center">
 				<a href="/menu">
-					<img src="ลูกศรกลับหน้าhome.svg" alt="" />
+					<img src="ลูกศรกลับหน้าhome.webp" alt="" />
 				</a>
 				<p class="ml-2 text-2xl tradewin">PHASE 1</p>
 			</div>
-			<a href="/leaderboard"><img src="ranking.svg" alt="" /></a>
+			<a href="/leaderboard"><img src="ranking.webp" alt="" /></a>
 		</div>
-		<div class="mb-5 z-20">
+		<div class="mb-16 z-20">
 			<Scorebar bind:score />
 		</div>
 		<div class="flex flex-col items-center justify-center z-20">
-			<img
-				src="กรอบqr.svg"
-				alt=""
-				class="absolute bg-fixed bottom-1 z-50 scale-110 overflow-visible pointer-events-none"
-			/>
-			<div class="z-30">
+			<div class="relative z-30">
+				<img
+					src="กรอบqr.webp"
+					alt="qr"
+					class="absolute bg-fixed bottom-1 z-50 scale-110 overflow-visible pointer-events-none"
+				/>
 				<div
 					class="flex items-center relative [margin-inline:_auto] aspect-square overflow-hidden rounded-xl w-[310px]"
 				>
@@ -193,19 +198,19 @@
 
 <style>
 	.background-img {
-		background-image: url('ขอบกรอบ.svg');
+		background-image: url('ขอบกรอบ.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
 	.bg-code {
-		background-image: url('กรอบtext.svg');
+		background-image: url('กรอบtext.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
 	.bg-qr {
-		background-image: url('กรอบqr.svg');
+		background-image: url('กรอบqr.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

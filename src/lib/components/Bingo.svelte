@@ -10,10 +10,13 @@
 
 <Dialog.Root>
 	<Dialog.Trigger
-		class="bg-gray-600 text-white text-2xl font-semibold w-full h-20 rounded-md drop-shadow-[0_2px_2px_rgba(0,0,0,0.25)] {question.is_checked
-			? 'bg-green-500'
-			: 'bg-grey-500'}">{question.id}</Dialog.Trigger
+		style="background-image: url({question.image});"
+		class=" flex items-center justify-center text-white text-2xl font-semibold w-[3em] h-[3em] rounded-md drop-shadow-[0_2px_2px_rgba(0,0,0,0.25)]"
 	>
+		{#if question.is_checked}
+			<img src="/bingo/ปั้ม.svg" alt="s" />
+		{/if}
+	</Dialog.Trigger>
 	<Dialog.Content class="sm:max-w-[425px]">
 		<Dialog.Header>
 			<Dialog.Title class="text-start text-xl font-semibold">{question.question}</Dialog.Title>

@@ -1,15 +1,8 @@
 <script lang="ts">
 	import { session } from '$lib/stores/member.store';
+	import { elemental_parser } from '$lib/parser/elemental';
 	import { ArrowLeftFromLine } from 'lucide-svelte';
 	import { ArrowRightFromLine } from 'lucide-svelte';
-	let data = {
-		fullname: 'Nuttawit P.',
-		nickname: 'วิน',
-		sumnak: 'สำนักอิอิ',
-		elemental: 'FIRE',
-		isshowsumnak: false
-	};
-	$: console.log($session);
 </script>
 
 <!-- BASS -->
@@ -32,22 +25,24 @@
 			<div>
 				<div class="bg-profile mt-5 mx-5 text-white shadow-md min-h-[175px] min-w-[310px]">
 					<div class="relative flex items-center justify-center container mx-auto px-6 py-3">
-						{#if data.isshowsumnak}
+						{#if $session.elemental != 'NONE'}
 							<div class="absolute flex justify-around w-full">
+								<img class="w-[8rem] -rotate-12" src="elemental/FIRE.svg" alt="elemental_icon" />
 								<img
-									class="transform -scale-x-100 w-[6rem] rotate-12"
-									src="/elemental/fire.webp"
+									class="transform -scale-x-100 w-[8rem] rotate-12"
+									src="elemental/FIRE.svg"
 									alt="elemental_icon"
 								/>
-								<img class="w-[6rem] -rotate-12" src="/elemental/fire.webp" alt="elemental_icon" />
 							</div>
 						{/if}
-						<div class="flex items-center justify-center px-2 text-sm">
+						<div class="flex items-center justify-center px-2 text-sm z-[1500]">
 							<div class="mangorn flex flex-col items-center">
 								<p class="text-4xl">ชื่อจอมยุทธ</p>
-								<p class="text-7xl">{$session.email}</p>
-								{#if data.isshowsumnak}
-									<p class="text-4xl">{data.sumnak}</p>
+								<p class="text-7xl text-[#C99949]">
+									{'JUSMIN'}
+								</p>
+								{#if $session.elemental != 'NONE'}
+									<p class="text-4xl">{elemental_parser($session.elemental || '')}</p>
 								{:else}
 									<p class="text-4xl text-[#767272]">สำนักยังไม่เปิดเผย</p>
 								{/if}
@@ -86,11 +81,11 @@
 					</div>
 				</a>
 			</div>
-			<div class="w-full mt-5 flex justify-center">
+			<!-- <div class="w-full mt-5 flex justify-center">
 				<a href="/menu">
 					<img src="ปุ่มปิด.webp" alt="" />
 				</a>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

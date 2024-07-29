@@ -32,7 +32,7 @@ declare interface Member {
 	status: MemberStatus;
 	elemental: string;
 	reputation: number;
-	coins: number;
+	token: number;
 	this_or_that: string[];
 	maximum_member: number;
 	unlocked_puzzle: string[];

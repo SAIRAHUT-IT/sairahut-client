@@ -11,7 +11,6 @@
 
 	let loader = true;
 	const checker = async () => {
-		console.log($session);
 		const isPhaseDay = checkPhaseDay($page.url.pathname.slice(1));
 
 		if ($page.data.isAuth && $session.id === undefined && !$page.data.isToken) {

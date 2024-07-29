@@ -2,14 +2,13 @@
 	import { session } from '$lib/stores/member.store';
 
 	let score = $session.token;
-	let ranking = 80;
 	let text = 'your point : ' + score + ' pt';
 </script>
 
 <div class="mx-5 rounded-3xl text-white shadow-md bg-score tradewin">
 	<div class="container mx-auto px-6 py-3 flex">
 		<div class="w-1/4 flex items-center justify-end">
-			<h1 class="text-4xl">{ranking}</h1>
+			<h1 class="text-4xl">{$session.ranking || 999}</h1>
 		</div>
 		<div class="w-3/4 flex justify-center">
 			<div>

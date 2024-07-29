@@ -16,7 +16,7 @@
 		/>
 	</div>
 	<img src="ริ้ว.webp" class="absolute bg-fixed w-full" alt="" />
-	<!-- <img src="เขาหลัง.webp" class="absolute bottom-0 bg-fixed w-full z-10" alt="" /> -->
+	<!-- <img src="เขาหลัง.webp" class="absolute bottom-0 bg-fixed w-full z-10" alt=x"" /> -->
 	<img src="หน้าปก.webp" class="bg-fixed w-full" alt="" />
 	<div class="p-3 relative w-[390px]">
 		<div class="relative background-img flex flex-col justify-center min-w-[367px] min-h-[511px]">

@@ -82,9 +82,13 @@
 					<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
 					<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
 					{#if houseIsUnlock}
-						<img src={`elemental/${$session.elemental}.svg`} alt="house" class="z-50" />
+						<img
+							src={`elemental/${$session.paired_member?.elemental || ''}.svg`}
+							alt="house"
+							class="z-50"
+						/>
 						<p class="mangorn text-center text-3xl text-black z-50">
-							{elemental_parser(String($session.elemental))}
+							{elemental_parser(String($session.paired_member?.elemental || ''))}
 						</p>
 					{:else}
 						<p class="mangorn text-center text-3xl text-[#767272] z-50">สำนักยังไม่เปิดเผย</p>

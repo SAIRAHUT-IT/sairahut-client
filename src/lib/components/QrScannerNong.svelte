@@ -73,7 +73,7 @@
 	}
 </script>
 
-<div class="flex relative text-white flex-col items-center w-full h-dvh">
+<div class="flex relative text-white flex-col items-center w-full h-screen">
 	<div
 		class="relative background-img flex flex-col justify-center w-[367px] h-full max-h-[740px] mt-10"
 	>
@@ -91,7 +91,7 @@
 			</div>
 			<a href="/leaderboard"><img src="ranking.webp" alt="" /></a>
 		</div>
-		<div class="mb-16 z-20">
+		<div class="mb-10 z-20">
 			<Scorebar bind:score />
 		</div>
 		<div class="flex flex-col items-center justify-center z-20">
@@ -99,7 +99,7 @@
 				<img
 					src="กรอบqr.webp"
 					alt="qr"
-					class="absolute bg-fixed bottom-1 z-50 scale-110 overflow-visible pointer-events-none"
+					class="absolute bg-fixed -bottom-[10.5rem] left-[0.4rem] z-50 scale-110 overflow-visible pointer-events-none"
 				/>
 				<div
 					class="flex items-center relative [margin-inline:_auto] aspect-square overflow-hidden rounded-xl w-[310px]"
@@ -164,7 +164,7 @@
 				>
 					<Dialog.Root>
 						<Dialog.Trigger disabled={!code} class=""
-							><img src="ปุม submit.svg" alt="" /></Dialog.Trigger
+							><img src="ปุม submit.webp" alt="" /></Dialog.Trigger
 						>
 						{#if checker(code)}
 							<Dialog.Content class="bg-green-100">

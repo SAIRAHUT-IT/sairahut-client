@@ -7,7 +7,7 @@
 </script>
 
 {#if $session.role == 'FRESHY'}
-	<QrScannerP qr_code={data.qrcode} meta={data.meta} />
-{:else}
 	<QrScannerNong />
+{:else}
+	<QrScannerP qr_code={data.qrcode} meta={data.meta} />
 {/if}

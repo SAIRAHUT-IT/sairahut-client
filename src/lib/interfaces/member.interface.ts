@@ -23,10 +23,12 @@ declare interface Code {
 	member?: Member | null;
 }
 
-declare interface Member {
+interface Member {
 	id: number;
 	nickname: string;
 	username: string;
+	student_id: string;
+	unique_key: string;
 	email: string;
 	role: MemberRole;
 	status: MemberStatus;
@@ -36,10 +38,12 @@ declare interface Member {
 	this_or_that: string[];
 	maximum_member: number;
 	unlocked_puzzle: string[];
-	created_codes: Code[];
-	redeemed_codes: Code[];
-	paired_member_id?: number | null;
-	paired_member?: Member | null;
+	puzzle_url: string;
+	paired_member_id: number;
+	paired_member: Member | null;
 	paired_with: Member[];
-	code: Code[];
+	redeemed_codes: Code[];
+	created_codes: Code[];
+	hint?: string[];
+	ranking: number;
 }

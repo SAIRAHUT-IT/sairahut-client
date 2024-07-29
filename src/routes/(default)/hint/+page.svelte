@@ -5,20 +5,16 @@
 	import Scorebar from '$lib/components/Scorebar.svelte';
 	import { session } from '$lib/stores/member.store';
 	import { onMount } from 'svelte';
-	let point = 0;
-	let score = 0;
 	let shard = [5, 10, 15, 20, 25];
 	let hint = new Array(7).fill({ content: '??', isUnlocked: false });
 	onMount(() => {
 		// @ts-ignore
-		const member_hint = $session.paired_member.hint.map((e: any) => e.content);
-		console.log($session);
+		const member_hint = $session.hint;
+		// @ts-ignore
 		member_hint.forEach((content: string, i: number) => {
 			hint[i] = { content, isUnlocked: true };
 		});
 	});
-
-	$: console.log(hint);
 </script>
 
 <div class="flex justify-center w-full">

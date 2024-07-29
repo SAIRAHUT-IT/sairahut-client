@@ -31,7 +31,7 @@
 	};
 </script>
 
-<div class="flex relative text-white flex-col items-center w-full h-screen">
+<div class="flex relative text-white flex-col items-center w-full h-screen mt-10">
 	<div class="relative flex flex-col background-img justify-center w-[367px] h-full max-h-[740px]">
 		<div class="flex items-center mx-6 my-5 justify-between z-20">
 			<div class="flex items-center">
@@ -43,22 +43,19 @@
 			<a href="/leaderboard"><img src="ranking.webp" alt="" /></a>
 		</div>
 		<div class="flex flex-col items-center justify-center z-20">
-			<img
-				src="กรอบqr.webp"
-				alt=""
-				class="absolute bg-fixed bottom-[7.3rem] z-50 scale-105 overflow-visible pointer-events-none"
-			/>
-			<div class="z-30">
+			<div class="relative z-30">
+				<div class="z-30">
+					<img
+						src={qr_code || qr}
+						class="flex items-center relative [margin-inline:_auto] aspect-square overflow-hidden rounded-xl w-[288px] z-50"
+						alt=""
+					/>
+				</div>
 				<img
-					src={qr_code || qr}
-					class="flex items-center relative [margin-inline:_auto] aspect-square overflow-hidden rounded-xl w-[288px] z-50"
+					src="กรอบqr.webp"
 					alt=""
+					class="absolute bg-fixed -bottom-[14.5rem] z-50 scale-105 overflow-visible pointer-events-none"
 				/>
-				<!-- <div
-					class="flex items-center relative [margin-inline:_auto] aspect-square overflow-hidden rounded-xl w-[288px] border"
-				>
-					<div id="reader" class="reader w-full"></div>
-				</div> -->
 			</div>
 		</div>
 		<div class="mx-6 z-20 mt-6">
@@ -97,12 +94,6 @@
 
 	.bg-code {
 		background-image: url('กรอบtext.webp');
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-
-	.bg-qr {
-		background-image: url('กรอบqr.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

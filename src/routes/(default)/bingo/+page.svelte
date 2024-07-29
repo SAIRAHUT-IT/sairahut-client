@@ -126,17 +126,18 @@
 				</div>
 			</div>
 			<div id="reset-submit" class="flex justify-center">
-				<Button class="w-full mx-5 text-base font-bold uppercase">Submit</Button>
+				<Button
+					class="w-full mx-5 text-base font-bold uppercase bg-transparent hover:bg-transparent"
+				>
+					<img src="submit.svg" alt="" />
+				</Button>
 			</div>
 		</div>
-		<div
-			class="flex flex-col items-center mx-5 mt-10 bg-gray-600 text-white text-s rounded-[20px] p-5"
-		>
-			<h1 class="text-2xl font-bold">HOW TO PLAY</h1>
-			<p class="text-lg font-semibold">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam a dolorem quas officiis aperiam
-				iure, ab accusamus, vero molestias odit vitae adipisci sint. Laborum in rerum doloremque
-				aliquam sequi ducimus?
+		<div class="flex flex-col items-center mx-5 mt-10 bg-[#26221E]/70 text-white px-5 py-2">
+			<!-- <h1 class="text-2xl font-bold">HOW TO PLAY</h1> -->
+			<img src="describe.svg" alt="desc" class="w-32 bg-fixed" />
+			<p class="text-sm font-semibold maitree line-clamp-5">
+				อธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้า
 			</p>
 		</div>
 	</div>

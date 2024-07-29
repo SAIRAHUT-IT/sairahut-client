@@ -42,7 +42,9 @@
 									{'JUSMIN'}
 								</p>
 								{#if $session.elemental != 'NONE'}
-									<p class="text-4xl">{elemental_parser($session.elemental || '')}</p>
+									<p class="text-4xl">
+										{elemental_parser($session.paired_member?.elemental || '')}
+									</p>
 								{:else}
 									<p class="text-4xl text-[#767272]">สำนักยังไม่เปิดเผย</p>
 								{/if}

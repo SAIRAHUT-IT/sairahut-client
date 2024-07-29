@@ -1,4 +1,8 @@
 <script lang="ts">
+	import toast from 'svelte-french-toast';
+	import Error from '../../+error.svelte';
+	import { goto } from '$app/navigation';
+
 	let arr = new Array(13).fill(undefined);
 	let question_arr = [
 		{ title: 'สายกิจกรรม', isSelect: false },
@@ -41,13 +45,27 @@
 				question_arr[i].isSelect = false;
 			}
 		}
-		console.log(arr);
 	};
-	const submit = () => {
-		if (arr.includes(undefined)) {
-			alert('Please select all answer.');
-		} else {
-			alert('Success!');
+	const submit = async () => {
+		try {
+			if (arr.includes(undefined)) throw 'กรุณากรอกให้ครบทุกข้อ';
+			const result = await fetch('/api/this-that', {
+				method: 'PATCH',
+				body: JSON.stringify({
+					payload: arr
+				})
+			});
+			const data = await result.json();
+			if (!result.ok) throw data.message;
+			toast.success(data.message, {
+				duration: 3000
+			});
+			goto('/menu');
+		} catch (error: any) {
+			toast.error(error, {
+				duration: 3000
+			});
+			goto('/menu');
 		}
 	};
 </script>

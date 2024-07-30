@@ -85,21 +85,10 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 		if (event.url.pathname === '/api/auth/signin' && !token) {
 			const response = await request(`${env.BASE_URL}/api/auth/signin`, 'GET');
 			if (response.ok) {
-				const contentType = response.headers.get('Content-Type');
-				if (contentType && contentType.includes('application/json')) {
-					const data = await response.json();
-					return new Response(JSON.stringify({ success: true, data }), {
-						headers: { 'Content-Type': 'application/json' }
-					});
-				} else {
-					return new Response(
-						JSON.stringify({ success: false, error: 'Unexpected response format' }),
-						{
-							status: 500,
-							headers: { 'Content-Type': 'application/json' }
-						}
-					);
-				}
+				const data = await response.text();
+				return new Response(JSON.stringify({ success: true, data }), {
+					headers: { 'Content-Type': 'application/json' }
+				});
 			} else {
 				return new Response(JSON.stringify({ success: false, error: 'Authentication failed' }), {
 					status: response.status,

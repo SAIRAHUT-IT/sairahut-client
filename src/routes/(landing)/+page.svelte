@@ -1,5 +1,15 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import { session } from '$lib/stores/member.store.js';
+	import { onMount } from 'svelte';
+
 	export let data;
+
+	onMount(() => {
+		console.log($page.url);
+		if (!$session && $page.url.searchParams) {
+		}
+	});
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full h-screen">
@@ -73,7 +83,7 @@
 
 <style>
 	.background-img {
-		background-image: url('ขอบlanding.webp');
+		background-image: url('/ขอบlanding.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

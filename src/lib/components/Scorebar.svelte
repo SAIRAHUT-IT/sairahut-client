@@ -23,7 +23,7 @@
 
 <style>
 	.bg-score {
-		background-image: url('กรอบtextScore.webp');
+		background-image: url('/scoreborder.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

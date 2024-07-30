@@ -92,13 +92,13 @@
 
 <style>
 	.background-img {
-		background-image: url('ขอบกรอบ.svg');
+		background-image: url('/border.svg');
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
 	.bg-profile {
-		background-image: url('กรอบtextprofile.webp');
+		background-image: url('/กรอบtextprofile.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

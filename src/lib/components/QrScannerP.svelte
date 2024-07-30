@@ -87,13 +87,13 @@
 
 <style>
 	.background-img {
-		background-image: url('ขอบกรอบ.webp');
+		background-image: url('/border.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 
 	.bg-code {
-		background-image: url('กรอบtext.webp');
+		background-image: url('/textbanner.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

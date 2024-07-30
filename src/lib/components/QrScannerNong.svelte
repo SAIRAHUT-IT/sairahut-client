@@ -198,19 +198,7 @@
 
 <style>
 	.background-img {
-		background-image: url('ขอบกรอบ.webp');
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-
-	.bg-code {
-		background-image: url('กรอบtext.webp');
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-
-	.bg-qr {
-		background-image: url('กรอบqr.webp');
+		background-image: url('/border.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

@@ -50,7 +50,7 @@
 
 <style>
 	#background-img {
-		background-image: url('bingo/ขอบกรอบ.svg');
+		background-image: url('/bingo/ขอบกรอบ.svg');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

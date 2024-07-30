@@ -99,7 +99,7 @@
 
 <style>
 	.background-img {
-		background-image: url('/ขอบกรอบ.webp');
+		background-image: url('/border.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

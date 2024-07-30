@@ -1,8 +1,4 @@
 <script lang="ts">
-	import toast from 'svelte-french-toast';
-	import Error from '../../+error.svelte';
-	import { goto } from '$app/navigation';
-
 	let arr = new Array(13).fill(undefined);
 	let question_arr = [
 		{ title: 'สายกิจกรรม', isSelect: false },
@@ -45,27 +41,13 @@
 				question_arr[i].isSelect = false;
 			}
 		}
+		console.log(arr);
 	};
-	const submit = async () => {
-		try {
-			if (arr.includes(undefined)) throw 'กรุณากรอกให้ครบทุกข้อ';
-			const result = await fetch('/api/this-that', {
-				method: 'PATCH',
-				body: JSON.stringify({
-					payload: arr
-				})
-			});
-			const data = await result.json();
-			if (!result.ok) throw data.message;
-			toast.success(data.message, {
-				duration: 3000
-			});
-			goto('/menu');
-		} catch (error: any) {
-			toast.error(error, {
-				duration: 3000
-			});
-			goto('/menu');
+	const submit = () => {
+		if (arr.includes(undefined)) {
+			alert('Please select all answer.');
+		} else {
+			alert('Success!');
 		}
 	};
 </script>
@@ -135,25 +117,25 @@
 
 <style>
 	.background-red {
-		background-image: url('พื้นหลังสีแดง.webp');
+		background-image: url('/พื้นหลังสีแดง.webp');
 		/* background-position: 54% 33%; */
 		background-repeat: no-repeat;
 	}
 
 	.arcane-description {
-		background-image: url('arcane.webp');
+		background-image: url('/arcane.webp');
 		/* background-position: 54% 33%; */
 		background-repeat: no-repeat;
 	}
 
 	.group-img {
-		background-image: url('group.webp');
+		background-image: url('/group.webp');
 		background-position: center top;
 		background-repeat: no-repeat;
 	}
 
 	.left-lamp {
-		background-image: url('โคมไฟซ้าย_thisorthat.webp');
+		background-image: url('/โคมไฟซ้าย_thisorthat.webp');
 		background-position: left top;
 		background-repeat: no-repeat;
 		/* overflow: hidden;
@@ -164,25 +146,25 @@
 	}
 
 	.right-lamp {
-		background-image: url('โคมไฟขวา_thisorthat.webp');
+		background-image: url('/โคมไฟขวา_thisorthat.webp');
 		background-position: right top;
 		background-repeat: no-repeat;
 	}
 
 	.could {
-		background-image: url('เมฆตกแต่ง.webp');
+		background-image: url('/cloud.webp');
 		background-position: 50% 120%;
 		background-repeat: no-repeat;
 	}
 
 	.left-light {
-		background-image: url('แสงซ้าย.webp');
+		background-image: url('/lightl.webp');
 		background-position: left 7%;
 		background-repeat: no-repeat;
 	}
 
 	.right-light {
-		background-image: url('แสงขวา.webp');
+		background-image: url('/lightr.webp');
 		background-position: right 7%;
 		background-repeat: no-repeat;
 	}

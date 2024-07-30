@@ -72,7 +72,7 @@
 
 <style>
 	.bg-score {
-		background-image: url('กรอบtextScore.svg');
+		background-image: url('/scoreborder.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

@@ -12,21 +12,15 @@
 	let loader = true;
 	const checker = async () => {
 		const isPhaseDay = checkPhaseDay($page.url.pathname.slice(1));
-
-		if ($page.data.isAuth && $session.id === undefined && !$page.data.isToken) {
-			toast.error('กรุณาเข้าสู่ระบบ');
-			if (browser) await goto('/');
-		}
-
-		if (['/'].includes($page.url.pathname) && $session.id !== undefined) {
-			if (browser) await goto('/menu');
-		}
-
 		if (
 			!isPhaseDay &&
 			['this_that', 'qrScanner', 'bingo', 'hint', 'puzzle'].includes($page.url.pathname.slice(1))
 		) {
 			toast.error('ยังไม่ถึงกำหนดการ');
+			if (browser) await goto('/menu');
+		}
+		if (($session.this_or_that?.length || 0) > 0 && $page.url.pathname == '/this_that') {
+			toast.error('ไม่สามารถกรอกคำถามซ้ำได้');
 			if (browser) await goto('/menu');
 		}
 	};
@@ -40,7 +34,7 @@
 		}
 		switch (path) {
 			case 'this_that':
-				return true;
+				return day >= 1;
 			case 'qrScanner':
 				return day >= 2;
 			case 'bingo':
@@ -74,5 +68,4 @@
 	{#if !loader}
 		<slot />
 	{/if}
-	<Footer />
 </div>

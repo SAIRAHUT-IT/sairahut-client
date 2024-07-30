@@ -67,5 +67,19 @@
 	<Toaster />
 	{#if !loader}
 		<slot />
+		<Footer />
 	{/if}
 </div>
+
+<!-- <div class="hidden sm:block">
+	<div class="w-full h-dvhv flex justify-center items-center">
+		<div class="w-2/3 h-1/3 bg-slate-100">
+			<div class="w-full h-1/6 bg-slate-200 flex justify-center items-center">
+				<h1 class="text-3xl font-bold text-white">กรุณาเข้าใช้งานผ่านมือถือ</h1>
+			</div>
+			<div class="w-full h-5/6 bg-slate-100 flex justify-center items-center">
+				<img src="/images/phone.png" alt="phone" class="w-1/2" />
+			</div>
+		</div>
+	</div>
+</div> -->

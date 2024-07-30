@@ -3,14 +3,14 @@
 	import { elemental_parser } from '$lib/parser/elemental';
 </script>
 
-<div class="flex relative text-white flex-col items-center w-full h-dvh">
+<div class="flex relative text-white flex-col items-center w-full h-screen">
 	<div class="relative background-img flex justify-center w-[367px] h-full max-h-[740px]">
 		<img
 			src="cloud.webp"
 			class="absolute bg-fixed bottom-40 z-10 scale-110 overflow-visible"
 			alt=""
 		/>
-		<div class="z-50 mt-20">
+		<div class="z-50 mt-14">
 			<div class="flex items-center mx-5 my-5 justify-start">
 				<div class="flex items-center">
 					<a href="/menu">
@@ -68,7 +68,7 @@
 					</div>
 				</a>
 			</div>
-			<div>
+			<!-- <div>
 				<a href="/@me/history/bingo">
 					<div class="bg-[#383527] mt-10 mx-5 rounded-md shadow-md drop-shadow-[0_3px_6px_#C99949]">
 						<div class="container mx-auto px-6">
@@ -80,7 +80,7 @@
 						</div>
 					</div>
 				</a>
-			</div>
+			</div> -->
 			<!-- <div class="w-full mt-5 flex justify-center">
 				<a href="/menu">
 					<img src="ปุ่มปิด.webp" alt="" />

@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { updateSession } from '$lib/stores/member.store';
+	import toast from 'svelte-french-toast';
+
 	let arr = new Array(13).fill(undefined);
 	let question_arr = [
 		{ title: 'สายกิจกรรม', isSelect: false },
@@ -42,11 +45,20 @@
 			}
 		}
 	};
-	const submit = () => {
-		if (arr.includes(undefined)) {
-			alert('Please select all answer.');
-		} else {
-			alert('Success!');
+	const submit = async () => {
+		try {
+			if (arr.includes(undefined)) throw 'กรุณาเลือกให้ครบทุกข้อ';
+			const response = await fetch('/api/puzzle', {
+				method: 'PATCH',
+				body: JSON.stringify(arr)
+			});
+			const data = await response.json();
+			if (!response.ok) throw data.message || 'error';
+			toast.success('ส่งแบบสำรวจสำเร็จ');
+			updateSession();
+			window.location.reload();
+		} catch (error: any) {
+			toast.error(error);
 		}
 	};
 </script>

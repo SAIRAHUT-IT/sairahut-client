@@ -77,9 +77,9 @@
 				</p>
 			</div>
 			<div class="flex justify-center mt-3">
-				<a href="/qrScanner" class=" p-2 rounded-xl">
+				<button on:click={() => window.location.reload()} class=" p-2 rounded-xl">
 					<img src="/resetcode.webp" alt="" />
-				</a>
+				</button>
 			</div>
 		</div>
 	</div>

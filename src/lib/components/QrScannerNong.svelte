@@ -6,6 +6,9 @@
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { ArrowLeftFromLine } from 'lucide-svelte';
 	import Scorebar from '$lib/components/Scorebar.svelte';
+	import { error } from '@sveltejs/kit';
+	import toast from 'svelte-french-toast';
+	import { updateSession } from '$lib/stores/member.store';
 
 	let scanning = false;
 	/**
@@ -69,8 +72,28 @@
 	 * @param {any} error
 	 */
 	function onScanFailure(error) {
-		console.warn(`Code scan error = ${error}`);
+		// console.warn(`Code scan error = ${error}`);
 	}
+
+	const submit = async () => {
+		const id = toast.loading('กำลังยืนยันโค้ด...');
+		if (!code) return toast.error('ไม่พบโค้ด', { id });
+		try {
+			const response = await fetch('/api/code-hunt/redeem', {
+				method: 'POST',
+				body: JSON.stringify({
+					code: code
+				})
+			});
+			const data = await response.json();
+			if (!response.ok) throw data.message || 'error';
+			toast.success(`กรอกโค้ดสำเร็จ!`, { id });
+			updateSession();
+			window.location.reload();
+		} catch (error) {
+			toast.error(error, { id });
+		}
+	};
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full h-screen">
@@ -153,7 +176,11 @@
 					อธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอ
 				</p>
 			</div> -->
-			<div class="flex justify-center">
+			<button class="flex w-full items-center justify-center" on:click={submit}>
+				<img src="/ปุม submit.webp" alt="" />
+			</button>
+
+			<!-- <div class="flex justify-center">
 				<button
 					class=" p-2 rounded-xl"
 					on:click={() => {
@@ -192,6 +219,7 @@
 					</Dialog.Root>
 				</button>
 			</div>
+		</div> -->
 		</div>
 	</div>
 </div>

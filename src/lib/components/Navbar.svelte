@@ -5,7 +5,7 @@
 <nav
 	class="sticky top-0 flex w-full justify-between items-center bg-gradient-to-r from-black to-yellow-900 px-4 z-[1500]"
 >
-	<a href="/">
+	<a href="/menu">
 		<img src="/logo.svg" alt="logo" class="object-cover w-28" />
 	</a>
 	<a href="/@me">

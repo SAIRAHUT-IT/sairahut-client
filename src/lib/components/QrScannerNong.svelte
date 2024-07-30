@@ -85,11 +85,11 @@
 		<div class="flex items-center mx-6 my-5 justify-between z-20">
 			<div class="flex items-center">
 				<a href="/menu">
-					<img src="ลูกศรกลับหน้าhome.webp" alt="" />
+					<img src="/ลูกศรกลับหน้าhome.webp" alt="" />
 				</a>
 				<p class="ml-2 text-2xl tradewin">PHASE 1</p>
 			</div>
-			<a href="/leaderboard"><img src="ranking.webp" alt="" /></a>
+			<a href="/leaderboard"><img src="/ranking.webp" alt="" /></a>
 		</div>
 		<div class="mb-10 z-20">
 			<Scorebar bind:score />
@@ -164,7 +164,7 @@
 				>
 					<Dialog.Root>
 						<Dialog.Trigger disabled={!code} class=""
-							><img src="ปุม submit.webp" alt="" /></Dialog.Trigger
+							><img src="/ปุม submit.webp" alt="" /></Dialog.Trigger
 						>
 						{#if checker(code)}
 							<Dialog.Content class="bg-green-100">

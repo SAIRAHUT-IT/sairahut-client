@@ -73,7 +73,7 @@
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full">
-	<img src="menu/Group 37.svg" class="absolute bg-fixed w-full -top-24" alt="s" />
+	<img src="/menu/Group 37.svg" class="absolute bg-fixed w-full -top-24" alt="s" />
 	<div class="absolute flex justify-between z-10 pointer-events-none top-10 w-full">
 		<img
 			src="/menu/leftlamp.webp"
@@ -101,11 +101,11 @@
 		<div class="mt-10">
 			<div id="house" class="relative mb-9">
 				<span class="relative top-0 flex items-center justify-center">
-					<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
-					<img src="menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
+					<img src="/menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
+					<img src="/menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
 					{#if $session.paired_member?.elemental || ($session.elemental && $session.elemental !== 'NONE')}
 						<img
-							src={`elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
+							src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
 							alt="house"
 							class="z-50"
 						/>

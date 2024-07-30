@@ -32,7 +32,7 @@
 				</div>
 			</div>
 			<div class="mx-5">
-				<img src="describe.svg" alt="" />
+				<img src="/describe.svg" alt="" />
 				<p class="text-white maitree text-sm">
 					อธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้า
 				</p>

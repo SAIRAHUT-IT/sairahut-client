@@ -14,7 +14,7 @@
 			<div class="flex items-center mx-5 my-5 justify-start">
 				<div class="flex items-center">
 					<a href="/menu">
-						<img src="ลูกศรกลับหน้าhome.webp" alt="" />
+						<img src="/ลูกศรกลับหน้าhome.webp" alt="" />
 					</a>
 					<p class="ml-2 text-2xl tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Profile</p>
 				</div>
@@ -26,12 +26,12 @@
 							<div class="absolute flex justify-around w-full">
 								<img
 									class="w-[8rem] -rotate-12"
-									src={`elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
+									src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
 									alt="elemental_icon"
 								/>
 								<img
 									class="transform -scale-x-100 w-[8rem] rotate-12"
-									src={`elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
+									src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
 									alt="elemental_icon"
 								/>
 							</div>

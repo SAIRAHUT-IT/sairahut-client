@@ -6,7 +6,6 @@
 	export let data;
 
 	onMount(() => {
-		console.log($page.url);
 		if (!$session && $page.url.searchParams) {
 		}
 	});
@@ -25,19 +24,19 @@
 			alt="right_comb"
 		/>
 	</div>
-	<img src="ริ้ว.webp" class="absolute bg-fixed w-full" alt="" />
+	<img src="/ริ้ว.webp" class="absolute bg-fixed w-full" alt="" />
 	<!-- <img src="เขาหลัง.webp" class="absolute bottom-0 bg-fixed w-full z-10" alt=x"" /> -->
-	<img src="หน้าปก.webp" class="bg-fixed w-full" alt="" />
+	<img src="/หน้าปก.webp" class="bg-fixed w-full" alt="" />
 	<div class="p-3 relative w-[390px]">
 		<div class="relative background-img flex flex-col justify-center min-w-[367px] min-h-[511px]">
-			<img src="cloud.webp" class="absolute bottom-14 scale-110 overflow-visible" alt="" />
+			<img src="/cloud.webp" class="absolute bottom-14 scale-110 overflow-visible" alt="" />
 			<div class="mx-10 z-50">
 				<div class="mb-5">
 					<div class="relative flex justify-center items-center mb-2">
 						<h1 class="text-[#FBE9B8] drop-shadow-[0_5px_11px_#DBA45E] mangorn text-2xl">
 							สายรหัสคืออะไร
 						</h1>
-						<img src="กรอบหัวข้อ.webp" class="absolute w-32" alt="" />
+						<img src="/กรอบหัวข้อ.webp" class="absolute w-32" alt="" />
 					</div>
 					<p class="maitree text-xs">
 						กิจกรรมสายรหัสครั้งที่ 9 จัดขึ้นเพื่อส่งเสริมความสัมพันธ์อันดีระหว่างรุ่นพี่ รุ่นน้อง
@@ -50,7 +49,7 @@
 						<h1 class="text-[#FBE9B8] drop-shadow-[0_5px_11px_#DBA45E] mangorn text-2xl">
 							ใครเข้าร่วมได้บ้าง
 						</h1>
-						<img src="กรอบหัวข้อ.webp" class="absolute w-36" alt="" />
+						<img src="/กรอบหัวข้อ.webp" class="absolute w-36" alt="" />
 					</div>
 					<p class="maitree text-xs">
 						นักศึกษาคณะเทคโนโลยีสารสนเทศ สจล. รุ่นที่ 21 และรุ่นที่
@@ -63,7 +62,7 @@
 						<h1 class="text-[#FBE9B8] drop-shadow-[0_5px_11px_#DBA45E] mangorn text-2xl">
 							เข้าร่วมอย่างไร
 						</h1>
-						<img src="กรอบหัวข้อ.webp" class="absolute w-32" alt="" />
+						<img src="/กรอบหัวข้อ.webp" class="absolute w-32" alt="" />
 					</div>
 					<p class="maitree text-xs">
 						นักศึกษาต้องทำการกรอกข้อมูลส่วนตัว อุปนิสัย ความชอบหลังจากเข้าสู่ระบบ
@@ -73,7 +72,7 @@
 				<div class="relative flex justify-center items-center">
 					<a href={data.url} class="flex justify-center items-center">
 						<h1 class="z-50 tradewin">login with google</h1>
-						<img src="ปุ่มล้อกอิน.webp" class="absolute bg-fixed w-44" alt="" />
+						<img src="/ปุ่มล้อกอิน.webp" class="absolute bg-fixed w-44" alt="" />
 					</a>
 				</div>
 			</div>

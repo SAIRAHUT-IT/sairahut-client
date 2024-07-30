@@ -41,7 +41,6 @@
 				question_arr[i].isSelect = false;
 			}
 		}
-		console.log(arr);
 	};
 	const submit = () => {
 		if (arr.includes(undefined)) {
@@ -106,7 +105,7 @@
 					</div>
 					<div class="mt-5">
 						<div class="flex justify-center items-center">
-							<button class="" on:click={submit}><img src="ปุม submit.webp" alt="" /></button>
+							<button class="" on:click={submit}><img src="/ปุม submit.webp" alt="" /></button>
 						</div>
 					</div>
 				</div>

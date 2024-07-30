@@ -36,11 +36,11 @@
 		<div class="flex items-center mx-6 my-5 justify-between z-20">
 			<div class="flex items-center">
 				<a href="/menu">
-					<img src="ลูกศรกลับหน้าhome.webp" alt="" />
+					<img src="/ลูกศรกลับหน้าhome.webp" alt="" />
 				</a>
 				<p class="ml-2 text-2xl tradewin">Scan QR</p>
 			</div>
-			<a href="/leaderboard"><img src="ranking.webp" alt="" /></a>
+			<a href="/leaderboard"><img src="/ranking.webp" alt="" /></a>
 		</div>
 		<div class="flex flex-col items-center justify-center z-20">
 			<div class="relative z-30">
@@ -70,7 +70,7 @@
 			</div>
 			<div class="bg-[#26221E] pb-3 px-3 mt-5 rounded-sm">
 				<div class="flex justify-center">
-					<img src="Frame29.webp" alt="" />
+					<img src="/Frame29.webp" alt="" />
 				</div>
 				<p class="text-sm">
 					อธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอ
@@ -78,7 +78,7 @@
 			</div>
 			<div class="flex justify-center mt-3">
 				<a href="/qrScanner" class=" p-2 rounded-xl">
-					<img src="resetcode.webp" alt="" />
+					<img src="/resetcode.webp" alt="" />
 				</a>
 			</div>
 		</div>

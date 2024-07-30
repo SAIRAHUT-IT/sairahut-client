@@ -48,9 +48,9 @@
 	const submit = async () => {
 		try {
 			if (arr.includes(undefined)) throw 'กรุณาเลือกให้ครบทุกข้อ';
-			const response = await fetch('/api/puzzle', {
+			const response = await fetch('/api/this-that', {
 				method: 'PATCH',
-				body: JSON.stringify(arr)
+				body: JSON.stringify({ payload: arr })
 			});
 			const data = await response.json();
 			if (!response.ok) throw data.message || 'error';
@@ -90,7 +90,7 @@
 				<h1 class="text-3xl text-center tradewin drop-shadow-[0_3px_11px_#ffffff]">THIS OR THAT</h1>
 				<img src="/arcane.webp" alt="arcane" />
 				<p class="text-[10px] maitree">
-					ปุจฉาอัขรา เหล่าจอมยุทธเอ๋ย <br />จงเลือกตัวเลือกที่ิอธิบายความเป็นตัวเจ้าได้มากที่สุด
+					ปุจฉาอัขรา เหล่าจอมยุทธ์เอ๋ย <br />จงเลือกตัวเลือกที่ิอธิบายความเป็นตัวเจ้าได้มากที่สุด
 				</p>
 			</div>
 			<div class="mt-5 mx-5 rounded-3xl text-white">

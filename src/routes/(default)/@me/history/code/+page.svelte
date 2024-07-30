@@ -1,6 +1,7 @@
 <script lang="ts">
 	import * as Table from '$lib/components/ui/table/index.js';
 	import { session } from '$lib/stores/member.store';
+	import { PackageOpen } from 'lucide-svelte';
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full h-dvh">
@@ -40,33 +41,44 @@
 						</Table.Row>
 					</Table.Header>
 					<Table.Body class="text-black maitree">
-						{#each $session.redeemed_codes || [] as item, index}
-							{#if index == 0}
-								<Table.Row class="bg-[#86261C]">
-									<Table.Cell class="font-medium text-center">{index + 1}</Table.Cell>
-									<Table.Cell class="text-center">{item.code}</Table.Cell>
-									<!-- <Table.Cell class="text-center">{item.creator.username}</Table.Cell> -->
-								</Table.Row>
-							{:else if index == 1}
-								<Table.Row class="bg-[#C48E16]">
-									<Table.Cell class="font-medium text-center">{index + 1}</Table.Cell>
-									<Table.Cell class="text-center">{item.code}</Table.Cell>
-									<!-- <Table.Cell class="text-center">{item.creator.username}</Table.Cell> -->
-								</Table.Row>
-							{:else if index == 2}
-								<Table.Row class="bg-[#B2A068]">
-									<Table.Cell class="font-medium text-center">{index + 1}</Table.Cell>
-									<Table.Cell class="text-center">{item.code}</Table.Cell>
-									<!-- <Table.Cell class="text-center">{item.creator.username}</Table.Cell> -->
-								</Table.Row>
-							{:else if index <= 9}
-								<Table.Row class="bg-white">
-									<Table.Cell class="font-medium text-center">{index + 1}</Table.Cell>
-									<Table.Cell class="text-center">{item.code}</Table.Cell>
-									<!-- <Table.Cell class="text-center">{item.creator.username}</Table.Cell> -->
-								</Table.Row>
-							{/if}
-						{/each}
+						{#if ($session.redeemed_codes || []).length || 0 <= 0}
+							<Table.Row class="bg-white h-96">
+								<Table.Cell colspan={3}>
+									<div class="flex flex-col gap-1 items-center justify-center text-center">
+										<PackageOpen class="opacity-50" size={32} />
+										<p class="font-semibold opacity-50">ยังไม่มีข้อมูล</p>
+									</div>
+								</Table.Cell>
+							</Table.Row>
+						{:else}
+							{#each $session.redeemed_codes || [] as item, index}
+								{#if index == 0}
+									<Table.Row class="bg-[#86261C]">
+										<Table.Cell class="font-medium text-center">{index + 1}</Table.Cell>
+										<Table.Cell class="text-center">{item.code}</Table.Cell>
+										<!-- <Table.Cell class="text-center">{item.creator.username}</Table.Cell> -->
+									</Table.Row>
+								{:else if index == 1}
+									<Table.Row class="bg-[#C48E16]">
+										<Table.Cell class="font-medium text-center">{index + 1}</Table.Cell>
+										<Table.Cell class="text-center">{item.code}</Table.Cell>
+										<!-- <Table.Cell class="text-center">{item.creator.username}</Table.Cell> -->
+									</Table.Row>
+								{:else if index == 2}
+									<Table.Row class="bg-[#B2A068]">
+										<Table.Cell class="font-medium text-center">{index + 1}</Table.Cell>
+										<Table.Cell class="text-center">{item.code}</Table.Cell>
+										<!-- <Table.Cell class="text-center">{item.creator.username}</Table.Cell> -->
+									</Table.Row>
+								{:else if index <= 9}
+									<Table.Row class="bg-white">
+										<Table.Cell class="font-medium text-center">{index + 1}</Table.Cell>
+										<Table.Cell class="text-center">{item.code}</Table.Cell>
+										<!-- <Table.Cell class="text-center">{item.creator.username}</Table.Cell> -->
+									</Table.Row>
+								{/if}
+							{/each}
+						{/if}
 					</Table.Body>
 				</Table.Root>
 			</div>

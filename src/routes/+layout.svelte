@@ -49,7 +49,7 @@
 	};
 
 	page.subscribe(() => {
-		if (loader) checker();
+		// if (loader) checker();
 	});
 
 	onMount(async () => {
@@ -58,7 +58,7 @@
 		if ($page.data.isToken) updater.push(updateSession());
 		await Promise.all(updater);
 		loader = false;
-		checker();
+		// checker();
 	});
 </script>
 
@@ -67,7 +67,6 @@
 	<Toaster />
 	{#if !loader}
 		<slot />
-		<Footer />
 	{/if}
 </div>
 

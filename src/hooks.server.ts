@@ -82,6 +82,25 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 			}
 		}
 
+		if (event.url.pathname === '/api/auth/signout') {
+			const response = new Response(null, {
+				status: 302,
+				headers: {
+					Location: '/'
+				}
+			});
+
+			response.headers.append(
+				'Set-Cookie',
+				event.cookies.serialize('token', '', {
+					path: '/',
+					expires: new Date(0)
+				})
+			);
+
+			return response;
+		}
+
 		if (event.url.pathname === '/api/auth/signin' && !token) {
 			const response = await request(`${env.BASE_URL}/api/auth/signin`, 'GET');
 			if (response.ok) {
@@ -111,6 +130,14 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 	if (event.route.id?.includes('/(default)') && !event.url.pathname.startsWith('/api')) {
 		if (!event.locals.user) {
 			throw redirect(303, '/');
+		}
+
+		if (event.locals.user.status == 'FORM' && event.url.pathname !== '/this_that') {
+			throw redirect(303, '/this_that');
+		}
+
+		if (event.url.pathname === '/this_that' && event.locals.user.status !== 'FORM') {
+			throw redirect(303, '/menu');
 		}
 		// const isPhaseDay = checkPhaseDay(event.url.pathname.slice(1));
 		// if (

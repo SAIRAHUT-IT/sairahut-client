@@ -105,7 +105,7 @@
 			class="absolute bg-fixed bottom-40 z-10 scale-110 overflow-visible"
 			alt=""
 		/>
-		<div class="flex items-center mx-6 my-5 justify-between z-20">
+		<div class="flex items-center mx-6 my-3 justify-between z-20">
 			<div class="flex items-center">
 				<a href="/menu">
 					<img src="/ลูกศรกลับหน้าhome.webp" alt="" />
@@ -114,7 +114,7 @@
 			</div>
 			<a href="/leaderboard"><img src="/ranking.webp" alt="" /></a>
 		</div>
-		<div class="mb-10 z-20">
+		<div class=" mb-8 z-20">
 			<Scorebar bind:score />
 		</div>
 		<div class="flex flex-col items-center justify-center z-20">
@@ -152,15 +152,23 @@
 				</div>
 			</div>
 		</div>
-		<div class="mx-6 z-20">
-			<p class="text-base tradewin">Password</p>
-			<div class="my-3 flex justify-center">
+		<div class="mx-6 flex flex-col items-center justify-center z-20">
+			<p type="text" class="mangorn text-5xl p-2 text-center bg-code h-full min-h-[77px] w-[296px]">
+				<input
+					type="text"
+					placeholder="code here"
+					bind:value={code}
+					class="p-2 w-full rounded-xl bg-transparent tradewin pl-4 ring-0 outline-none text-center"
+				/>
+			</p>
+
+			<!-- <div class="my-3 flex justify-center">
 				<input
 					type="text"
 					bind:value={code}
 					class="p-2 w-full rounded-xl bg-[#8D8C8A] drop-shadow-[0_3px_11px_#C99949] tradewin pl-4"
 				/>
-			</div>
+			</div> -->
 			<!-- <div class="my-3 flex justify-center">
 				<input
 					type="text"
@@ -168,14 +176,7 @@
 					class="border border-black p-2 text-center bg-code h-full min-h-[77px] w-[296px] text-2xl"
 				/>
 			</div> -->
-			<!-- <div class="bg-[#26221E] pb-3 px-3 my-5 rounded-sm">
-				<div class="flex justify-center">
-					<img src="Frame29.svg" alt="" />
-				</div>
-				<p class="text-sm">
-					อธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอ
-				</p>
-			</div> -->
+
 			<button class="flex w-full items-center justify-center" on:click={submit}>
 				<img src="/ปุม submit.webp" alt="" />
 			</button>
@@ -222,11 +223,25 @@
 		</div> -->
 		</div>
 	</div>
+	<!-- <div class="bg-[#26221E] pb-3 px-3 my-5 rounded-sm mx-5">
+		<div class="flex justify-center">
+			<img src="Frame29.svg" alt="" />
+		</div>
+		<p class="text-sm">
+			อธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอ
+		</p>
+	</div> -->
 </div>
 
 <style>
 	.background-img {
 		background-image: url('/border.webp');
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.bg-code {
+		background-image: url('/textbanner.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

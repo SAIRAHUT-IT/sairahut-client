@@ -3,7 +3,7 @@
 	import { elemental_parser } from '$lib/parser/elemental';
 	let door = [
 		{
-			title: 'Scan',
+			title: 'ล่าหาพลัง',
 			leftDoorPath: 'menu/leftdoorred.webp',
 			rightDoorPath: 'menu/rightdoorred.webp',
 			mainColor: '#A63521',
@@ -11,7 +11,7 @@
 			secondaryColor: ''
 		},
 		{
-			title: 'Bingo',
+			title: 'กลีบดอกเหมย',
 			leftDoorPath: 'menu/leftdoorblue.webp',
 			rightDoorPath: 'menu/rightdoorblue.webp',
 			mainColor: '#3E80B1',
@@ -19,7 +19,7 @@
 			secondaryColor: ''
 		},
 		{
-			title: 'Hint',
+			title: 'ใบ้บอกทิศ',
 			leftDoorPath: 'menu/leftdoorgreen.webp',
 			rightDoorPath: 'menu/rightdoorgreen.webp',
 			mainColor: '#009971',
@@ -27,7 +27,7 @@
 			path: 'hint'
 		},
 		{
-			title: 'Picture',
+			title: 'เผยโฉมฉาย',
 			leftDoorPath: 'menu/leftdooryellow.webp',
 			rightDoorPath: 'menu/rightdooryellow.webp',
 			mainColor: '#E68636',
@@ -45,7 +45,7 @@
 		}
 		switch (path) {
 			case 'this_that':
-				return true;
+				return day >= 1;
 			case 'qrScanner':
 				return day >= 2;
 			case 'bingo':
@@ -58,7 +58,6 @@
 				return true;
 		}
 	};
-
 	function delayedNavigation(
 		event: { preventDefault: () => void },
 		url: string,
@@ -140,9 +139,9 @@
 							id="right-door"
 						/>
 						<p
-							class="text-white z-10 tradewin font-bold text-5xl drop-shadow-[0_3px_1px_rgba(0,0,0,1)]"
+							class="text-white z-10 mangorn font-bold text-6xl drop-shadow-[0_3px_1px_rgba(0,0,0,1)]"
 						>
-							{checkPhaseDay(x.path) ? x.title : '????'}
+							{!checkPhaseDay(x.path) ? '????' : x.title}
 						</p>
 					</div>
 				{/each}

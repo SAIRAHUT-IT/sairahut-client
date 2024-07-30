@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// @ts-nocheck
 
 	import { Html5Qrcode } from 'html5-qrcode';
@@ -59,7 +59,7 @@
 			</div>
 		</div>
 		<div class="mx-6 z-20 mt-6">
-			<p class="text-base tradewin">Code</p>
+			<p class="text-base tradewin mx-5">Code</p>
 			<div class="my-3 flex justify-center">
 				<p
 					type="text"
@@ -72,13 +72,15 @@
 				<div class="flex justify-center">
 					<img src="/Frame29.webp" alt="" />
 				</div>
-				<p class="text-sm">
-					อธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอ
+				<p class="text-xs maitree">
+					เกมนี้จะให้น้องมาแสกน QR code ของเราหรือให้เราที่เป็นพี่ มอบ code ให้กับน้อง ซึ่งเมื่อ
+					code ของเราถูกใช้งาน แต้ม disciple soul ก็จะเพิ่มขึ้น โดย code 1 อันสามารถใช้ได้ 1 ครั้ง
+					(อย่าลืม reset qr code เมื่อน้องแสกนไปแล้ว)
 				</p>
 			</div>
 			<div class="flex justify-center mt-3">
 				<button on:click={() => window.location.reload()} class=" p-2 rounded-xl">
-					<img src="/resetcode.webp" alt="" />
+					<img src="/reset.svg" alt="" />
 				</button>
 			</div>
 		</div>

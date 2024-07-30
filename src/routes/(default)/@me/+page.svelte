@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { session } from '$lib/stores/member.store';
 	import { elemental_parser } from '$lib/parser/elemental';
+	import { EyeOff, Eye, Pointer } from 'lucide-svelte';
+	$: secret_code = false;
+
+	const enableSecretCode = () => {
+		secret_code = !secret_code;
+	};
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full h-screen">
@@ -38,7 +44,7 @@
 						{/if}
 						<div class="flex items-center justify-center px-2 text-sm z-[1500]">
 							<div class="mangorn flex flex-col items-center">
-								<p class="text-4xl">ชื่อจอมยุทธ</p>
+								<p class="text-4xl">ชื่อจอมยุทธ์</p>
 								<p class="text-7xl text-[#C99949]">
 									{$session.nickname}
 								</p>
@@ -68,6 +74,20 @@
 					</div>
 				</a>
 			</div>
+			{#if $session.role == 'SOPHOMORE'}
+				<div>
+					<button on:click={enableSecretCode} class="w-full">
+						<div
+							class="bg-[#383527] mt-7 mx-5 p-1 text-center rounded-md shadow-md drop-shadow-[0_3px_6px_#C99949]"
+						>
+							<p class="text-5xl mangorn text-center">
+								{secret_code ? $session.unique_key : 'รหัสลับ'}
+							</p>
+							<p class="text-lg text-red-500 mangorn">**ห้ามโชว์รหัสนี้ให้ใครเห็นเด็ดขาด</p>
+						</div>
+					</button>
+				</div>
+			{/if}
 			<!-- <div>
 				<a href="/@me/history/bingo">
 					<div class="bg-[#383527] mt-10 mx-5 rounded-md shadow-md drop-shadow-[0_3px_6px_#C99949]">
@@ -81,11 +101,11 @@
 					</div>
 				</a>
 			</div> -->
-			<!-- <div class="w-full mt-5 flex justify-center">
-				<a href="/menu">
-					<img src="ปุ่มปิด.webp" alt="" />
+			<div class="w-full mt-5 flex justify-center">
+				<a href="/api/auth/signout">
+					<img src="/logout.svg" alt="logout" />
 				</a>
-			</div> -->
+			</div>
 		</div>
 	</div>
 </div>

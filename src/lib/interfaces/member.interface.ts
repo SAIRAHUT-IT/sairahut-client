@@ -1,7 +1,8 @@
 declare enum MemberStatus {
 	PAIRED = 'PAIRED',
 	UNPAIR = 'UNPAIR',
-	FREEZE = 'FREEZE'
+	FREEZE = 'FREEZE',
+	FORM = 'FORM'
 }
 
 declare enum MemberRole {
@@ -28,6 +29,7 @@ interface Member {
 	nickname: string;
 	username: string;
 	student_id: string;
+	avatarURL: string;
 	unique_key: string;
 	email: string;
 	role: MemberRole;

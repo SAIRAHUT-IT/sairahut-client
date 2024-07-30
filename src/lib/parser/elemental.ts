@@ -1,7 +1,7 @@
 export const elemental_parser = (val: string): string => {
 	const x: { [key: string]: string } = {
 		FIRE: 'หุบเขาพันแสง',
-		WATER: 'ท่าเรือบงกชนรฤมิตร',
+		WATER: 'ท่าเรือบงกชนฤมิตร',
 		EARTH: 'เมืองลู่จิ้ง',
 		AIR: 'หุบเขาเหมันต์',
 		LIGHTING: 'แนวเขาอัสนีราตรี',

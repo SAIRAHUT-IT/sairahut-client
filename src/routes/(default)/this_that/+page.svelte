@@ -92,7 +92,7 @@
 				<h1 class="text-3xl text-center tradewin drop-shadow-[0_3px_11px_#ffffff]">THIS OR THAT</h1>
 				<img src="/arcane.webp" alt="arcane" />
 				<p class="text-[0.65rem] maitree">
-					ปุจฉาอัขรา เหล่าจอมยุทธ์เอ๋ย <br />จงเลือกตัวเลือกที่ิอธิบายความเป็นตัวเจ้าได้มากที่สุด
+					ปุจฉาอักขรา เหล่าจอมยุทธ์เอ๋ย <br />จงเลือกตัวเลือกที่อธิบายความเป็นตัวเจ้าได้มากที่สุด
 				</p>
 			</div>
 			<div class="mt-5 mx-5 rounded-3xl text-white">

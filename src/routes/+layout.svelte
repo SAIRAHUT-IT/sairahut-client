@@ -6,6 +6,7 @@
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import { MetaTags } from 'svelte-meta-tags';
 	import toast, { Toaster } from 'svelte-french-toast';
 
 	let loader = true;
@@ -61,6 +62,11 @@
 	});
 </script>
 
+<MetaTags
+	title="Sairahut IT KMITL | สายรหัสคณะเทคโนโลยีสารสนเทศ"
+	openGraph={{ title: 'Sairahut IT KMITL', images: [{ url: '/metaimage.svg', alt: 'Sairahut' }] }}
+/>
+
 <div class="block sm:hidden overflow-x-hidden">
 	<Loading loading={loader} />
 	<Toaster />
@@ -69,15 +75,13 @@
 	{/if}
 </div>
 
-<!-- <div class="hidden sm:block">
-	<div class="w-full h-dvhv flex justify-center items-center">
-		<div class="w-2/3 h-1/3 bg-slate-100">
-			<div class="w-full h-1/6 bg-slate-200 flex justify-center items-center">
-				<h1 class="text-3xl font-bold text-white">กรุณาเข้าใช้งานผ่านมือถือ</h1>
-			</div>
-			<div class="w-full h-5/6 bg-slate-100 flex justify-center items-center">
-				<img src="/images/phone.png" alt="phone" class="w-1/2" />
-			</div>
+<div class="hidden sm:block">
+	<div
+		class="w-full h-screen flex justify-center items-center text-white bg-gradient-to-t from-black to-[#C99949]"
+	>
+		<div class="p-10 ring-2 ring-white rounded-xl text-center space-y-3">
+			<h1 class="text-5xl font-bold">ประกาศจากทางสำนัก</h1>
+			<p class="text-2xl maitree">❌ กรุณาเข้าใช้งานผ่านมือถือเท่านั้น</p>
 		</div>
 	</div>
-</div> -->
+</div>

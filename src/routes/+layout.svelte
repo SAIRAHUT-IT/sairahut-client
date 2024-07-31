@@ -6,7 +6,6 @@
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
-	import Footer from '$lib/components/Footer.svelte';
 	import toast, { Toaster } from 'svelte-french-toast';
 
 	let loader = true;
@@ -49,7 +48,7 @@
 	};
 
 	page.subscribe(() => {
-		// if (loader) checker();
+		if (loader) checker();
 	});
 
 	onMount(async () => {
@@ -58,11 +57,11 @@
 		if ($page.data.isToken) updater.push(updateSession());
 		await Promise.all(updater);
 		loader = false;
-		// checker();
+		checker();
 	});
 </script>
 
-<div class="block sm:hidden">
+<div class="block sm:hidden overflow-x-hidden">
 	<Loading loading={loader} />
 	<Toaster />
 	{#if !loader}

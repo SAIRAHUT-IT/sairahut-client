@@ -31,8 +31,8 @@
 	};
 </script>
 
-<div class="flex relative text-white flex-col items-center w-full h-screen mt-10">
-	<div class="relative flex flex-col background-img justify-center w-[367px] h-full max-h-[740px]">
+<div class="flex relative text-white flex-col items-center w-full">
+	<div class="relative flex flex-col background-img justify-center">
 		<div class="flex items-center mx-6 my-5 justify-between z-20">
 			<div class="flex items-center">
 				<a href="/menu">
@@ -42,7 +42,7 @@
 			</div>
 			<a href="/leaderboard"><img src="/ranking.webp" alt="" /></a>
 		</div>
-		<div class="flex flex-col items-center justify-center z-20">
+		<div class="flex flex-col items-center justify-center">
 			<div class="relative z-30">
 				<div class="z-30">
 					<img
@@ -57,45 +57,44 @@
 					class="absolute bg-fixed -bottom-[14.5rem] z-50 scale-105 overflow-visible pointer-events-none"
 				/>
 			</div>
-		</div>
-		<div class="mx-6 z-20 mt-6">
-			<p class="text-base tradewin mx-5">Code</p>
-			<div class="my-3 flex justify-center">
-				<p
-					type="text"
-					class="mangorn text-5xl border border-black p-2 text-center bg-code h-full min-h-[77px] w-[296px]"
+			<div class="z-20 mt-6 mx-5 max-w-72 overflow-hidden space-y-2">
+				<p class="text-base tradewin">Code</p>
+				<div
+					class="flex items-center justify-center mangorn text-5xl text-center bg-code w-full rounded-md h-[77px]"
 				>
-					{code}
-				</p>
-			</div>
-			<div class="bg-[#26221E] pb-3 px-3 mt-5 rounded-sm">
-				<div class="flex justify-center">
-					<img src="/Frame29.webp" alt="" />
+					<p type="text" class="mangorn text-6xl">
+						{code}
+					</p>
 				</div>
-				<p class="text-xs maitree">
-					เกมนี้จะให้น้องมาแสกน QR code ของเราหรือให้เราที่เป็นพี่ มอบ code ให้กับน้อง ซึ่งเมื่อ
-					code ของเราถูกใช้งาน แต้ม disciple soul ก็จะเพิ่มขึ้น โดย code 1 อันสามารถใช้ได้ 1 ครั้ง
-					(อย่าลืม reset qr code เมื่อน้องแสกนไปแล้ว)
-				</p>
-			</div>
-			<div class="flex justify-center mt-3">
-				<button on:click={() => window.location.reload()} class=" p-2 rounded-xl">
-					<img src="/reset.svg" alt="" />
-				</button>
+				<div class="bg-[#26221E] p-3 rounded-sm">
+					<div class="flex justify-center">
+						<img src="/Frame29.webp" alt="" />
+					</div>
+					<p class="text-xs maitree">
+						เกมนี้จะให้น้องมาแสกน QR code ของเราหรือให้เราที่เป็นพี่ มอบ code ให้กับน้อง ซึ่งเมื่อ
+						code ของเราถูกใช้งาน แต้ม disciple soul ก็จะเพิ่มขึ้น โดย code 1 อันสามารถใช้ได้ 1 ครั้ง
+						(อย่าลืม reset qr code เมื่อน้องแสกนไปแล้ว)
+					</p>
+				</div>
+				<div class="flex justify-center mt-3">
+					<button on:click={() => window.location.reload()} class=" p-2 rounded-xl">
+						<img src="/reset.svg" alt="" />
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
 <style>
-	.background-img {
+	/* .background-img {
 		background-image: url('/border.webp');
 		background-position: center;
 		background-repeat: no-repeat;
-	}
+	} */
 
 	.bg-code {
-		background-image: url('/textbanner.webp');
+		background-image: url('/กรอบtext.png');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

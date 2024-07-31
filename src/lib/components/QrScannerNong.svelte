@@ -1,10 +1,9 @@
-<script>
+<script lang="ts">
 	// @ts-nocheck
 
 	import { Html5Qrcode } from 'html5-qrcode';
 	import { onDestroy, onMount } from 'svelte';
 	import * as Dialog from '$lib/components/ui/dialog';
-	import { ArrowLeftFromLine } from 'lucide-svelte';
 	import Scorebar from '$lib/components/Scorebar.svelte';
 	import { error } from '@sveltejs/kit';
 	import toast from 'svelte-french-toast';
@@ -96,40 +95,38 @@
 	};
 </script>
 
-<div class="flex relative text-white flex-col items-center w-full h-screen">
-	<div
-		class="relative background-img flex flex-col justify-center w-[367px] h-full max-h-[740px] mt-10"
-	>
+<div class="flex relative text-white flex-col items-center w-full">
+	<div class="relative flex flex-col background-img justify-center space-y-6">
 		<img
 			src="cloud.webp"
 			class="absolute bg-fixed bottom-40 z-10 scale-110 overflow-visible"
 			alt=""
 		/>
-		<div class="flex items-center mx-6 my-3 justify-between z-20">
+		<div class="flex items-center my-5 justify-between z-20">
 			<div class="flex items-center">
 				<a href="/menu">
 					<img src="/ลูกศรกลับหน้าhome.webp" alt="" />
 				</a>
-				<p class="ml-2 text-2xl tradewin">PHASE 1</p>
+				<p class="ml-2 text-2xl tradewin">Scan QR</p>
 			</div>
 			<a href="/leaderboard"><img src="/ranking.webp" alt="" /></a>
 		</div>
-		<div class=" mb-8 z-20">
+		<div class="z-20">
 			<Scorebar bind:score />
 		</div>
-		<div class="flex flex-col items-center justify-center z-20">
+		<div class="flex flex-col items-center justify-center">
 			<div class="relative z-30">
 				<img
 					src="กรอบqr.webp"
 					alt="qr"
-					class="absolute bg-fixed -bottom-[10.5rem] left-[0.4rem] z-50 scale-110 overflow-visible pointer-events-none"
+					class="absolute bg-fixed -bottom-[15rem] left-[0.4rem] z-50 scale-110 overflow-visible pointer-events-none"
 				/>
 				<div
 					class="flex items-center relative [margin-inline:_auto] aspect-square overflow-hidden rounded-xl w-[310px]"
 				>
 					<div id="reader" class="reader w-full"></div>
 				</div>
-				<div class="my-5 flex justify-center">
+				<!-- <div class="my-5 flex justify-center">
 					{#if scanning}
 						<button on:click={stop}
 							><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"
@@ -149,99 +146,38 @@
 							></button
 						>
 					{/if}
-				</div>
+				</div> -->
 			</div>
-		</div>
-		<div class="mx-6 flex flex-col items-center justify-center z-20">
-			<p type="text" class="mangorn text-5xl p-2 text-center bg-code h-full min-h-[77px] w-[296px]">
-				<input
-					type="text"
-					placeholder="code here"
-					bind:value={code}
-					class="p-2 w-full rounded-xl bg-transparent tradewin pl-4 ring-0 outline-none text-center"
-				/>
-			</p>
-
-			<!-- <div class="my-3 flex justify-center">
-				<input
-					type="text"
-					bind:value={code}
-					class="p-2 w-full rounded-xl bg-[#8D8C8A] drop-shadow-[0_3px_11px_#C99949] tradewin pl-4"
-				/>
-			</div> -->
-			<!-- <div class="my-3 flex justify-center">
-				<input
-					type="text"
-					bind:value={code}
-					class="border border-black p-2 text-center bg-code h-full min-h-[77px] w-[296px] text-2xl"
-				/>
-			</div> -->
-
-			<button class="flex w-full items-center justify-center" on:click={submit}>
-				<img src="/ปุม submit.webp" alt="" />
-			</button>
-
-			<!-- <div class="flex justify-center">
-				<button
-					class=" p-2 rounded-xl"
-					on:click={() => {
-						if (code == correctAns) {
-							score += 1000;
-						}
-					}}
-				>
-					<Dialog.Root>
-						<Dialog.Trigger disabled={!code} class=""
-							><img src="/ปุม submit.webp" alt="" /></Dialog.Trigger
-						>
-						{#if checker(code)}
-							<Dialog.Content class="bg-green-100">
-								<Dialog.Header>
-									<Dialog.Title>Your code is correct</Dialog.Title>
-									<Dialog.Description>
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, consectetur culpa
-										odit, aliquid soluta, placeat esse dolore illum voluptatem maiores perferendis
-										non tempora eos provident. Corrupti vero modi repellat magnam!
-									</Dialog.Description>
-								</Dialog.Header>
-							</Dialog.Content>
-						{:else}
-							<Dialog.Content class="bg-red-100">
-								<Dialog.Header>
-									<Dialog.Title>Your code is not correct</Dialog.Title>
-									<Dialog.Description>
-										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, sint facilis!
-										Eveniet pariatur quia nisi, architecto nobis laborum saepe culpa, sequi voluptas
-										unde ipsa nostrum qui provident iure repellendus atque?
-									</Dialog.Description>
-								</Dialog.Header>
-							</Dialog.Content>
-						{/if}
-					</Dialog.Root>
+			<div class="flex flex-col items-center justify-center z-40 w-[300px] mt-10 ga">
+				<div class="mangorn text-4xl p-2 text-center bg-code h-full w-full rounded-md">
+					<input
+						type="text"
+						placeholder="code here"
+						bind:value={code}
+						class="p-2 w-full rounded-xl bg-transparent tradewin ring-0 outline-none text-center"
+					/>
+				</div>
+				<div class="bg-[#26221E] p-3 mt-2 rounded-sm">
+					<div class="flex justify-center">
+						<img src="/Frame29.webp" alt="" />
+					</div>
+					<p class="text-xs maitree">
+						จงออกตามหาศิษย์พี่มากหน้าหลายตาที่กระจัดกระจายกันอยู่ทั่วยุทธภพนี้
+						โดยเหล่าศิษย์พี่นั้นจะมีตำราวิชาลับ (QR code) ของแต่ละคนเก็บซ่อนอยู่
+						จงตามหาเหล่าศิษย์พี่เพื่อรับตำราลับ แล้วพัฒนาวรยุทธของพวกเจ้าซะ!
+					</p>
+				</div>
+				<button class="flex w-full items-center justify-center mt-3" on:click={submit}>
+					<img src="/submit.svg" alt="" />
 				</button>
 			</div>
-		</div> -->
 		</div>
 	</div>
-	<!-- <div class="bg-[#26221E] pb-3 px-3 my-5 rounded-sm mx-5">
-		<div class="flex justify-center">
-			<img src="Frame29.svg" alt="" />
-		</div>
-		<p class="text-sm">
-			อธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอธิบายวิธีเล่นเกมรอพีอามาใส่จ้าอ
-		</p>
-	</div> -->
 </div>
 
 <style>
-	.background-img {
-		background-image: url('/border.webp');
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-
 	.bg-code {
-		background-image: url('/textbanner.webp');
+		background-image: url('/กรอบtext.png');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

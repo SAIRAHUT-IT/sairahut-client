@@ -105,7 +105,7 @@
 					</div>
 				</a>
 			</div> -->
-			<div class="w-full mt-5 flex justify-center">
+			<div class="w-full mt-10 flex justify-center scale-150">
 				<a href="/api/auth/signout">
 					<img src="/logout.svg" alt="logout" />
 				</a>

@@ -8,6 +8,7 @@
 	import { goto } from '$app/navigation';
 	import { MetaTags } from 'svelte-meta-tags';
 	import toast, { Toaster } from 'svelte-french-toast';
+	import GoogleAnalytics from '$lib/components/GoogleAnalytics.svelte';
 
 	let loader = true;
 	const checker = async () => {
@@ -62,9 +63,24 @@
 	});
 </script>
 
+<GoogleAnalytics />
 <MetaTags
 	title="Sairahut IT KMITL | สายรหัสคณะเทคโนโลยีสารสนเทศ"
-	openGraph={{ title: 'Sairahut IT KMITL', images: [{ url: '/metaimage.svg', alt: 'Sairahut' }] }}
+	description="A description of your page for social media and search engines."
+	openGraph={{
+		title: 'Sairahut IT KMITL',
+		description: 'A description of your page for social media and search engines.',
+		type: 'website',
+		url: 'https://sairahut.it.kmitl.ac.th',
+		images: [{ url: '/metaimage.svg', alt: 'Sairahut' }]
+	}}
+	twitter={{
+		cardType: 'summary_large_image',
+		site: '@sairahutitkmitl',
+		title: 'Sairahut IT KMITL',
+		description: 'A description of your page for social media and search engines.',
+		image: '/metaimage.svg'
+	}}
 />
 
 <div class="block sm:hidden overflow-x-hidden">

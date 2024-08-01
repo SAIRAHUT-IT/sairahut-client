@@ -4,9 +4,10 @@
 	import { EyeOff, Eye, Pointer } from 'lucide-svelte';
 	$: secret_code = false;
 	let nick_ =
-		($session.nickname || 'SAIRAHUT').length > 9
-			? $session.nickname?.slice(0, 7) + '...'
-			: $session.nickname;
+		$session.nickname && $session.nickname.length > 9
+			? $session.nickname.slice(0, 7) + '...'
+			: $session.nickname || '';
+
 	const enableSecretCode = () => {
 		secret_code = !secret_code;
 	};
@@ -49,7 +50,7 @@
 							<div class="mangorn flex flex-col items-center">
 								<p class="text-4xl">ชื่อจอมยุทธ์</p>
 								<p class="text-7xl text-[#C99949]">
-									{nick_ || $session.nickname}
+									{nick_ || 'SAIRAHUT'}
 								</p>
 
 								{#if $session.paired_member?.elemental || $session.elemental}

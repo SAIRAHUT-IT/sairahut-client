@@ -2,7 +2,7 @@
 	import { session } from '$lib/stores/member.store';
 
 	let score = $session.token;
-	let text = 'your point : ' + score + ' pt';
+	let text = 'your point : ' + score + ($session.role == 'FRESHY' ? ' chakras' : ' soul');
 </script>
 
 <div class="mx-5 rounded-lg text-white shadow-md bg-score tradewin">

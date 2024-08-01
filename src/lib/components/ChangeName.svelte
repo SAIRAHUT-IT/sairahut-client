@@ -35,7 +35,7 @@
 	<Drawer.Content class="bg-[#383527] text-white border-0">
 		<Drawer.Header class="text-start">
 			<Drawer.Title>Change your nickname</Drawer.Title>
-			<Drawer.Description class="text-white/60 maitree">ใช้สำหรับเปลี่บยเชื่อ</Drawer.Description>
+			<Drawer.Description class="text-white/60 maitree">ใช้สำหรับเปลี่ยนชื่อ</Drawer.Description>
 			<Input
 				bind:value={val}
 				class="bg-[#383527] text-white placeholder-white maitree"

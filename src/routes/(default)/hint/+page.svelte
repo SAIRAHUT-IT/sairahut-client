@@ -19,7 +19,7 @@
 <div class="flex justify-center w-full">
 	<div
 		id="background-img"
-		class="relative flex flex-col justify-center w-[367px] min-h-[837px] px-3 overflow-y-scroll mx-5"
+		class="relative flex flex-col justify-center w-[367px] min-h-[837px] px-3 mx-5"
 	>
 		<div>
 			<div id="game-header" class="flex items-center justify-between h-12">

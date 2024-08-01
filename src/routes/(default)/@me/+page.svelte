@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { session } from '$lib/stores/member.store';
 	import { elemental_parser } from '$lib/parser/elemental';
-	import { EyeOff, Eye, Pointer } from 'lucide-svelte';
+	import { ChevronLeft, Pencil } from 'lucide-svelte';
+	import ChangeName from '$lib/components/ChangeName.svelte';
 	$: secret_code = false;
 	let nick_ =
 		$session.nickname && $session.nickname.length > 9
@@ -21,16 +22,18 @@
 			alt=""
 		/>
 		<div class="z-50 mt-14">
-			<div class="flex items-center mx-5 my-5 justify-start">
-				<div class="flex items-center">
-					<a href="/menu">
-						<img src="/ลูกศรกลับหน้าhome.webp" alt="" />
-					</a>
+			<div class="flex items-center mx-5 my-5 justify-between">
+				<button class="flex items-center" on:click={() => (window.location.href = '/menu')}>
+					<ChevronLeft size={30} class="text-[#C99949]" />
 					<p class="ml-2 text-2xl tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Profile</p>
-				</div>
+				</button>
 			</div>
 			<div>
-				<div class="bg-profile mt-5 mx-5 text-white shadow-md min-h-[175px] min-w-[310px]">
+				<div class="bg-profile mt-5 mx-5 text-white shadow-md min-h-[175px] min-w-[310px] relative">
+					<!-- <div class="absolute right-5 top-5 z-[1500]">
+						<ChangeName />
+					</div> -->
+
 					<div class="relative flex items-center justify-center container mx-auto px-6 py-3">
 						{#if $session.paired_member?.elemental || ($session.elemental && $session.elemental !== 'NONE')}
 							<div class="absolute flex justify-around w-full">
@@ -47,12 +50,11 @@
 							</div>
 						{/if}
 						<div class="flex items-center justify-center px-2 text-sm z-[1500]">
-							<div class="mangorn flex flex-col items-center">
+							<div class=" mangorn flex flex-col items-center">
 								<p class="text-4xl">ชื่อจอมยุทธ์</p>
 								<p class="text-7xl text-[#C99949]">
 									{nick_ || 'SAIRAHUT'}
 								</p>
-
 								{#if $session.paired_member?.elemental || $session.elemental}
 									<p class="text-4xl text-gray-300">
 										{elemental_parser(
@@ -66,7 +68,7 @@
 				</div>
 			</div>
 			<div>
-				<a href="/@me/history/code">
+				<!-- <a href="/@me/history/code">
 					<div
 						class="bg-[#383527] mt-7 mx-5 rounded-md shadow-md border-r-2 border-l-2 border-[#C99949] drop-shadow-md"
 					>
@@ -78,7 +80,7 @@
 							</div>
 						</div>
 					</div>
-				</a>
+				</a> -->
 			</div>
 			{#if $session.role == 'SOPHOMORE'}
 				<div>

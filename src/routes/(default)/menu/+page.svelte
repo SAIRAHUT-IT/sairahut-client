@@ -85,7 +85,7 @@
 			alt="right_comb"
 		/>
 	</div>
-	<img src="/menu/cloud.webp" class="absolute w-full pointer-events-none" alt="" />
+	<img src="/menu_bg.svg" class="absolute w-full pointer-events-none mt-12 max-h-[100dvh]" alt="" />
 	<img
 		src="/menu/flower.webp"
 		class="absolute w-screen top-48 z-50 pointer-events-none"
@@ -93,59 +93,55 @@
 	/>
 	<img
 		src="/menu/flower.webp"
-		class="absolute w-screen top-[550px] pointer-events-none"
+		class="absolute w-screen z-50 top-[550px] pointer-events-none"
 		alt="flower"
 	/>
-	<div class="absolute">
-		<div class="mt-10">
-			<div id="house" class="relative mb-9">
-				<span class="relative top-0 flex items-center justify-center">
-					<img src="/menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
-					<img src="/menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
-					{#if $session.paired_member?.elemental || ($session.elemental && $session.elemental !== 'NONE')}
-						<img
-							src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
-							alt="house"
-							class="z-50"
-						/>
-						<p class="mangorn text-center text-3xl text-black z-50">
-							{elemental_parser($session.paired_member?.elemental || $session.elemental || '')}
-						</p>
-					{:else}
-						<p class="mangorn text-center text-3xl text-[#767272] z-50">สำนักยังไม่เปิดเผย</p>
-					{/if}
-				</span>
-			</div>
-			<div class="max-h-screen">
-				{#each door as x}
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<div
-						id="wrapper"
-						class={`group bg-[#1C1A17]/90 hover:shadow-sm hover:shadow-yellow-200 relative flex items-center justify-center w-96 h-96 max-w-[220px] max-h-[220px] overflow-hidden rounded-full border-[6px] my-5 `}
-						style="border-color: {x.mainColor};"
-						on:click={(e) => delayedNavigation(e, x.path, 200)}
+	<div class="mt-10">
+		<div class="mb-9">
+			<span class="relative top-0 flex items-center justify-center">
+				<img src="/menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
+				<img src="/menu/สำนัก.webp" alt="banner" class="absolute h-[60px] w-[215px]" />
+				{#if $session.paired_member?.elemental || ($session.elemental && $session.elemental !== 'NONE')}
+					<img
+						src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
+						alt="house"
+						class="z-50"
+					/>
+					<p class="mangorn text-center text-3xl text-black z-50">
+						{elemental_parser($session.paired_member?.elemental || $session.elemental || '')}
+					</p>
+				{:else}
+					<p class="mangorn text-center text-3xl text-[#767272] z-50">สำนักยังไม่เปิดเผย</p>
+				{/if}
+			</span>
+		</div>
+		<div>
+			{#each door as x}
+				<button
+					id="wrapper"
+					class={`group bg-[#1C1A17]/90 hover:shadow-sm hover:shadow-yellow-200 relative flex items-center justify-center w-96 h-96 max-w-[220px] max-h-[220px] overflow-hidden rounded-full border-[6px] my-5 `}
+					style="border-color: {x.mainColor};"
+					on:click={(e) => delayedNavigation(e, x.path, 200)}
+				>
+					<img
+						src={x.leftDoorPath}
+						alt="left-door"
+						class="absolute bg-[#1C1A17] door transition-all duration-300 group-hover:-translate-x-full"
+						id="left-door"
+					/>
+					<img
+						src={x.rightDoorPath}
+						alt="right-door"
+						class="absolute bg-[#1C1A17] door transition-all duration-300 group-hover:translate-x-full"
+						id="right-door"
+					/>
+					<p
+						class="text-white z-10 mangorn font-bold text-6xl drop-shadow-[0_3px_1px_rgba(0,0,0,1)]"
 					>
-						<img
-							src={x.leftDoorPath}
-							alt="left-door"
-							class="absolute bg-[#1C1A17] door transition-all duration-300 group-hover:-translate-x-full"
-							id="left-door"
-						/>
-						<img
-							src={x.rightDoorPath}
-							alt="right-door"
-							class="absolute bg-[#1C1A17] door transition-all duration-300 group-hover:translate-x-full"
-							id="right-door"
-						/>
-						<p
-							class="text-white z-10 mangorn font-bold text-6xl drop-shadow-[0_3px_1px_rgba(0,0,0,1)]"
-						>
-							{!checkPhaseDay(x.path) ? '????' : x.title}
-						</p>
-					</div>
-				{/each}
-			</div>
+						{!checkPhaseDay(x.path) ? '????' : x.title}
+					</p>
+				</button>
+			{/each}
 		</div>
 	</div>
 </div>

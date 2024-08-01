@@ -9,6 +9,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import toast, { Toaster } from 'svelte-french-toast';
 	import GoogleAnalytics from '$lib/components/GoogleAnalytics.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	let loader = true;
 	const checker = async () => {
@@ -50,7 +51,7 @@
 	};
 
 	page.subscribe(() => {
-		if (loader) checker();
+		// if (loader) checker();
 	});
 
 	onMount(async () => {
@@ -59,7 +60,7 @@
 		if ($page.data.isToken) updater.push(updateSession());
 		await Promise.all(updater);
 		loader = false;
-		checker();
+		// checker();
 	});
 </script>
 
@@ -83,15 +84,19 @@
 	}}
 />
 
-<div class="block sm:hidden overflow-x-hidden">
-	<Loading loading={loader} />
-	<Toaster />
-	{#if !loader}
-		<slot />
-	{/if}
+<div class="flex justify-center items-center w-full">
+	<div class="w-full max-w-2xl overflow-x-hidden">
+		<div class="max-w-7xl mx-auto min-h-screen">
+			<Loading loading={loader} />
+			<Toaster />
+			{#if !loader}
+				<slot />
+			{/if}
+		</div>
+	</div>
 </div>
 
-<div class="hidden sm:block">
+<!-- <div class="hidden sm:block">
 	<div
 		class="w-full h-screen flex justify-center items-center text-white bg-gradient-to-t from-black to-[#C99949]"
 	>
@@ -100,4 +105,4 @@
 			<p class="text-2xl maitree">❌ กรุณาเข้าใช้งานผ่านมือถือเท่านั้น</p>
 		</div>
 	</div>
-</div>
+</div> -->

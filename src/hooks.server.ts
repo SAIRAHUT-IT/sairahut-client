@@ -138,7 +138,7 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 		if (
 			event.locals.user.status == 'FORM' &&
 			event.url.pathname !== '/this_that' &&
-			event.locals.user.role !== MemberRole.SENIOR
+			event.locals.user.role !== 'SENIOR'
 		) {
 			throw redirect(303, '/this_that');
 		}

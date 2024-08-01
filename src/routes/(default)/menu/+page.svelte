@@ -85,7 +85,11 @@
 			alt="right_comb"
 		/>
 	</div>
-	<img src="/menu_bg.svg" class="absolute w-full pointer-events-none mt-12 max-h-[100dvh]" alt="" />
+	<img
+		src="/menu_bg.svg"
+		class="absolute w-full pointer-events-none mt-12 max-h-[100dvh] bg-fixed"
+		alt=""
+	/>
 	<img
 		src="/menu/flower.webp"
 		class="absolute w-screen top-48 z-50 pointer-events-none"

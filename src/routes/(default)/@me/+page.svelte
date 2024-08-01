@@ -3,6 +3,7 @@
 	import { elemental_parser } from '$lib/parser/elemental';
 	import { ChevronLeft, Pencil } from 'lucide-svelte';
 	import ChangeName from '$lib/components/ChangeName.svelte';
+	import toast from 'svelte-french-toast';
 	$: secret_code = false;
 	let nick_ =
 		$session.nickname && $session.nickname.length > 9
@@ -30,9 +31,9 @@
 			</div>
 			<div>
 				<div class="bg-profile mt-5 mx-5 text-white shadow-md min-h-[175px] min-w-[310px] relative">
-					<!-- <div class="absolute right-5 top-5 z-[1500]">
+					<div class="absolute right-5 top-5 z-[1500]">
 						<ChangeName />
-					</div> -->
+					</div>
 
 					<div class="relative flex items-center justify-center container mx-auto px-6 py-3">
 						{#if $session.paired_member?.elemental || ($session.elemental && $session.elemental !== 'NONE')}

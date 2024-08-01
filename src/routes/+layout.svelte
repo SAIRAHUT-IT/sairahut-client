@@ -67,10 +67,10 @@
 <GoogleAnalytics />
 <MetaTags
 	title="Sairahut IT KMITL | สายรหัสคณะเทคโนโลยีสารสนเทศ"
-	description="A description of your page for social media and search engines."
+	description=""
 	openGraph={{
 		title: 'Sairahut IT KMITL',
-		description: 'A description of your page for social media and search engines.',
+		description: '',
 		type: 'website',
 		url: 'https://sairahut.it.kmitl.ac.th',
 		images: [{ url: '/metaimage.svg', alt: 'Sairahut' }]
@@ -79,7 +79,7 @@
 		cardType: 'summary_large_image',
 		site: '@sairahutitkmitl',
 		title: 'Sairahut IT KMITL',
-		description: 'A description of your page for social media and search engines.',
+		description: '',
 		image: '/metaimage.svg'
 	}}
 />

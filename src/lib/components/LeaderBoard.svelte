@@ -1,24 +1,22 @@
 <script lang="ts">
 	import Scorebar from '$lib/components/Scorebar.svelte';
-	import { ArrowLeftFromLine } from 'lucide-svelte';
+	import { ArrowLeftFromLine, ChevronLeft } from 'lucide-svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
 	export let leaderboard;
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full h-screen">
 	<div
-		class="relative background-img flex flex-col justify-center w-[367px] h-full max-h-[740px] mt-10"
+		class="background-img flex flex-col justify-center w-[367px] max-w-[367px] h-full max-h-[740px]"
 	>
-		<div id="game-header" class="flex items-center justify-between mx-5 h-12">
-			<div class="flex items-center justify-center gap-2">
-				<a href="/menu">
-					<ArrowLeftFromLine size={32} color="#C99949" />
-				</a>
-				<p class="text-2xl font-bold text-start tradewin text-white">Phase 2</p>
-			</div>
+		<div class="flex items-center justify-between mt-7 mx-5">
+			<button class="flex items-center" on:click={() => (window.location.href = '/menu')}>
+				<ChevronLeft size={30} class="text-[#C99949]" />
+				<p class="ml-2 text-2xl tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Leaderboard</p>
+			</button>
 		</div>
 		<Scorebar />
-		<div class="scale-90 z-50">
+		<div class="scale-90 z-50 -mt-4">
 			<Table.Root>
 				<Table.Header>
 					<Table.Row class="bg-black mangorn text-2xl">
@@ -63,7 +61,7 @@
 
 <style>
 	.background-img {
-		background-image: url('/border.webp');
+		background-image: url('/border.svg');
 		background-position: center;
 		background-repeat: no-repeat;
 	}

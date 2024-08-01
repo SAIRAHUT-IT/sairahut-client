@@ -7,7 +7,7 @@
 	export let data;
 </script>
 
-<div class="flex justify-center h-screen mt-10">
+<div class="flex justify-center mt-10">
 	<Border>
 		{#if $session.role == 'FRESHY'}
 			<QrScannerNong />

@@ -119,8 +119,9 @@
 			{#each door as x}
 				<button
 					id="wrapper"
-					class={`group bg-[#1C1A17]/90 hover:shadow-sm hover:shadow-yellow-200 relative flex items-center justify-center w-96 h-96 max-w-[220px] max-h-[220px] overflow-hidden rounded-full border-[6px] my-5 `}
-					style="border-color: {x.mainColor};"
+					class={`group bg-[#1C1A17]/90 hover:shadow-sm hover:shadow-yellow-200 relative flex items-center justify-center w-96 h-96 max-w-[220px] max-h-[220px] overflow-hidden rounded-full border-[6px] my-5 ${!checkPhaseDay(x.path) ? 'grayscale pointer-events-none' : ''}`}
+					style={`border-color: ${x.mainColor};`}
+					disabled={!checkPhaseDay(x.path)}
 					on:click={(e) => delayedNavigation(e, x.path, 200)}
 				>
 					<img

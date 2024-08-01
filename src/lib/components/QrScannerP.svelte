@@ -4,7 +4,7 @@
 	import { Html5Qrcode } from 'html5-qrcode';
 	import { onMount } from 'svelte';
 	import * as Dialog from '$lib/components/ui/dialog';
-	import { ArrowLeftFromLine } from 'lucide-svelte';
+	import { ArrowLeftFromLine, ChevronLeft, List } from 'lucide-svelte';
 	import Scorebar from '$lib/components/Scorebar.svelte';
 
 	export let qr_code, meta;
@@ -33,14 +33,17 @@
 
 <div class="flex relative text-white flex-col items-center w-full">
 	<div class="relative flex flex-col background-img justify-center">
-		<div class="flex items-center mx-6 my-5 justify-between z-20">
-			<div class="flex items-center">
-				<a href="/menu">
-					<img src="/ลูกศรกลับหน้าhome.webp" alt="" />
-				</a>
-				<p class="ml-2 text-2xl tradewin">Scan QR</p>
-			</div>
-			<a href="/leaderboard"><img src="/ranking.webp" alt="" /></a>
+		<div class="flex items-center justify-between mb-10">
+			<button class="flex items-center" on:click={() => (window.location.href = '/menu')}>
+				<ChevronLeft size={30} class="text-[#C99949]" />
+				<p class="ml-2 text-2xl tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Scan QR</p>
+			</button>
+			<button
+				class="border border-[#C99949] rounded-md p-1"
+				on:click={() => (window.location.href = '/leaderboard')}
+			>
+				<List class="opacity-80" size={25} />
+			</button>
 		</div>
 		<div class="flex flex-col items-center justify-center">
 			<div class="relative z-30">
@@ -54,10 +57,10 @@
 				<img
 					src="กรอบqr.webp"
 					alt=""
-					class="absolute bg-fixed -bottom-[14.5rem] z-50 scale-105 overflow-visible pointer-events-none"
+					class="absolute bg-fixed -bottom-[14.5rem] z-50 scale-105 pointer-events-none"
 				/>
 			</div>
-			<div class="z-20 mt-6 mx-5 max-w-72 overflow-hidden space-y-2">
+			<div class="z-20 mt-6 mx-5 max-w-72 pace-y-2">
 				<p class="text-base tradewin">Code</p>
 				<div
 					class="flex items-center justify-center mangorn text-5xl text-center bg-code w-full rounded-md h-[77px]"
@@ -65,6 +68,11 @@
 					<p type="text" class="mangorn text-6xl">
 						{code}
 					</p>
+				</div>
+				<div class="flex justify-center mt-3">
+					<button on:click={() => window.location.reload()} class=" p-2 rounded-xl">
+						<img src="/reset.svg" alt="" />
+					</button>
 				</div>
 				<div class="bg-[#26221E] p-3 rounded-sm">
 					<div class="flex justify-center">
@@ -75,11 +83,6 @@
 						code ของเราถูกใช้งาน แต้ม disciple soul ก็จะเพิ่มขึ้น โดย code 1 อันสามารถใช้ได้ 1 ครั้ง
 						(อย่าลืม reset qr code เมื่อน้องแสกนไปแล้ว)
 					</p>
-				</div>
-				<div class="flex justify-center mt-3">
-					<button on:click={() => window.location.reload()} class=" p-2 rounded-xl">
-						<img src="/reset.svg" alt="" />
-					</button>
 				</div>
 			</div>
 		</div>

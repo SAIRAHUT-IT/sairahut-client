@@ -33,7 +33,7 @@
 	<div class="p-3 relative w-[390px]">
 		<div class="relative background-img flex flex-col justify-center min-w-[367px] min-h-[511px]">
 			<img src="/cloud.webp" class="absolute bottom-14 scale-110 overflow-visible" alt="" />
-			<div class="mx-10 z-50">
+			<div class="mx-10 z-20">
 				<div class="mb-8">
 					<div class="relative flex justify-center items-center mb-2">
 						<h1 class="text-[#FBE9B8] drop-shadow-[0_5px_11px_#DBA45E] mangorn text-2xl">

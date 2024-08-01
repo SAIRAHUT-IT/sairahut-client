@@ -140,9 +140,7 @@
 						class="absolute bg-[#1C1A17] door transition-all duration-300 group-hover:translate-x-full"
 						id="right-door"
 					/>
-					<p
-						class="text-white z-10 mangorn font-bold text-6xl drop-shadow-[0_3px_1px_rgba(0,0,0,1)]"
-					>
+					<p class="text-white z-10 mangorn text-6xl drop-shadow-[0_3px_1px_rgba(0,0,0,1)]">
 						{!checkPhaseDay(x.path) ? '????' : x.title}
 					</p>
 				</button>

@@ -67,7 +67,9 @@
 			</div>
 			<div>
 				<a href="/@me/history/code">
-					<div class="bg-[#383527] mt-7 mx-5 rounded-md shadow-md drop-shadow-[0_3px_6px_#C99949]">
+					<div
+						class="bg-[#383527] mt-7 mx-5 rounded-md shadow-md border-r-2 border-l-2 border-[#C99949] drop-shadow-md"
+					>
 						<div class="container mx-auto px-6">
 							<div class="flex items-center justify-between px-2">
 								<div class="mangorn text-3xl">
@@ -82,7 +84,7 @@
 				<div>
 					<button on:click={enableSecretCode} class="w-full">
 						<div
-							class="bg-[#383527] mt-7 mx-5 p-1 text-center rounded-md shadow-md drop-shadow-[0_3px_6px_#C99949]"
+							class="bg-[#383527] mt-7 mx-5 p-1 text-center rounded-md shadow-md border-r-2 border-l-2 border-[#C99949] drop-shadow-md"
 						>
 							<p class="text-5xl mangorn text-center">
 								{secret_code ? $session.unique_key : 'รหัสลับ'}
@@ -107,7 +109,14 @@
 			</div> -->
 			<div class="w-full mt-10 flex justify-center scale-150">
 				<a href="/api/auth/signout">
-					<img src="/logout.svg" alt="logout" />
+					<!-- <img src="/logout.svg" alt="logout" /> -->
+					<div
+						class="bg-[#383527] shadow-md rounded-3xl px-2 border-r-2 border-l-2 border-[#C99949]"
+					>
+						<div class="flex items-center justify-center">
+							<p class="mangorn text-xl">ออกจากระบบ</p>
+						</div>
+					</div>
 				</a>
 			</div>
 		</div>

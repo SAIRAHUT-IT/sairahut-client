@@ -74,8 +74,13 @@
 				</div>
 				<div class="relative flex justify-center items-center">
 					<a href={data.url} class="flex justify-center items-center">
-						<h1 class="z-50 tradewin">login with google</h1>
-						<img src="/ปุ่มล้อกอิน.webp" class="absolute bg-fixed w-44" alt="" />
+						<div
+							class="bg-[#383527] shadow-md rounded-3xl px-2 border-r-2 border-l-2 border-[#C99949]"
+						>
+							<div class="flex items-center justify-center p-1">
+								<p class="mangorn text-2xl">LOGIN WITH GOOGLE</p>
+							</div>
+						</div>
 					</a>
 				</div>
 			</div>

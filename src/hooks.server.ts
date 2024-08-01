@@ -127,7 +127,10 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 		}
 	}
 
-	if (event.route.id?.includes('/(default)') && !event.url.pathname.startsWith('/api')) {
+	if (
+		((event.route.id || '').includes('(default)') || (event.route.id || '').includes('(except)')) &&
+		!event.url.pathname.startsWith('/api')
+	) {
 		if (!event.locals.user) {
 			throw redirect(303, '/');
 		}

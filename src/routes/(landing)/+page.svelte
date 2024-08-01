@@ -24,14 +24,17 @@
 			alt="right_comb"
 		/>
 	</div>
-	<img src="/ริ้ว.webp" class="absolute bg-fixed w-full" alt="" />
+	<!-- <img src="/ริ้ว.webp" class="absolute bg-fixed w-full" alt="" /> -->
 	<!-- <img src="เขาหลัง.webp" class="absolute bottom-0 bg-fixed w-full z-10" alt=x"" /> -->
-	<img src="/หน้าปก.webp" class="bg-fixed w-full" alt="" />
+	<h1 class="absolute z-20 text-2xl top-[calc(17%)] tradewin drop-shadow-[0_1px_2px_#FFFFFF]">
+		SAIRAHUT IT22
+	</h1>
+	<img src="/landing_castle.png" class="bg-fixedc w-full" alt="" />
 	<div class="p-3 relative w-[390px]">
 		<div class="relative background-img flex flex-col justify-center min-w-[367px] min-h-[511px]">
 			<img src="/cloud.webp" class="absolute bottom-14 scale-110 overflow-visible" alt="" />
 			<div class="mx-10 z-50">
-				<div class="mb-5">
+				<div class="mb-8">
 					<div class="relative flex justify-center items-center mb-2">
 						<h1 class="text-[#FBE9B8] drop-shadow-[0_5px_11px_#DBA45E] mangorn text-2xl">
 							สายรหัสคืออะไร
@@ -44,7 +47,7 @@
 						โดยกิจกรรมจัดขึ้นในช่วงวันที่ 1 - 17 สิงหาคม พ.ศ. 2567 ณ คณะเทคโนโลยีสารสนเทศ สจล.
 					</p>
 				</div>
-				<div class="mb-5">
+				<div class="mb-8">
 					<div class="relative flex justify-center items-center mb-2">
 						<h1 class="text-[#FBE9B8] drop-shadow-[0_5px_11px_#DBA45E] mangorn text-2xl">
 							ใครเข้าร่วมได้บ้าง
@@ -57,7 +60,7 @@
 						visitor
 					</p>
 				</div>
-				<div class="mb-5">
+				<div class="mb-8">
 					<div class="relative flex justify-center items-center mb-2">
 						<h1 class="text-[#FBE9B8] drop-shadow-[0_5px_11px_#DBA45E] mangorn text-2xl">
 							เข้าร่วมอย่างไร

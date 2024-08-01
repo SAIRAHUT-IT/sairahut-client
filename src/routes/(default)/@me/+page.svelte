@@ -4,7 +4,7 @@
 	import { EyeOff, Eye, Pointer } from 'lucide-svelte';
 	$: secret_code = false;
 	let nick_ =
-		$session.nickname?.length || 'SAIRAHUT'.length > 9
+		($session.nickname || 'SAIRAHUT').length > 9
 			? $session.nickname?.slice(0, 7) + '...'
 			: $session.nickname;
 	const enableSecretCode = () => {

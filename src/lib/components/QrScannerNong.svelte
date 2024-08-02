@@ -95,7 +95,7 @@
 </script>
 
 <div class="flex text-white flex-col items-center w-full">
-	<div class="relative flex flex-col background-img justify-center space-y-6">
+	<div class="relative flex flex-col background-img justify-center space-y-6 mb-2">
 		<img src="cloud.webp" class="absolute bg-fixed bottom-40 z-10 scale-110" alt="cloud" />
 		<div class="flex items-center justify-between">
 			<button class="flex items-center" on:click={() => (window.location.href = '/menu')}>
@@ -131,7 +131,7 @@
 			<Scorebar />
 		</div>
 		<div class="flex flex-col items-center justify-center">
-			<div class="relative z-30">
+			<div class="relative z-20">
 				<img
 					src="กรอบqr.webp"
 					alt="qr"
@@ -143,13 +143,13 @@
 					<div id="reader" class="reader w-full"></div>
 				</div>
 			</div>
-			<div class="flex flex-col items-center justify-center z-40 w-[300px] mt-10 ga">
-				<div class="mangorn text-4xl p-2 text-center bg-code h-full w-full rounded-md">
+			<div class="flex flex-col items-center justify-center z-20 w-[300px] mt-10">
+				<div class="mangorn text-6xl p-2 text-center bg-code h-full w-full rounded-md">
 					<input
 						type="text"
 						placeholder="code here"
 						bind:value={code}
-						class="p-2 w-full rounded-xl bg-transparent tradewin ring-0 outline-none text-center"
+						class="p-2 w-full rounded-xl bg-transparent mangorn ring-0 outline-none text-center"
 					/>
 				</div>
 				<button class="flex w-full items-center justify-center mt-3" on:click={submit}>

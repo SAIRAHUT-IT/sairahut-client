@@ -117,7 +117,7 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 		} else {
 			const body = event.request.method !== 'GET' ? await event.request.json() : null;
 			const response = await request(
-				env.BASE_URL + event.url.pathname,
+				env.BASE_URL + event.url.pathname + event.url.search,
 				event.request.method,
 				token,
 				{},

@@ -1,8 +1,22 @@
 <script lang="ts">
 	import Scorebar from '$lib/components/Scorebar.svelte';
-	import { ArrowLeftFromLine, ChevronLeft } from 'lucide-svelte';
+	import { ChevronLeft, RefreshCcw } from 'lucide-svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
+	import { page } from '$app/stores';
 	export let leaderboard;
+	let spinning = false;
+
+	function refreshy() {
+		spinning = true;
+		const url = new URL(window.location.href);
+		const freshy = url.searchParams.get('freshy');
+		if (freshy) {
+			url.searchParams.delete('freshy');
+		} else {
+			url.searchParams.set('freshy', 'true');
+		}
+		window.location.replace(url.toString());
+	}
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full h-screen">
@@ -14,9 +28,16 @@
 				<ChevronLeft size={30} class="text-[#C99949]" />
 				<p class="ml-2 text-2xl tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Leaderboard</p>
 			</button>
+			<button
+				class="bg-transparent hover:bg-transparent text-white hover:text-white p-3"
+				class:animate-spin={spinning}
+				on:click={refreshy}
+			>
+				<RefreshCcw size={25} />
+			</button>
 		</div>
 		<Scorebar />
-		<div class="scale-90 z-50 -mt-4">
+		<div class="scale-90 z-20 -mt-4">
 			<Table.Root>
 				<Table.Header>
 					<Table.Row class="bg-black mangorn text-2xl">

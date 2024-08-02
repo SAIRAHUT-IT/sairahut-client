@@ -127,6 +127,25 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 		}
 	}
 
+	if (event.locals.token && !event.locals.user) {
+		const response = new Response(null, {
+			status: 302,
+			headers: {
+				Location: '/'
+			}
+		});
+
+		response.headers.append(
+			'Set-Cookie',
+			event.cookies.serialize('token', '', {
+				path: '/',
+				expires: new Date(0)
+			})
+		);
+
+		return response;
+	}
+
 	if (
 		((event.route.id || '').includes('(default)') || (event.route.id || '').includes('(except)')) &&
 		!event.url.pathname.startsWith('/api')

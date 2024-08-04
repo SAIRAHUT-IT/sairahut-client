@@ -9,10 +9,12 @@
 
 <div class="flex justify-center mt-10">
 	<Border>
-		{#if $session.role == 'FRESHY'}
-			<QrScannerNong />
-		{:else}
-			<QrScannerP qr_code={data.qrcode} meta={data.meta} />
-		{/if}
+		<div class="p-6">
+			{#if $session.role == 'FRESHY'}
+				<QrScannerNong />
+			{:else}
+				<QrScannerP qr_code={data.qrcode} meta={data.meta} />
+			{/if}
+		</div>
 	</Border>
 </div>

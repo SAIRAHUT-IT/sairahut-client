@@ -3,7 +3,6 @@
 	import { elemental_parser } from '$lib/parser/elemental';
 	import { ChevronLeft, Pencil } from 'lucide-svelte';
 	import ChangeName from '$lib/components/ChangeName.svelte';
-	import toast from 'svelte-french-toast';
 	$: secret_code = false;
 	let nick_ =
 		$session.nickname && $session.nickname.length > 9
@@ -68,8 +67,8 @@
 					</div>
 				</div>
 			</div>
-			<div>
-				<!-- <a href="/@me/history/code">
+			<!-- <div>
+				<a href="/@me/history/code">
 					<div
 						class="bg-[#383527] mt-7 mx-5 rounded-md shadow-md border-r-2 border-l-2 border-[#C99949] drop-shadow-md"
 					>
@@ -81,8 +80,30 @@
 							</div>
 						</div>
 					</div>
-				</a> -->
-			</div>
+				</a>
+			</div> -->
+			{#if new Date().getTime() > new Date('2024-08-05').getTime() && $session.role == 'FRESHY'}
+				<div>
+					<button
+						on:click={() => {
+							window.location.href = '/@me/history/bingo';
+						}}
+						class="w-full"
+					>
+						<div
+							class="bg-[#383527] mt-10 mx-5 rounded-md shadow-md border-r-2 border-l-2 border-[#C99949]"
+						>
+							<div class="container mx-auto px-6">
+								<div class="flex items-center justify-between px-2">
+									<div class="mangorn text-3xl">
+										<p>Bingo Ticket</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</button>
+				</div>
+			{/if}
 			{#if $session.role == 'SOPHOMORE'}
 				<div>
 					<button on:click={enableSecretCode} class="w-full">
@@ -97,19 +118,7 @@
 					</button>
 				</div>
 			{/if}
-			<!-- <div>
-				<a href="/@me/history/bingo">
-					<div class="bg-[#383527] mt-10 mx-5 rounded-md shadow-md drop-shadow-[0_3px_6px_#C99949]">
-						<div class="container mx-auto px-6">
-							<div class="flex items-center justify-between px-2">
-								<div class="mangorn text-3xl">
-									<p>Bingo Ticket</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div> -->
+
 			<div class="w-full mt-10 flex justify-center scale-150">
 				<a href="/api/auth/signout">
 					<!-- <img src="/logout.svg" alt="logout" /> -->

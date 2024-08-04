@@ -127,24 +127,24 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 		}
 	}
 
-	if (event.locals.token && !event.locals.user) {
-		const response = new Response(null, {
-			status: 302,
-			headers: {
-				Location: '/'
-			}
-		});
+	// if (event.locals.token && !event.locals.user) {
+	// 	const response = new Response(null, {
+	// 		status: 302,
+	// 		headers: {
+	// 			Location: '/'
+	// 		}
+	// 	});
 
-		response.headers.append(
-			'Set-Cookie',
-			event.cookies.serialize('token', '', {
-				path: '/',
-				expires: new Date(0)
-			})
-		);
+	// 	response.headers.append(
+	// 		'Set-Cookie',
+	// 		event.cookies.serialize('token', '', {
+	// 			path: '/',
+	// 			expires: new Date(0)
+	// 		})
+	// 	);
 
-		return response;
-	}
+	// 	return response;
+	// }
 
 	if (
 		((event.route.id || '').includes('(default)') || (event.route.id || '').includes('(except)')) &&
@@ -168,7 +168,10 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 		const isPhaseDay = checkPhaseDay(event.url.pathname.slice(1));
 		if (
 			!isPhaseDay &&
-			['this_that', 'qrScanner', 'bingo', 'hint', 'puzzle'].includes(event.url.pathname.slice(1))
+			['this_that', 'qrScanner', 'bingo', 'hint', 'puzzle', '@me/history/bingo'].includes(
+				event.url.pathname.slice(1)
+			) &&
+			event.locals.user.student_id !== '66070070'
 		) {
 			throw redirect(303, '/menu');
 		}
@@ -183,6 +186,7 @@ const checkPhaseDay = (path: string) => {
 	const date = new Date();
 	const day = date.getDate();
 	const month = date.getMonth();
+	const h = date.getHours();
 	if (month !== 7) {
 		return false;
 	}
@@ -192,7 +196,8 @@ const checkPhaseDay = (path: string) => {
 		case 'qrScanner':
 			return day >= 2;
 		case 'bingo':
-			return day >= 5;
+		case '@me/history/bingo':
+			return day >= 5 && h >= 11;
 		case 'hint':
 			return day >= 8;
 		case 'puzzle':

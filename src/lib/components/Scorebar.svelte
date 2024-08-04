@@ -10,12 +10,10 @@
 		<div class="w-1/4 flex items-center justify-end">
 			<h1 class="text-4xl">{$session.ranking || 999}</h1>
 		</div>
-		<div class="w-3/4 flex justify-center">
+		<div class="w-3/4 flex flex-col justify-center mangorn text-2xl px-5">
+			<div>คืออันดับของคุณ</div>
 			<div>
-				<div class="mangorn text-3xl">คืออันดับของคุณ</div>
-				<div>
-					{text}
-				</div>
+				{text}
 			</div>
 		</div>
 	</div>

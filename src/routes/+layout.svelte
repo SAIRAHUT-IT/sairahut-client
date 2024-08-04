@@ -10,6 +10,7 @@
 	import toast, { Toaster } from 'svelte-french-toast';
 	import GoogleAnalytics from '$lib/components/GoogleAnalytics.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import FeedDialog from '$lib/components/FeedDialog.svelte';
 
 	let loader = true;
 	const checker = async () => {
@@ -63,6 +64,10 @@
 		// checker();
 	});
 </script>
+
+{#if $session.id !== undefined && (!$session.real_nickname || !$session.contact)}
+	<FeedDialog />
+{/if}
 
 <GoogleAnalytics />
 <MetaTags

@@ -69,6 +69,9 @@
 			window.location.href = url;
 		}, delay);
 	}
+	if ($session.role != 'FRESHY') {
+		door.length = 1;
+	}
 </script>
 
 <div class="flex relative text-white flex-col items-center w-full">

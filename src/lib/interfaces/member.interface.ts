@@ -11,6 +11,12 @@ declare enum MemberRole {
 	SENIOR = 'SENIOR'
 }
 
+declare interface Bingo {
+	id: number;
+	question: string;
+	is_checked: boolean;
+}
+
 declare interface Code {
 	id: number;
 	code: string;
@@ -24,8 +30,16 @@ declare interface Code {
 	member?: Member | null;
 }
 
-interface Member {
+declare interface Ticket {
 	id: number;
+	title: string;
+	is_used: boolean;
+}
+
+declare interface Member {
+	id: number;
+	real_nickname: string;
+	contact: string;
 	nickname: string;
 	username: string;
 	student_id: string;
@@ -42,7 +56,9 @@ interface Member {
 	unlocked_puzzle: string[];
 	puzzle_url: string;
 	paired_member_id: number;
+	bingo_board: Bingo[];
 	paired_member: Member;
+	ticket: Ticket[];
 	paired_with: Member[];
 	redeemed_codes: Code[];
 	created_codes: Code[];

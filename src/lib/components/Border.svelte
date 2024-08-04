@@ -1,4 +1,4 @@
-<div class={`border_ border border-[#C99949] h-fit`}>
+<div class={`border_ border border-[#C99949] w-fit h-fit`}>
 	<div class="circle top-circle"></div>
 	<slot />
 	<div class="bottom-borders"></div>
@@ -9,7 +9,6 @@
 	.border_ {
 		position: relative;
 		display: inline-block;
-		padding: 20px;
 	}
 
 	.border_::before,

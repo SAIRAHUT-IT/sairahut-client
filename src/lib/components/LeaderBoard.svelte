@@ -2,7 +2,6 @@
 	import Scorebar from '$lib/components/Scorebar.svelte';
 	import { ChevronLeft, RefreshCcw } from 'lucide-svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
-	import { page } from '$app/stores';
 	export let leaderboard;
 	let spinning = false;
 

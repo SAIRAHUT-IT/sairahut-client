@@ -7,7 +7,11 @@ declare global {
 			token: string;
 			user: Member;
 		}
-		// interface PageData { }
+		interface PageData {
+			isToken: boolean;
+			isAuth: boolean;
+			board: Bingo[];
+		}
 		// interface PageState { }
 		// interface Platform {}
 	}

@@ -1,150 +1,150 @@
 <script lang="ts">
-	let bingoScore = 0;
+	import { onDestroy } from 'svelte';
 	import Bingo from '$lib/components/Bingo.svelte';
+	import Border from '$lib/components/Border.svelte';
+	import * as Dialog from '$lib/components/ui/dialog';
 	import { Button } from '$lib/components/ui/button';
-	import { ArrowLeftFromLine } from 'lucide-svelte';
-	let question = [
-		{
-			id: 1,
-			question: 'Question 1: What is the name of your father?',
-			is_checked: false,
-			image: 'bingo/00.svg'
-		},
-		{
-			id: 2,
-			question: 'Question 2: What is the name of your mother?',
-			is_checked: false,
-			image: 'bingo/01.svg'
-		},
-		{
-			id: 3,
-			question: 'Question 3: What is the name of your father?',
-			is_checked: false,
-			image: 'bingo/02.svg'
-		},
-		{
-			id: 4,
-			question: 'Question 4: What is the name of your mother?',
-			is_checked: false,
-			image: 'bingo/03.svg'
-		},
-		{
-			id: 5,
-			question: 'Question 5: What is the name of your father?',
-			is_checked: false,
-			image: 'bingo/10.svg'
-		},
-		{
-			id: 6,
-			question: 'Question 6: What is the name of your mother?',
-			is_checked: false,
-			image: 'bingo/11.svg'
-		},
-		{
-			id: 7,
-			question: 'Question 7: What is the name of your father?',
-			is_checked: false,
-			image: 'bingo/12.svg'
-		},
-		{
-			id: 8,
-			question: 'Question 8: What is the name of your mother?',
-			is_checked: true,
-			image: 'bingo/13.svg'
-		},
-		{
-			id: 9,
-			question: 'Question 9: What is the name of your father?',
-			is_checked: false,
-			image: 'bingo/20.svg'
-		},
-		{
-			id: 10,
-			question: 'Question 10: What is the name of your mother?',
-			is_checked: true,
-			image: 'bingo/21.svg'
-		},
-		{
-			id: 11,
-			question: 'Question 11: What is the name of your father?',
-			is_checked: false,
-			image: 'bingo/22.svg'
-		},
-		{
-			id: 12,
-			question: 'Question 12: What is the name of your mother?',
-			is_checked: false,
-			image: 'bingo/23.svg'
-		},
-		{
-			id: 13,
-			question: 'Question 13: What is the name of your father?',
-			is_checked: false,
-			image: 'bingo/30.svg'
-		},
-		{
-			id: 14,
-			question: 'Question 14: What is the name of your mother?',
-			is_checked: false,
-			image: 'bingo/31.svg'
-		},
-		{
-			id: 15,
-			question: 'Question 15: What is the name of your father?',
-			is_checked: false,
-			image: 'bingo/32.svg'
-		},
-		{
-			id: 16,
-			question: 'Question 16: What is the name of your mother?',
-			is_checked: false,
-			image: 'bingo/33.svg'
-		}
+	import { ChevronLeft, Ticket } from 'lucide-svelte';
+	import SubmitBingo from '$lib/components/SubmitBingo.svelte';
+	import Progress from '$lib/components/ui/progress/progress.svelte';
+
+	const block_image = [
+		'bingo/00.svg',
+		'bingo/01.svg',
+		'bingo/02.svg',
+		'bingo/03.svg',
+		'bingo/10.svg',
+		'bingo/11.svg',
+		'bingo/12.svg',
+		'bingo/13.svg',
+		'bingo/20.svg',
+		'bingo/21.svg',
+		'bingo/22.svg',
+		'bingo/23.svg',
+		'bingo/30.svg',
+		'bingo/31.svg',
+		'bingo/32.svg',
+		'bingo/33.svg'
 	];
+
+	const split_chunk = (val: any) => {
+		const chunkSize = 4;
+		const bingoPayload = [];
+
+		for (let i = 0; i < val.length; i += chunkSize) {
+			const chunk = val.slice(i, i + chunkSize);
+			bingoPayload.push(chunk);
+		}
+		return bingoPayload;
+	};
+
+	export let data;
+
+	const estimateScore = (payload: any) => {
+		let score = 0;
+
+		payload.forEach((row: any) => {
+			if (row.every((cell: any) => cell.is_checked)) {
+				score++;
+			}
+		});
+
+		for (let col = 0; col < 4; col++) {
+			let columnBingo = true;
+			for (let row = 0; row < 4; row++) {
+				if (!payload[row][col].is_checked) {
+					columnBingo = false;
+					break;
+				}
+			}
+			if (columnBingo) {
+				score++;
+			}
+		}
+
+		let mainDiagonalBingo = true;
+		for (let i = 0; i < 4; i++) {
+			if (!payload[i][i].is_checked) {
+				mainDiagonalBingo = false;
+				break;
+			}
+		}
+		if (mainDiagonalBingo) {
+			score++;
+		}
+
+		let antiDiagonalBingo = true;
+		for (let i = 0; i < 4; i++) {
+			if (!payload[i][3 - i].is_checked) {
+				antiDiagonalBingo = false;
+				break;
+			}
+		}
+		if (antiDiagonalBingo) {
+			score++;
+		}
+		return score;
+	};
+	$: question = split_chunk(data.board) || [];
+	$: score = estimateScore(question);
 </script>
 
 <div class="flex justify-center w-full">
-	<div
-		id="background-img"
-		class="relative flex flex-col justify-center w-[367px] min-h-[837px] px-3"
-	>
-		<div class="space-y-5">
-			<div id="game-header" class="flex items-center justify-between mx-5 h-12">
-				<div class="flex items-center justify-center gap-2">
-					<a href="/">
-						<ArrowLeftFromLine size={32} color="#C99949" />
-					</a>
-					<p class="text-2xl font-bold text-start tradewin text-white">Phase 2</p>
+	<div class="p-6 mt-10">
+		<Border>
+			<div class="relative flex flex-col justify-center text-white">
+				<div class="space-y-5">
+					<div class="flex items-center justify-between mx-5 mt-5">
+						<button class="flex items-center" on:click={() => (window.location.href = '/menu')}>
+							<ChevronLeft size={30} class="text-[#C99949]" />
+							<p class="ml-2 text-2xl tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Bingo</p>
+						</button>
+						<button
+							class="border border-[#C99949] rounded-md p-1"
+							on:click={() => (window.location.href = '/@me/history/bingo')}
+						>
+							<Ticket size={25} class="-rotate-12" />
+						</button>
+					</div>
+					<div class="mx-5">
+						<div class="flex gap-2 maitree">
+							<p class="text-sm">ความคืบหน้า</p>
+							<p class="text-sm text-white">(<span class="text-[#C99949]">{score}</span> / 10)</p>
+						</div>
+						<Progress value={score * 10} />
+					</div>
+					<div class="flex justify-center">
+						<div class="grid grid-cols-4 grid-rows-4 gap-2">
+							{#each question as row, i}
+								{#each row as question, j}
+									<Bingo
+										{question}
+										row={i}
+										col={j}
+										index={i * 4 + j}
+										image={block_image[i * 4 + j]}
+									/>
+								{/each}
+							{/each}
+						</div>
+					</div>
+					<div id="reset-submit" class="flex justify-center">
+						<SubmitBingo />
+					</div>
 				</div>
-				<p class="text-right font-semibold text-white tradewin">Your get {bingoScore} Bingo</p>
-			</div>
-			<div class="flex justify-center">
-				<div class="grid grid-cols-4 grid-rows-4 gap-2">
-					{#each question as question}
-						<Bingo {question} />
-					{/each}
+				<div class="flex flex-col items-center mx-5 mt-4 bg-[#26221E]/70 text-white px-5 py-2 mb-5">
+					<div class="flex justify-center">
+						<img src="/Frame29.webp" alt="" />
+					</div>
+					<p class="text-xs font-semibold maitree line-clamp-5">
+						เจ้าจะสังเกตได้ว่าเมื่อพลิกแผ่นกระดานขึ้นมาจะมีคำถาม จงทดคำตอบของเจ้าไว้ในใจ
+						แล้วออกตามหาศิษย์พี่ที่มีสิ่ง ๆ นั้นเหมือนกันกับเจ้า
+						เมื่อพบแล้วก็จงทำเครื่องหมายบนกระดานเพื่อ bingo! ยุทธภพนั้นกว้างใหญ่ไพศาล
+						แต่ศิษย์พี่ที่จริงใจนั้นจะมีเพียงคนเดียว!!
+					</p>
 				</div>
 			</div>
-			<div id="reset-submit" class="flex justify-center">
-				<Button
-					class="w-full mx-5 text-base font-bold uppercase bg-transparent hover:bg-transparent"
-				>
-					<img src="/submit.svg" alt="" />
-				</Button>
-			</div>
-		</div>
-		<div class="flex flex-col items-center mx-5 mt-10 bg-[#26221E]/70 text-white px-5 py-2">
-			<!-- <h1 class="text-2xl font-bold">HOW TO PLAY</h1> -->
-			<div class="flex justify-center">
-				<img src="/Frame29.webp" alt="" />
-			</div>
-			<p class="text-xs font-semibold maitree line-clamp-5">
-				เจ้าจะสังเกตได้ว่าเมื่อพลิกแผ่นกระดานขึ้นมาจะมีคำถาม จงทดคำตอบของเจ้าไว้ในใจ
-				แล้วออกตามหาศิษย์พี่ที่มีสิ่ง ๆ นั้นเหมือนกันกับเจ้า
-				เมื่อพบแล้วก็จงทำเครื่องหมายบนกระดานเพื่อ bingo! ยุทธภพนั้นกว้างใหญ่ไพศาล
-				แต่ศิษย์พี่ที่จริงใจนั้นจะมีเพียงคนเดียว!!
-			</p>
-		</div>
+		</Border>
 	</div>
 </div>
 

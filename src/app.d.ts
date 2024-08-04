@@ -9,9 +9,10 @@ declare global {
 		}
 		interface PageData {
 			isToken: boolean;
-			isAuth: boolean;
-			board: Bingo[];
+			isAuth?: boolean;
+			board?: Bingo[];
 		}
+
 		// interface PageState { }
 		// interface Platform {}
 	}

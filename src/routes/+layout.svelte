@@ -65,7 +65,7 @@
 	});
 </script>
 
-{#if $session.id !== undefined && (!$session.real_nickname || !$session.contact)}
+{#if $session.id !== undefined && (!$session.real_nickname || !$session.contact) && $session.role == 'FRESHY'}
 	<FeedDialog />
 {/if}
 

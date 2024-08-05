@@ -170,7 +170,8 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 			!isPhaseDay &&
 			['this_that', 'qrScanner', 'bingo', 'hint', 'puzzle', '@me/history/bingo'].includes(
 				event.url.pathname.slice(1)
-			)
+			) &&
+			event.locals.user.student_id !== '66070070'
 		) {
 			throw redirect(303, '/menu');
 		}

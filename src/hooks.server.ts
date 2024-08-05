@@ -199,9 +199,9 @@ const checkPhaseDay = (path: string) => {
 		case '@me/history/bingo':
 			return day >= 5 && h >= 11;
 		case 'hint':
-			return day >= 8;
+			return day >= 8 && h >= 11;
 		case 'puzzle':
-			return day >= 14;
+			return day >= 14 && h >= 11;
 		default:
 			return true;
 	}

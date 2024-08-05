@@ -186,7 +186,6 @@ const checkPhaseDay = (path: string) => {
 	const date = new Date();
 	const day = date.getDate();
 	const month = date.getMonth();
-	const h = date.getHours();
 	if (month !== 7) {
 		return false;
 	}
@@ -197,11 +196,11 @@ const checkPhaseDay = (path: string) => {
 			return day >= 2;
 		case 'bingo':
 		case '@me/history/bingo':
-			return day >= 5 && h >= 11;
+			return day >= 5;
 		case 'hint':
-			return day >= 8 && h >= 11;
+			return day >= 8;
 		case 'puzzle':
-			return day >= 14 && h >= 11;
+			return day >= 14;
 		default:
 			return true;
 	}

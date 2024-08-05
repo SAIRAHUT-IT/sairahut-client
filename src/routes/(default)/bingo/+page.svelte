@@ -136,7 +136,7 @@
 					<div class="flex justify-center">
 						<img src="/Frame29.webp" alt="" />
 					</div>
-					<p class="text-xs font-semibold maitree line-clamp-5">
+					<p class="text-xs font-semibold maitree">
 						เจ้าจะสังเกตได้ว่าเมื่อพลิกแผ่นกระดานขึ้นมาจะมีคำถาม จงทดคำตอบของเจ้าไว้ในใจ
 						แล้วออกตามหาศิษย์พี่ที่มีสิ่ง ๆ นั้นเหมือนกันกับเจ้า
 						เมื่อพบแล้วก็จงทำเครื่องหมายบนกระดานเพื่อ bingo! ยุทธภพนั้นกว้างใหญ่ไพศาล

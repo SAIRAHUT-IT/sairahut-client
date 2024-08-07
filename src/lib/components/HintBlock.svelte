@@ -25,7 +25,7 @@
 		</div>
 	{:else}
 		<div
-			class="rounded-xl flex justify-center flex-wrap max-w-xl px-3 py-3 w-full text-slate-50 bg-gradient-to-tr from-[#1D1A17] to-[#302c1cb4] pointer-events-none shadow-md border-r-2 border-l-2 border-[#C99949] max-h-72"
+			class="rounded-xl flex justify-center flex-wrap px-3 py-3 w-full text-slate-50 bg-gradient-to-tr from-[#1D1A17] to-[#302c1cb4] pointer-events-none shadow-md border-r-2 border-l-2 border-[#C99949] max-h-72"
 		>
 			{#each shuffled as item, i}
 				{#if i === 1}
@@ -36,9 +36,9 @@
 					</div>
 				{:else}
 					<div
-						class="rounded-full bg-gradient-to-tr from-[#433b34] to-[#504a2f24] border ring-2 ring-offset-2 ring-[#C99949] basis-[25%] aspect-square m-2 grid place-items-center"
+						class="flex items-center justify-center rounded-full bg-gradient-to-tr from-[#433b34] to-[#504a2f24] border ring-2 ring-offset-2 ring-[#C99949] basis-[25%] aspect-square m-2"
 					>
-						<img class="w-[3em] sm:w-[10em]" src={`/elemental/${item}.svg`} alt="lol" />
+						<img class="w-[10em] bg-cover" src={`/elemental/${item}.svg`} alt="lol" />
 					</div>
 				{/if}
 			{/each}

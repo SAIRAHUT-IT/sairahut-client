@@ -38,7 +38,7 @@
 			<Drawer.Description class="text-white/60 maitree">ใช้สำหรับเปลี่ยนชื่อ</Drawer.Description>
 			<Input
 				bind:value={val}
-				class="bg-[#383527] text-white placeholder-white maitree"
+				class="bg-[#383527] text-white placeholder-white/70 maitree"
 				placeholder="ชื่อเล่นน้องๆ"
 			/>
 		</Drawer.Header>

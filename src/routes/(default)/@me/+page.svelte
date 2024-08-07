@@ -29,7 +29,7 @@
 				</button>
 			</div>
 			<div>
-				<div class="bg-profile mt-5 mx-5 text-white shadow-md min-h-[175px] min-w-[310px] relative">
+				<div class="bg-profile mt-5 mx-5 text-white shadow-md min-h-[175px] min-w-[320px] relative">
 					<div class="absolute right-5 top-5 z-[1500]">
 						<ChangeName />
 					</div>
@@ -38,12 +38,12 @@
 						{#if $session.paired_member?.elemental || ($session.elemental && $session.elemental !== 'NONE')}
 							<div class="absolute flex justify-around w-full">
 								<img
-									class="w-[8rem] -rotate-12"
+									class="w-[10rem] -rotate-12"
 									src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
 									alt="elemental_icon"
 								/>
 								<img
-									class="transform -scale-x-100 w-[8rem] rotate-12"
+									class="transform -scale-x-100 w-[10rem] rotate-12"
 									src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
 									alt="elemental_icon"
 								/>
@@ -52,7 +52,7 @@
 						<div class="flex items-center justify-center px-2 text-sm z-[1500]">
 							<div class=" mangorn flex flex-col items-center">
 								<p class="text-4xl">ชื่อจอมยุทธ์</p>
-								<p class="text-7xl text-[#C99949]">
+								<p class="text-7xl text-WHITE drop-shadow-md">
 									{nick_ || 'SAIRAHUT'}
 								</p>
 								{#if $session.paired_member?.elemental || $session.elemental}

@@ -112,7 +112,7 @@
 					<img
 						src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
 						alt="house"
-						class="z-50"
+						class="z-50 w-[4em]"
 					/>
 					<p class="mangorn text-center text-3xl text-black z-50">
 						{elemental_parser($session.paired_member?.elemental || $session.elemental || '')}

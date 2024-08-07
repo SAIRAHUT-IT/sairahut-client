@@ -1,54 +1,61 @@
 <script lang="ts">
-	import { ArrowLeftFromLine } from 'lucide-svelte';
+	import { ArrowLeftFromLine, ChevronLeft, KeyRound } from 'lucide-svelte';
 	import HintButton from '$lib/components/HintButton.svelte';
 	import Scorebar from '$lib/components/Scorebar.svelte';
 	import { session } from '$lib/stores/member.store';
 	import { onMount } from 'svelte';
-	let shard = [5, 10, 15, 20, 25];
+	import Border from '$lib/components/Border.svelte';
+	import HintBlock from '$lib/components/HintBlock.svelte';
 	let hint = new Array(7).fill({ content: '??', isUnlocked: false });
 	onMount(() => {
 		// @ts-ignore
 		const member_hint = $session.hint;
 		// @ts-ignore
-		member_hint.forEach((content: string, i: number) => {
-			hint[i] = { content, isUnlocked: true };
-		});
+		if (member_hint) {
+			member_hint.forEach((content: string, i: number) => {
+				hint[i] = { content, isUnlocked: true };
+			});
+		}
 	});
 </script>
 
-<div class="flex justify-center w-full">
-	<div
-		id="background-img"
-		class="relative flex flex-col justify-center w-[367px] min-h-[837px] px-3 mx-5"
-	>
-		<div>
-			<div id="game-header" class="flex items-center justify-between h-12">
-				<div class="flex items-center justify-center gap-2">
-					<a href="/menu">
-						<ArrowLeftFromLine size={32} color="#C99949" />
-					</a>
-					<p class="text-2xl font-bold text-start tradewin text-white">Phase 3</p>
+<img
+	class="fixed w-[2000px] object-cover scale-[2] -left-[calc(50%)] -top-20 opacity-30 mt-20"
+	src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
+	alt="ss"
+/>
+
+<div class="flex justify-center w-full p-5 mb-5">
+	<Border>
+		<div class="relative flex flex-col justify-center px-3 mx-5 my-5 mb-10">
+			<div>
+				<button class="flex items-center" on:click={() => (window.location.href = '/menu')}>
+					<ChevronLeft size={30} class="text-[#C99949]" />
+					<p class="ml-2 text-3xl text-white tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Hint</p>
+				</button>
+
+				<div class="mx-5">
+					<img src="/describe.svg" alt="" />
+					<p class="text-white maitree text-xs mb-2">
+						บันทึกของผู้เฒ่าเซียน ผู้เฒ่าเซียน เป็นผู้แกร่งกล้าวิชาไม่เป็นสองรองใครในยุทธภพแห่งนี้
+						ท่านผู้โอบอ้อมอารีได้ฝึกฝนขัดเกลาจอมยุทธนับร้อย ให้ได้พบกับเส้นทางของตนเอง คราวนี้ล่ะ
+						ถึงเวลาของเจ้าแล้ว… การพบปะกับเหล่าเซียนทั้งหลายที่ผ่านมาในอดีต
+						บัดนี้ได้กลายมาเป็นกุญแจชิ้นสำคัญ เพื่อที่เจ้าจะได้ฝากตัวเป็นศิษย์น้องกับบุคคลที่ถูกต้อง
+						จงตามหาศิษย์พี่ที่แท้จริงให้พบ
+					</p>
+				</div>
+				<div class="z-20">
+					<Scorebar />
+				</div>
+				<HintButton />
+				<div class="flex flex-col gap-1 mt-3 px-3">
+					{#each hint as hint, i}
+						<HintBlock i={i + 1} {hint} />
+					{/each}
 				</div>
 			</div>
-			<div class="mx-5">
-				<img src="/describe.svg" alt="" />
-				<p class="text-white maitree text-[0.6rem] -mt-2 line-clamp-6">
-					บันทึกของผู้เฒ่าเซียน ผู้เฒ่าเซียน เป็นผู้แกร่งกล้าวิชาไม่เป็นสองรองใครในยุทธภพแห่งนี้
-					ท่านผู้โอบอ้อมอารีได้ฝึกฝนขัดเกลาจอมยุทธนับร้อย ให้ได้พบกับเส้นทางของตนเอง คราวนี้ล่ะ
-					ถึงเวลาของเจ้าแล้ว… การพบปะกับเหล่าเซียนทั้งหลายที่ผ่านมาในอดีต
-					บัดนี้ได้กลายมาเป็นกุญแจชิ้นสำคัญ เพื่อที่เจ้าจะได้ฝากตัวเป็นศิษย์น้องกับบุคคลที่ถูกต้อง
-					จงตามหาศิษย์พี่ที่แท้จริงให้พบ
-				</p>
-			</div>
-			<div class="z-20">
-				<Scorebar />
-			</div>
-
-			{#each hint as hint, i}
-				<HintButton i={i + 1} shard={shard[i]} {hint} />
-			{/each}
 		</div>
-	</div>
+	</Border>
 </div>
 
 <style>

@@ -32,10 +32,11 @@
 	}
 	let shuffled = shuffleArray(['FIRE', 'EARTH', 'PLANT', 'WATER', 'LIGHTING', 'AIR']);
 	shuffled.length = 3;
+	$: dis = ($session.hint?.length || 0) >= 7;
 </script>
 
 <Dialog.Root>
-	<Dialog.Trigger class="w-full relative">
+	<Dialog.Trigger class="w-full relative" disabled={dis}>
 		<div
 			class="flex justify-center gap-2 items-center bg-gradient-to-tr from-[#1D1A17] to-[#302c1c6b] backdrop-blur-lg drop-shadow-lg mangorn text-5xl mt-5 mx-5 rounded-md shadow-md border-r-2 border-l-2 px-2 py-5 text-center text-[#C99949] border-[#C99949]"
 		>

@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import Border from '$lib/components/Border.svelte';
 	import HintBlock from '$lib/components/HintBlock.svelte';
+	import FreshyInfo from '$lib/components/FreshyInfo.svelte';
 	let hint = new Array(7).fill({ content: '??', isUnlocked: false });
 	let freshy = $session.paired_with || [];
 
@@ -67,26 +68,23 @@
 									น้องคนที่ {i + 1}
 								</label>
 								<div class="flex flex-col gap-3">
-									<HintBlock
-										except
+									<FreshyInfo
 										i={i + 1}
 										hint={{
 											content: item.real_nickname || 'น้องยังไม่กรอกข้อมูล',
 											isUnlocked: true
 										}}
 									/>
-									<HintBlock
-										except
+									<FreshyInfo
 										i={i + 1}
 										hint={{ content: item.student_id || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
 									/>
-									<HintBlock
-										except
+									<FreshyInfo
 										i={i + 1}
+										url
 										hint={{ content: item.contact || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
 									/>
-									<HintBlock
-										except
+									<FreshyInfo
 										i={i + 1}
 										hint={{ content: item.branch || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
 									/>

@@ -2,6 +2,7 @@
 	import { LockKeyhole } from 'lucide-svelte';
 	export let hint = { content: '??', isUnlocked: false };
 	export let i = 1;
+	export let except = false;
 	function shuffleArray(array: any[]) {
 		for (let i = array.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
@@ -14,9 +15,11 @@
 </script>
 
 <div>
-	<label class="block text-3xl text-white underline mb-1 mt-2 ml-2 mangorn" for="field1"
-		>คำใบ้ที่ {i}</label
-	>
+	{#if !except}
+		<label class="block text-3xl text-white underline mb-1 mt-2 ml-2 mangorn" for="field1"
+			>คำใบ้ที่ {i}</label
+		>
+	{/if}
 	{#if hint.isUnlocked}
 		<div
 			class="rounded-xl maitree text-lg px-5 py-3 w-full text-slate-50 bg-gradient-to-tr from-[#1D1A17] to-[#302c1c96] pointer-events-none shadow-md border-r-2 border-l-2 border-[#C99949] drop-shadow-[0_1px_4px_#C99949]"

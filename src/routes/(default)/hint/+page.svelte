@@ -7,6 +7,8 @@
 	import Border from '$lib/components/Border.svelte';
 	import HintBlock from '$lib/components/HintBlock.svelte';
 	let hint = new Array(7).fill({ content: '??', isUnlocked: false });
+	let freshy = $session.paired_with || [];
+
 	onMount(() => {
 		// @ts-ignore
 		const member_hint = $session.hint;
@@ -47,11 +49,46 @@
 				<div class="z-20">
 					<Scorebar />
 				</div>
-				<HintButton />
+				{#if $session.role == 'FRESHY'}
+					<HintButton />
+				{/if}
 				<div class="flex flex-col gap-1 mt-3 px-3">
-					{#each hint as hint, i}
-						<HintBlock i={i + 1} {hint} />
-					{/each}
+					{#if $session.role == 'FRESHY'}
+						{#each hint as hint, i}
+							<HintBlock except={false} i={i + 1} {hint} />
+						{/each}
+					{:else}
+						{#each freshy as item, i}
+							<label
+								class="block text-3xl text-white underline mb-1 mt-2 ml-2 mangorn"
+								for="field1"
+							>
+								น้องคนที่ {i + 1}
+							</label>
+							<div class="flex flex-col gap-3">
+								<HintBlock
+									except
+									i={i + 1}
+									hint={{ content: item.real_nickname || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
+								/>
+								<HintBlock
+									except
+									i={i + 1}
+									hint={{ content: item.student_id || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
+								/>
+								<HintBlock
+									except
+									i={i + 1}
+									hint={{ content: item.contact || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
+								/>
+								<HintBlock
+									except
+									i={i + 1}
+									hint={{ content: item.branch || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
+								/>
+							</div>
+						{/each}
+					{/if}
 				</div>
 			</div>
 		</div>

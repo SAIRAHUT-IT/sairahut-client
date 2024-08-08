@@ -40,6 +40,7 @@ declare interface Member {
 	id: number;
 	real_nickname: string;
 	contact: string;
+	branch: string;
 	nickname: string;
 	username: string;
 	student_id: string;

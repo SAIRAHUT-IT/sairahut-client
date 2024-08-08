@@ -69,7 +69,10 @@
 			window.location.href = url;
 		}, delay);
 	}
-	if ($session.role != 'FRESHY') {
+	if ($session.role == 'SOPHOMORE') {
+		door.splice(1, 1);
+		door.length = 2;
+	} else {
 		door.length = 1;
 	}
 </script>

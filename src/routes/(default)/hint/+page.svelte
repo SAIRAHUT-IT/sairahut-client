@@ -58,36 +58,41 @@
 							<HintBlock except={false} i={i + 1} {hint} />
 						{/each}
 					{:else}
-						{#each freshy as item, i}
-							<label
-								class="block text-3xl text-white underline mb-1 mt-2 ml-2 mangorn"
-								for="field1"
-							>
-								น้องคนที่ {i + 1}
-							</label>
-							<div class="flex flex-col gap-3">
-								<HintBlock
-									except
-									i={i + 1}
-									hint={{ content: item.real_nickname || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
-								/>
-								<HintBlock
-									except
-									i={i + 1}
-									hint={{ content: item.student_id || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
-								/>
-								<HintBlock
-									except
-									i={i + 1}
-									hint={{ content: item.contact || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
-								/>
-								<HintBlock
-									except
-									i={i + 1}
-									hint={{ content: item.branch || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
-								/>
-							</div>
-						{/each}
+						<div>
+							{#each freshy as item, i}
+								<label
+									class="block text-3xl text-white underline mb-1 mt-2 ml-2 mangorn"
+									for="field1"
+								>
+									น้องคนที่ {i + 1}
+								</label>
+								<div class="flex flex-col gap-3">
+									<HintBlock
+										except
+										i={i + 1}
+										hint={{
+											content: item.real_nickname || 'น้องยังไม่กรอกข้อมูล',
+											isUnlocked: true
+										}}
+									/>
+									<HintBlock
+										except
+										i={i + 1}
+										hint={{ content: item.student_id || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
+									/>
+									<HintBlock
+										except
+										i={i + 1}
+										hint={{ content: item.contact || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
+									/>
+									<HintBlock
+										except
+										i={i + 1}
+										hint={{ content: item.branch || 'น้องยังไม่กรอกข้อมูล', isUnlocked: true }}
+									/>
+								</div>
+							{/each}
+						</div>
 					{/if}
 				</div>
 			</div>

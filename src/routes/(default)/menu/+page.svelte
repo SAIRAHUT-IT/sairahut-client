@@ -72,7 +72,7 @@
 	if ($session.role == 'SOPHOMORE') {
 		door.splice(1, 1);
 		door.length = 2;
-	} else {
+	} else if ($session.role == 'SENIOR') {
 		door.length = 1;
 	}
 </script>

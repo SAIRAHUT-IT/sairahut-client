@@ -53,7 +53,7 @@
 				{#if $session.role == 'FRESHY'}
 					<HintButton />
 				{/if}
-				<div class="flex flex-col gap-1 mt-3 px-3">
+				<div class="flex flex-col gap-1 mt-3 px-3 z-20">
 					{#if $session.role == 'FRESHY'}
 						{#each hint as hint, i}
 							<HintBlock except={false} i={i + 1} {hint} />

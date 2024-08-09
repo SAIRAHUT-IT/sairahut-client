@@ -28,7 +28,7 @@
 	alt="ss"
 />
 
-<div class="flex justify-center w-full p-20 mb-5">
+<div class="flex justify-center w-full p-3 mb-5">
 	<Border>
 		<div class="relative flex flex-col justify-center px-3 mx-5 my-5 mb-10">
 			<div>

@@ -23,12 +23,12 @@
 </script>
 
 <img
-	class="fixed w-[2000px] object-cover scale-[2] -left-[calc(50%)] -top-20 opacity-30 mt-20"
+	class="fixed w-[2000px] object-cover scale-[2] -left-[calc(50%)] -top-20 opacity-30 mt-20 -z-[1500]"
 	src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}
 	alt="ss"
 />
 
-<div class="flex justify-center w-full p-5 mb-5">
+<div class="flex justify-center w-full p-20 mb-5">
 	<Border>
 		<div class="relative flex flex-col justify-center px-3 mx-5 my-5 mb-10">
 			<div>

@@ -7,7 +7,7 @@
 
 <div class="mx-5 rounded-lg text-white drop-shadow-md bg-score tradewin">
 	<div class="flex items-center justify-center gap-5 py-5">
-		<h1 class="text-4xl text-end ml-9">{$session.ranking || 999}</h1>
+		<h1 class="text-4xl text-end ml-5">{$session.ranking || 999}</h1>
 
 		<div class="flex flex-col">
 			<p class="maitree">คืออันดับของคุณ</p>

@@ -54,7 +54,8 @@ declare interface Member {
 	token: number;
 	this_or_that: string[];
 	maximum_member: number;
-	unlocked_puzzle: string[];
+	puzzle_count: number;
+	unlocked_puzzle: [number, number][];
 	puzzle_url: string;
 	paired_member_id: number;
 	bingo_board: Bingo[];

@@ -1,22 +1,36 @@
 <script lang="ts">
+	import Border from '$lib/components/Border.svelte';
+	import { session } from '$lib/stores/member.store';
+	import { ChevronLeft } from 'lucide-svelte';
 	import { onMount } from 'svelte';
+	import toast from 'svelte-french-toast';
 
 	let pieces: { piece: string; isImage: boolean }[] = [];
+	let unlocked_pieces: [number, number][] = $session.unlocked_puzzle || [];
+	let code = '';
 
-	let unlocked_pieces = [
-		// [0, 0],
-		[0, 1],
-		// [0, 2],
-		// [1, 0],
-		// [1, 1],
-		// [1, 2],
-		// [2, 0],
-		[2, 1],
-		[2, 2]
-	];
+	let imageUrl = `https://sairahut.tanansorn.bio/${'66070347' || $session.student_id}.webp`;
 
-	let imageUrl =
-		'https://media.discordapp.net/attachments/1134763980871712768/1261687348165480538/9F99E393-67FE-4E42-AE14-142FF78DE785.jpg?ex=66aa46e8&is=66a8f568&hm=b11ee61cf6ab6acb470c5a320bc3b6c0c88b54d7e584d39e53acee251f8c60d9&=&format=webp&width=526&height=700';
+	let targetWidth = 300;
+	let targetHeight = 300;
+
+	const submit = async () => {
+		try {
+			const response = await fetch('/api/puzzle', {
+				method: 'PATCH',
+
+				body: JSON.stringify({ code })
+			});
+			const data = await response.json();
+			if (!response.ok) throw data || 'error';
+			toast.success(data.message || 'ปลดล็อคสำเร็จ');
+			setTimeout(() => {
+				window.location.reload();
+			}, 2000);
+		} catch (error: any) {
+			toast.error(error.message || 'เกิดข้อผิดพลาด');
+		}
+	};
 
 	onMount(() => {
 		loadFromUrl(imageUrl);
@@ -28,21 +42,46 @@
 
 	function processImage(src: string) {
 		const img = new Image();
-		img.crossOrigin = 'Tanansorn';
+		img.crossOrigin = 'anonymous';
 		img.onload = function () {
 			const canvas = document.createElement('canvas');
 			const context = canvas.getContext('2d');
-			const pieceWidth = img.width / 3;
-			const pieceHeight = img.height / 3;
+
+			const imgAspectRatio = img.width / img.height;
+			const targetAspectRatio = targetWidth / targetHeight;
+
+			let drawWidth = targetWidth;
+			let drawHeight = targetHeight;
+			let offsetX = 0;
+			let offsetY = 0;
+
+			if (imgAspectRatio > targetAspectRatio) {
+				drawHeight = targetWidth / imgAspectRatio;
+				offsetY = (targetHeight - drawHeight) / 2;
+			} else {
+				drawWidth = targetHeight * imgAspectRatio;
+				offsetX = (targetWidth - drawWidth) / 2;
+			}
+
+			canvas.width = targetWidth;
+			canvas.height = targetHeight;
+
+			context?.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+
+			const pieceWidth = canvas.width / 3;
+			const pieceHeight = canvas.height / 3;
 
 			pieces = [];
 
 			for (let i = 0; i < 3; i++) {
 				for (let j = 0; j < 3; j++) {
-					canvas.width = pieceWidth;
-					canvas.height = pieceHeight;
-					context?.drawImage(
-						img,
+					const pieceCanvas = document.createElement('canvas');
+					const pieceContext = pieceCanvas.getContext('2d');
+					pieceCanvas.width = pieceWidth;
+					pieceCanvas.height = pieceHeight;
+
+					pieceContext?.drawImage(
+						canvas,
 						j * pieceWidth,
 						i * pieceHeight,
 						pieceWidth,
@@ -56,7 +95,7 @@
 					const isUnlocked = unlocked_pieces.some((pos) => pos[0] === i && pos[1] === j);
 
 					try {
-						const piece = canvas.toDataURL();
+						const piece = pieceCanvas.toDataURL();
 						pieces.push({ piece, isImage: isUnlocked });
 					} catch (e) {
 						console.error('Error generating piece:', e);
@@ -67,28 +106,75 @@
 			pieces = [...pieces];
 		};
 		img.onerror = function () {
-			console.error('Failed to load image. Please ensure the URL allows cross-origin requests.');
+			console.error('Failed to load image.');
 		};
 		img.src = src;
 	}
 </script>
 
-<div class="flex flex-col">
-	<div class="flex items-center justify-center">
-		<div id="pieces" class="grid grid-cols-3 gap-1 max-w-xl p-2 mt-4">
+<div class="flex flex-col items-center w-full p-5 mt-10">
+	<Border>
+		<div class="flex items-center justify-between mx-5 mt-5 text-white">
+			<button class="flex items-center" on:click={() => (window.location.href = '/menu')}>
+				<ChevronLeft size={30} class="text-[#C99949]" />
+				<p class="ml-2 text-2xl tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Puzzle</p>
+			</button>
+		</div>
+		<p class="mx-7 maitree text-white text-sm mt-3">
+			จำนวนครั้งที่เปิดได้ในวันนี้ (<span class="text-[#C99949]"
+				>{3 - ($session.puzzle_count || 0)}/3</span
+			>)
+		</p>
+		<div id="pieces" class="grid grid-cols-3 gap-1 place-items-center w-fit mx-auto p-2">
 			{#each pieces as piece, index}
 				{#if piece.isImage}
 					<img
-						class="w-full aspect-square ring-1 ring-black"
+						class="w-full aspect-square ring-1 ring-slate-700 rounded-md"
 						src={piece.piece}
-						alt="Piece {index}"
+						alt="P_{index}"
+						loading="lazy"
 					/>
 				{:else}
-					<div class="flex bg-white justify-center items-center aspect-square ring-1 ring-black">
-						{index + 1}
-					</div>
+					<img src="/puzzle.svg" class="rounded-md" alt="chart" loading="lazy" />
 				{/if}
 			{/each}
 		</div>
-	</div>
+		<div class="flex flex-col items-center justify-center w-full">
+			<div class="mangorn text-6xl p-2 text-center bg-code h-full w-full rounded-md mr-2">
+				<input
+					type="text"
+					maxlength="6"
+					placeholder="secret code"
+					bind:value={code}
+					class="p-2 w-full rounded-xl bg-transparent mangorn outline-none text-center text-[#C99949] placeholder-slate-50/60"
+				/>
+			</div>
+			<button
+				on:click={submit}
+				disabled={code.length < 6}
+				class={`mt-2 mx-5 ${code.length < 6 ? 'grayscale' : ''}`}
+			>
+				<img src="/submit.svg" alt="submit" />
+			</button>
+		</div>
+		<div class="flex flex-col items-center mt-4 bg-[#26221E]/70 text-white px-5 py-2 mb-5 mx-7">
+			<div class="flex justify-center">
+				<img src="/Frame29.webp" alt="" />
+			</div>
+			<p class="text-xs font-semibold maitree">
+				เจ้าจะสังเกตได้ว่าเมื่อพลิกแผ่นกระดานขึ้นมาจะมีคำถาม จงทดคำตอบของเจ้าไว้ในใจ
+				แล้วออกตามหาศิษย์พี่ที่มีสิ่ง ๆ นั้นเหมือนกันกับเจ้า
+				เมื่อพบแล้วก็จงทำเครื่องหมายบนกระดานเพื่อ bingo! ยุทธภพนั้นกว้างใหญ่ไพศาล
+				แต่ศิษย์พี่ที่จริงใจนั้นจะมีเพียงคนเดียว!!
+			</p>
+		</div>
+	</Border>
 </div>
+
+<style>
+	.bg-code {
+		background-image: url('/กรอบtext.png');
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+</style>

@@ -14,7 +14,7 @@
 	shuffled.length = 3;
 </script>
 
-<div>
+<div class="w-full">
 	{#if !except}
 		<label class="block text-3xl text-white underline mb-1 mt-2 ml-2 mangorn" for="field1"
 			>คำใบ้ที่ {i}</label

@@ -28,7 +28,7 @@
 				window.location.reload();
 			}, 500);
 		} catch (error: any) {
-			toast.error(error.message[0].message || error.message || 'error');
+			toast.error(error.message);
 		}
 	};
 </script>

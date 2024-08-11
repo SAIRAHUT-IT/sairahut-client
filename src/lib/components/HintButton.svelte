@@ -4,7 +4,7 @@
 	import { session, updateSession } from '$lib/stores/member.store';
 	import { KeyRound } from 'lucide-svelte';
 	import { toast } from 'svelte-french-toast';
-	let chakra = [5, 10, 10, 10, 15, 20, 25];
+	let chakra = [5, 5, 10, 10, 15, 20, 25];
 
 	const unlock = async () => {
 		try {
@@ -20,7 +20,7 @@
 			}, 500);
 			updateSession();
 		} catch (error: any) {
-			toast.error(error.message[0].message || error.message || 'error');
+			toast.error(error.message[0].message);
 		}
 	};
 	function shuffleArray(array: any[]) {
@@ -47,7 +47,7 @@
 	<Dialog.Content class="sm:max-w-[425px] ">
 		<Dialog.Header>
 			<Dialog.Title class="text-center text-2xl maitree font-bold">
-				ใช้ {chakra[($session?.hint?.length || 1) - 1]} จักระออร่า เพื่อรับการชี้แนะ
+				ใช้ {chakra[$session?.hint?.length || 0]} จักระออร่า เพื่อรับการชี้แนะ
 			</Dialog.Title>
 		</Dialog.Header>
 		<Dialog.Footer>

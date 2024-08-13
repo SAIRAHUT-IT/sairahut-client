@@ -9,7 +9,7 @@
 	let unlocked_pieces: [number, number][] = $session.unlocked_puzzle || [];
 	let code = '';
 
-	let imageUrl = `https://sairahut.tanansorn.bio/${$session.student_id || '66070070'}.webp`;
+	let imageUrl = `https://sairahut.tanansorn.bio/${$session.paired_member?.student_id || '66070070'}.webp`;
 
 	let targetWidth = 300;
 	let targetHeight = 300;

@@ -200,7 +200,7 @@ const checkPhaseDay = (path: string) => {
 		case 'hint':
 			return day >= 8;
 		case 'puzzle':
-			return day >= 14;
+			return day >= 13;
 		default:
 			return true;
 	}

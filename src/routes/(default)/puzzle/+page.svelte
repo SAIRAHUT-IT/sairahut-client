@@ -113,9 +113,12 @@
 
 <div class="flex flex-col items-center w-full p-5 mt-10">
 	<Border>
-		<div class="flex items-center justify-between mx-5 mt-5 text-white">
-			<button class="flex items-center" on:click={() => (window.location.href = '/menu')}>
-				<ChevronLeft size={30} class="text-[#C99949]" />
+		<div class="flex items-center mx-5 mt-5 text-white">
+			<button
+				class="flex items-center justify-around w-fit"
+				on:click={() => (window.location.href = '/menu')}
+			>
+				<ChevronLeft size={30} class="text-[#C99949] ml-2" />
 				<p class="ml-2 text-2xl tradewin drop-shadow-[0_3px_11px_#FFFFFF]">Puzzle</p>
 			</button>
 		</div>

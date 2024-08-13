@@ -4,13 +4,12 @@
 	import { ChevronLeft } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import toast from 'svelte-french-toast';
-
+	export let data;
 	let pieces: { piece: string; isImage: boolean }[] = [];
 	let unlocked_pieces: [number, number][] = $session.unlocked_puzzle || [];
 	let code = '';
 
-	let imageUrl = `https://sairahut.tanansorn.bio/${$session.paired_member?.student_id || '66070070'}.webp`;
-
+	let imageUrl = data.image;
 	let targetWidth = 300;
 	let targetHeight = 300;
 

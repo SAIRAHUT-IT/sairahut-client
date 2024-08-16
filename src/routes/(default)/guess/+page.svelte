@@ -15,7 +15,7 @@
 				})
 			});
 			const data = await response.json();
-			name = data?.info?.real_nickname || 'sairahut';
+			name = data?.info?.real_nickname || '';
 			if (!response.ok) throw data || 'error';
 		} catch (error: any) {
 			toast.error(error.message);

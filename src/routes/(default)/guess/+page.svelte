@@ -42,7 +42,7 @@
 	<Border class_="p-3 w-full">
 		<div class="flex flex-col space-y-10 my-10">
 			<div class="flex flex-col gap-2 items-center justify-center w-full">
-				<h1 class="mangorn text-5xl text-white">รหัสลับของศิษย์พี่</h1>
+				<h1 class="mangorn text-5xl text-white text-center">รหัสลับของศิษย์พี่</h1>
 				<!-- <div class="relative flex items-center justify-center">
 					<img src="/elemental_phase/textbg.png" alt="textbg" />
 					<input type="text" class="absolute bg-transparent" />

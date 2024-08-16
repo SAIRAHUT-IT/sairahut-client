@@ -18,7 +18,9 @@
 		<div
 			class="z-50 overflow-hidden flex flex-col gap-3 items-center justify-center text-white mx-5 border-2 border-[#C99949] rounded-xl p-5 my-4 bg-gradient-to-tr from-[#1D1A17] to-[#302c1c96] backdrop-blur-md"
 		>
-			<h1 class="mangorn text-6xl text-[#ECBF74] drop-shadow-[0_2px_10px_rgba(100,100,100,0.8)]">
+			<h1
+				class="mangorn text-5xl text-center text-[#ECBF74] drop-shadow-[0_2px_10px_rgba(100,100,100,0.8)]"
+			>
 				ท่านได้พบกับความจริง
 			</h1>
 			<p class="maitree text-center text-xl">

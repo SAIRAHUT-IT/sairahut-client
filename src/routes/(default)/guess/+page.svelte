@@ -56,7 +56,11 @@
 						class="p-2 w-full rounded-xl bg-transparent mangorn outline-none text-center text-[#C99949] placeholder-slate-50/60"
 					/>
 				</div>
-				<button on:click={submit} class="w-full flex justify-center scale-150 mt-4">
+				<button
+					disabled={guess.length < 6}
+					on:click={submit}
+					class="w-full flex justify-center scale-150 mt-4"
+				>
 					<div
 						class="bg-[#383527] shadow-md rounded-3xl px-2 border-r-2 border-l-2 border-[#C99949] w-1/2"
 					>

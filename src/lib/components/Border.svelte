@@ -1,4 +1,8 @@
-<div class={`border_ border border-[#C99949] w-fit h-fit`}>
+<script>
+	export let class_ = '';
+</script>
+
+<div class={`border_ border border-[#C99949] w-fit h-fit ${class_}`}>
 	<div class="circle top-circle"></div>
 	<slot />
 	<div class="bottom-borders"></div>

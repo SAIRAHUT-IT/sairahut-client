@@ -91,7 +91,7 @@
 
 <div class="flex justify-center items-center w-full">
 	<div class="w-full max-w-2xl overflow-x-hidden">
-		<div class="max-w-7xl mx-auto min-h-screen">
+		<div class="max-w-3xl mx-auto min-h-screen">
 			<Loading loading={loader} />
 			<Toaster />
 			{#if !loader}

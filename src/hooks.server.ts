@@ -154,6 +154,9 @@ const handleRequest: Handle = async ({ event, resolve }) => {
 			throw redirect(303, '/');
 		}
 
+		if (event.url.pathname != '/guess' && event.locals.user.role == 'FRESHY') {
+			throw redirect(303, '/guess');
+		}
 		if (
 			event.locals.user.status == 'FORM' &&
 			event.url.pathname !== '/this_that' &&

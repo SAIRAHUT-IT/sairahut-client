@@ -1,8 +1,5 @@
 <script lang="ts">
 	import * as Dialog from '$lib/components/ui/dialog';
-	import Input from './ui/input/input.svelte';
-	import Button from './ui/button/button.svelte';
-	import toast from 'svelte-french-toast';
 	import { session } from '$lib/stores/member.store';
 	export let open = false;
 	export let name = 'วิน';
@@ -12,7 +9,7 @@
 	onOutsideClick={(e) => {
 		e.preventDefault();
 	}}
-	{open}
+	open={true}
 >
 	<Dialog.Content class="bg-transparent ring-0 border-0">
 		<div
@@ -30,7 +27,7 @@
 			<p class="mangorn text-center text-5xl text-[#F4EFD4] drop-shadow-lg">
 				ศิษย์พี่<span class="underline text-[#ECBF74]">{name}</span>
 			</p>
-			<button
+			<!-- <button
 				on:click={() => {
 					window.location.reload();
 				}}
@@ -41,7 +38,7 @@
 						<p class="mangorn text-xl">close</p>
 					</div>
 				</div>
-			</button>
+			</button> -->
 			<div class="absolute -z-10 opacity-40">
 				<img
 					src={`/elemental/${$session.paired_member?.elemental || $session.elemental}.svg`}

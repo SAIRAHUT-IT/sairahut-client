@@ -23,7 +23,7 @@
 	};
 </script>
 
-<SophomoreInfo open={name.length > 0} {name} />
+<SophomoreInfo name={$session.paired_member?.real_nickname} />
 
 <div class="flex flex-col w-full min-h-screen items-center mt-10 p-5">
 	<!-- <div

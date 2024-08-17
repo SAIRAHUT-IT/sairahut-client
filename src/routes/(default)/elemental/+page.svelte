@@ -2,11 +2,12 @@
 	import { session } from '$lib/stores/member.store';
 	import gsap from 'gsap';
 	import Border from '$lib/components/Border.svelte';
-	import { text } from '@sveltejs/kit';
+	import { LoaderCircleIcon } from 'lucide-svelte';
 
 	export let data: { matcher?: 'matched' | 'not_matched' | 'fake'; code?: any };
 	$: matcher = data.matcher || 'not_matched';
 	$: is_fake = matcher === 'fake';
+	$: loading = false;
 	$: is_triggered = false;
 	const color_context = {
 		matched: {
@@ -28,6 +29,7 @@
 		}
 	};
 	const triggerAnimate = () => {
+		loading = true;
 		const tl = gsap.timeline({
 			delay: 1.5,
 			onStart: () => {
@@ -39,7 +41,7 @@
 				window.location.href = '/guess';
 			}
 		});
-		tl.to('#pane', { duration: 2, top: 50 });
+		tl.to('#pane', { duration: 2, top: 30 });
 		tl.to('#pane', { delay: 2, duration: 2, top: '-200%' });
 		tl.to('#quotes', { delay: 3.3, duration: 3, opacity: 0, ease: 'power2.out' }, '-=1');
 	};
@@ -83,7 +85,7 @@
 
 					{#if matcher == 'matched' || is_fake}
 						<button
-							disabled={is_triggered}
+							disabled={is_triggered || loading}
 							on:click={triggerAnimate}
 							class="w-full flex justify-center scale-150 mt-4"
 							style={is_fake ? 'display:none;' : ''}
@@ -91,8 +93,15 @@
 							<div
 								class="bg-[#383527] shadow-md rounded-3xl px-2 border-r-2 border-l-2 border-[#C99949]"
 							>
-								<div class="flex items-center justify-center">
-									<p class="mangorn text-xl">ไปต่อเลยยย</p>
+								<div class="flex items-center justify-center px-2">
+									{#if loading}
+										<LoaderCircleIcon
+											size={20}
+											class="text-white animate-spin w-10 my-1 opacity-85"
+										/>
+									{:else}
+										<p class="mangorn text-xl">ไปต่อเลยยย</p>
+									{/if}
 								</div>
 							</div>
 						</button>
